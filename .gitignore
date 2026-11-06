@@ -1,0 +1,19 @@
+node_modules/
+dist/
+out/
+*.log
+.DS_Store
+.env
+.env.local
+
+# scratch dir for PDF pipeline verification (not committed)
+.tmp/
+
+# brainstorming visual-companion scratch + git worktrees
+.superpowers/
+.worktrees/
+.claude/
+.e2e-data/
+.e2e-server.log
+test-results/
+playwright-report/

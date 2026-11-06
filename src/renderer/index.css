@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Window drag region. The top bar moves the frameless window; interactive
+ * children opt back out with `.no-drag`. On macOS the bar also reserves space
+ * for the inset traffic-light buttons so they never overlap the sidebar.
+ */
+.drag-region {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/*
+ * Custom scrollbars (everywhere). Chromium-only WebKit pseudo-elements — we do
+ * NOT set the standard `scrollbar-width`/`scrollbar-color`, since in modern
+ * Chromium those would disable the pseudo-element styling below.
+ *
+ * Thin, transparent track; rounded thumb in a muted tone with a transparent
+ * border (via background-clip) so it reads as inset padding. Theme-aware:
+ * the thumb derives from --text-muted, so it adapts to light & dark.
+ *
+ * Note: native <select> dropdown popups are rendered by the OS and cannot be
+ * styled with CSS — those keep the system scrollbar.
+ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--text-muted) 70%, transparent);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/*
+ * Compact icon-only "create invoice" button on project cards. Ghost by default
+ * (transparent, apricot glyph); on hover the neutral raised surface fills in.
+ * Borderless, no shadow — consistent with the rest of the design system.
+ */
+.invoice-icon-btn:hover {
+  background: var(--surface-raised) !important;
+}
+
+/*
+ * Status / flag chips — pastel pills, both light & dark.
+ * Borderless: tint background + tuned text colour, rounded-full. The base
+ * `.chip` sets shape/size; each modifier sets its hue, and `.dark` overrides
+ * the text colour where the light tone would be too dim on a dark surface.
+ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  line-height: 1;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip-finalized {
+  background: rgba(125, 178, 131, 0.22);
+  color: #5f9468;
+}
+.dark .chip-finalized {
+  color: #9ccfa1;
+}
+
+.chip-paid {
+  background: rgba(140, 165, 210, 0.24);
+  color: #6f86b8;
+}
+.dark .chip-paid {
+  color: #a7bce6;
+}
+
+.chip-sent {
+  background: rgba(255, 127, 84, 0.2);
+  color: #c2582f;
+}
+.dark .chip-sent {
+  color: #ff9b78;
+}
+
+.chip-draft {
+  background: rgba(172, 159, 148, 0.24);
+  color: var(--text-muted);
+}
+
+.chip-cancelled {
+  background: rgba(214, 140, 140, 0.22);
+  color: #b06a6a;
+}
+.dark .chip-cancelled {
+  color: #e3a3a3;
+}
+
+.chip-reverse {
+  background: rgba(186, 160, 205, 0.24);
+  color: #9a7bb0;
+}
+.dark .chip-reverse {
+  color: #c7a9d8;
+}
+
+/* --- Mobile Shell ------------------------------------------------------- */
+html, body, #root { height: 100%; }
+body { overscroll-behavior: none; }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }.safe-top { padding-top: env(safe-area-inset-top); }
+.tap-target { min-height: 44px; min-width: 44px; }
+
+input, select, textarea { font-size: 16px; }
+@media (min-width: 768px) {
+  input, select, textarea { font-size: inherit; }
+}
+
+/* iOS zoomt beim Fokussieren automatisch, wenn das Feld kleiner als 16 px ist.
+   Auf dem Handy daher alle Eingabefelder auf 16 px halten. */
+@media (max-width: 767px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}

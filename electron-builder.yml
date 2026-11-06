@@ -1,0 +1,79 @@
+appId: com.hustl.app
+# productName resolves to the Windows app name; on the case-insensitive Windows
+# filesystem "Hustl" maps to the same %APPDATA%\hustl folder the dev app uses,
+# so the packaged app reads the exact same hustl.db (projects, finances, …).
+productName: Hustl
+directories:
+  output: dist
+  buildResources: build
+# Inclusion-by-default: out/ (built main+preload+renderer) and production
+# node_modules are bundled automatically; dev-only sources/configs are excluded.
+files:
+  - '!**/.vscode/**'
+  - '!src/**'
+  - '!tests/**'
+  - '!docs/**'
+  - '!.claude/**'
+  - '!.superpowers/**'
+  - '!.worktrees/**'
+  - '!.github/**'
+  - '!deploy/**'
+  - '!dist/**'
+  - '!{electron.vite.config.*,vitest.config.*,postcss.config.*,tailwind.config.*}'
+  - '!{tsconfig.json,tsconfig.*.json}'
+  - '!{.gitignore,.gitattributes,.editorconfig,.npmrc}'
+  - '!**/*.md'
+win:
+  target:
+    - nsis
+  executableName: Hustl
+  icon: build/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext}
+mac:
+  # Both architectures so Intel and Apple Silicon users get a native build.
+  # The builds are unsigned; macOS Gatekeeper needs a manual bypass on first
+  # launch (see README).
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.finance
+  # Generated from build/icon.png by scripts/generate-icns.mjs.
+  icon: build/icon.icns
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  # No hardened runtime: the app is not notarised and would otherwise refuse
+  # to start on Apple Silicon.
+  hardenedRuntime: false
+linux:
+  # AppImage is self-contained and runs on any recent distro (incl. CachyOS)
+  # under X11 or Wayland/niri — no install step, just chmod +x and run.
+  target:
+    - AppImage
+  # 512×512 PNG; electron-builder derives the AppImage's embedded icon from it.
+  icon: build/icon.png
+  # Lowercase binary name inside the AppImage; on Linux userData resolves to
+  # ~/.config/Hustl (productName), a fresh store separate from the Windows box.
+  executableName: hustl
+  category: Office
+  synopsis: Rechnungs- und Finanztool
+  description: Hustl – Rechnungs- und Finanztool für Freelancer.
+  desktop:
+    entry:
+      # Lets the compositor (niri) map the window back to this .desktop entry.
+      StartupWMClass: Hustl
+appImage:
+  artifactName: ${productName}-${version}.${ext}
+# Copy the window/taskbar PNG next to the packaged app (→ process.resourcesPath).
+extraResources:
+  - from: resources/icon.png
+    to: icon.png
+nsis:
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Hustl

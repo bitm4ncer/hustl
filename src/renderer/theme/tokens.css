@@ -1,0 +1,83 @@
+/*
+ * Theme tokens for Hustl — neutral surfaces + apricot accent.
+ *
+ * Design rule: NO borders and NO shadows. Visual separation comes exclusively
+ * from neutral grey background surfaces (--bg / --surface / --surface-raised /
+ * --field) and spacing. Components must never introduce borders or shadows.
+ *
+ * Backgrounds are neutral grey (no tint): light #f2f2f2 / dark #1d1e1f.
+ * One accent only: apricot (#FF7F54 light / #FF8C66 dark). Focus is a soft
+ * accent ring (--focus), never an outline.
+ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../assets/fonts/inter-700.woff2') format('woff2');
+}
+
+:root {
+  --bg: #f2f2f2;
+  --surface: #ffffff;
+  --surface-raised: #e9e9e9;
+  --field: #e2e2e2;
+  --sidebar: #e7e7e7;
+  --chart-highlight: rgba(0, 0, 0, 0.06);
+  --text: #1d1d1f;
+  --text-muted: #86868b;
+  --accent: #ff7f54;
+  --accent-contrast: #ffffff;
+  --shadow: none;
+  --focus: 0 0 0 3px rgba(255, 127, 84, 0.32);
+
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dark {
+  --bg: #1d1e1f;
+  --surface: #27292b;
+  --surface-raised: #303234;
+  --field: #161718;
+  --sidebar: #161718;
+  --chart-highlight: rgba(0, 0, 0, 0.32);
+  --text: #f2f2f2;
+  --text-muted: #9a9a9d;
+  --accent: #ff8c66;
+  --accent-contrast: #1d1e1f;
+  --shadow: none;
+  --focus: 0 0 0 3px rgba(255, 140, 102, 0.38);
+}
+
+/* Borderless baseline: never paint borders; lean on neutral surfaces instead. */
+* {
+  border-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.38s ease, color 0.38s ease;
+}
+
+/* Respect users who prefer reduced motion — calm everything down. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

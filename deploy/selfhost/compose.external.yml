@@ -1,0 +1,57 @@
+name: hustl
+
+# Self-hosted stack for a VPS that already runs Caddy or Nginx on 80/443.
+# The container is published on 127.0.0.1 only; the existing proxy terminates
+# TLS and forwards to it. See Caddyfile.snippet written by install.sh.
+# Use deploy/selfhost/install.sh; it copies this file to /opt/hustl/docker-compose.yml.
+
+services:
+  hustl:
+    image: hustl:latest
+    container_name: hustl
+    restart: unless-stopped
+    user: "10001:10001"
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m
+    volumes:
+      - ./data:/data
+    environment:
+      HUSTL_DATA_DIR: /data
+      HUSTL_ORIGIN: ${HUSTL_ORIGIN:?HUSTL_ORIGIN fehlt in .env}
+      HUSTL_RP_ID: ${HUSTL_RP_ID:?HUSTL_RP_ID fehlt in .env}
+      HUSTL_VERSION: ${HUSTL_VERSION:-1.0.0}
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
+      HUSTL_CHROME_PROFILE: /tmp/chromium
+      HOME: /tmp
+      NODE_ENV: production
+      TZ: ${TZ:-Europe/Berlin}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: ${HUSTL_MEM_LIMIT:-1g}
+    ports:
+      - "127.0.0.1:${HUSTL_PORT:-3000}:3000"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: ${PROXY_NETWORK:-hustl-proxy}
+    external: true

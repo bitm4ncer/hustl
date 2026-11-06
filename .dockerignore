@@ -1,0 +1,10 @@
+node_modules
+dist
+out
+build
+.git
+.superpowers
+docs
+tests
+*.log
+.env

@@ -1,0 +1,8 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$HUSTL_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy hustl:3000
+}
