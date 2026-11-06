@@ -41,7 +41,10 @@ jobs:
           node-version: 24
           cache: npm
 
-      - run: npm ci
+      # `npm ci` rejects the lock file on Linux/macOS because it was generated
+      # on Windows and misses a few platform-specific optional entries.
+      # `npm install` resolves them on the runner without changing the source.
+      - run: npm install --no-audit --no-fund
 
       - run: npm run icons:icns
 
