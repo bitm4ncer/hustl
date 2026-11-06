@@ -118,7 +118,7 @@ export async function buildFullArchive(args: {
     const manifest = {
       format: 1,
       createdAt: now.toISOString(),
-      appVersion: process.env.HUSTL_VERSION ?? '1.0.0',
+      appVersion: process.env.HUSTL_VERSION ?? '1.1.0',
       database: {
         file: 'data/hustl.db',
         sha256: sha256(databaseBytes),

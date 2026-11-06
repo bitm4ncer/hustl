@@ -73,7 +73,21 @@ jobs:
         with:
           path: artifacts
 
+      # Stable names power the download buttons on the website and in the
+      # README. The versioned files stay on the release as well.
+      - name: Create stable download names
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          cp artifacts/hustl-windows/*.exe release/Hustl-win.exe
+          cp artifacts/hustl-macos/*-arm64.dmg release/Hustl-mac-arm64.dmg
+          cp artifacts/hustl-macos/*-x64.dmg release/Hustl-mac-x64.dmg
+          cp artifacts/hustl-linux/*.AppImage release/Hustl-linux.AppImage
+          ls -lh release
+
       - uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/**/*
+          files: |
+            artifacts/**/*
+            release/*
           generate_release_notes: true

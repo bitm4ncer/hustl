@@ -1,6 +1,6 @@
 {
   "name": "hustl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hustl – self-hosted Rechnungs- und Finanztool für Soloselbstständige",
   "main": "out/main/index.js",
   "author": "bitm4ncer",
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/bitm4ncer/hustl/issues"
   },
-  "homepage": "https://github.com/bitm4ncer/hustl#readme",
+  "homepage": "https://bitm4ncer.github.io/hustl/",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",

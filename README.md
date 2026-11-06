@@ -9,61 +9,200 @@
 </p>
 
 <p align="center">
-  <strong>Invoices, offers and finances for freelancers</strong> — self-hosted on your own VPS, as a PWA on any device and as a desktop app for Windows, macOS and Linux.
+  <strong>Invoices, offers and finances for freelancers.</strong><br>
+  Self-hosted on your own server. No cloud, no account, no telemetry.
 </p>
 
 <p align="center">
-  <a href="#install-on-your-own-vps"><img alt="Self-hosted with Docker" src="https://img.shields.io/badge/self--hosted-Docker-2496ED?logo=docker&logoColor=white"></a>
-  <img alt="PWA, Windows, macOS and Linux" src="https://img.shields.io/badge/PWA%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-555">
-  <img alt="No cloud, no account, no telemetry" src="https://img.shields.io/badge/no%20cloud%20%C2%B7%20no%20account%20%C2%B7%20no%20telemetry-2ea44f">
+  <a href="https://bitm4ncer.github.io/hustl/"><img alt="Website" src="https://img.shields.io/badge/website-hustl-ff8c66"></a>
+  <a href="https://github.com/bitm4ncer/hustl/releases/latest"><img alt="Download for Windows, macOS and Linux" src="https://img.shields.io/badge/download-Windows%20%7C%20macOS%20%7C%20Linux-555"></a>
   <a href="LICENSE"><img alt="License: ISC" src="https://img.shields.io/badge/license-ISC-blue"></a>
+  <img alt="Self-hosted with Docker" src="https://img.shields.io/badge/self--hosted-Docker-2496ED?logo=docker&logoColor=white">
 </p>
 
 ---
 
-Hustl is an invoicing and finance app for freelancers in Germany. It runs on your own VPS: one SQLite database, one Docker container, no cloud and no third-party account. You sign in with a passkey — no password. Install it as a PWA on iPhone, desktop or in the browser; there is also a slim desktop app for Windows, macOS and Linux.
+Hustl is an invoicing and finance app for freelancers and small studios in Germany. It runs on a small server that you rent yourself. Your invoices, clients and receipts stay there — not with us. Use Hustl in the browser, install it on your phone as an app, or use the desktop app for Windows, macOS and Linux.
 
-## What Hustl can do
+<p align="center">
+  <a href="https://bitm4ncer.github.io/hustl/"><strong>Website & screenshots →</strong></a>
+</p>
 
-- **Invoices**: create, number sequentially, finalize and export as PDF
-- **E-invoicing** according to EN 16931 (ZUGFeRD / Factur-X) as a hybrid PDF/A-3
-- **Cancellations and corrections** with their own number, plus number-sequence audit
-- **Offers** with versions, status and PDF; convert them directly into a client and project
-- **Clients and projects** with line items, hours and outstanding items
-- **Finance** with income, expenses, fixed costs, dashboard, forecast and monthly export
-- **Receipts**: upload PDFs and extract fields automatically
-- **Bank statements**: import them and match payments to the right invoices
-- **To-dos** with categories for shopping, groceries, tasks and weeklies
-- **German and English** UI and invoice language, with 12 currencies
-- **Full archive** as a ZIP with the database, all PDFs and CSV files
+## Is Hustl for you?
 
-## Install on your own VPS
+Hustl is a good fit if you:
 
-### Requirements
+- work as a freelancer or run a small studio,
+- want invoices, offers, projects and finances in one place,
+- want your data on your own server instead of someone else's cloud,
+- are okay with a small server that costs about **5–10 € per month**.
+
+Hustl is **not** a good fit if you need a multi-user team platform, want a fully hosted service with no setup, or need to work completely offline.
+
+## What Hustl does
+
+- **Invoices** — create, number, finalize and download as PDF.
+- **E-invoices** — hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X).
+- **Offers** — versions, status and PDF; turn an accepted offer into a client and project.
+- **Clients and projects** — hourly rates, fixed prices, line items and open items.
+- **Finance** — income, expenses, fixed costs, dashboard, forecast and monthly export.
+- **Receipts and bank statements** — upload PDFs and match payments to invoices.
+- **To-dos** — categories for tasks, shopping, groceries and weeklies.
+- **German and English** UI and document language, with 12 currencies.
+- **Full archive** — one ZIP with the database, all PDFs and CSV files.
+
+## See it
+
+<p align="center">
+  <img src="site/assets/screens/invoices.webp" alt="Hustl invoice list with demo data" width="860"><br>
+  <sub>Demo data — all names, addresses and amounts are fictional.</sub>
+</p>
+
+<p align="center">
+  <a href="https://bitm4ncer.github.io/hustl/"><strong>More screenshots on the website →</strong></a>
+</p>
+
+## Start in three steps
+
+You need two things: a small server (a **VPS**, a computer you rent by the month) and a domain that points to it. A VPS with 2 GB RAM is enough and costs roughly 5–10 € per month.
+
+### 1. Get a server and a domain
+
+Use Debian 12/13 or Ubuntu 22.04/24.04 with at least 2 vCPU, 2 GB RAM and 10 GB free disk. Point the A and AAAA records of a domain such as `hustl.example.com` to the server. Ports 22, 80 and 443 must be open.
+
+If you have never done this: the [agent guide](INSTALL-WITH-AGENT.md) walks you through it step by step, including choosing a VPS and setting up DNS.
+
+### 2. Run the installer
+
+Connect to the server with SSH and run:
+
+```bash
+sudo mkdir -p /opt/hustl
+sudo chown "$USER":"$USER" /opt/hustl
+git clone https://github.com/bitm4ncer/hustl.git /opt/hustl/src
+cd /opt/hustl/src
+sudo ./deploy/selfhost/install.sh
+```
+
+The installer asks for your domain and an email address for the HTTPS certificate. It then builds Hustl, starts Docker, sets up HTTPS, autostart and a daily backup at 03:30.
+
+### 3. Create your passkey
+
+Open the setup link printed by the installer:
+
+```text
+https://<your-domain>/setup?token=…
+```
+
+Create your first passkey — Face ID, Touch ID, Windows Hello or a security key — and store the **ten recovery codes** somewhere safe. The setup link can only be used once.
+
+That's it. Open `https://<your-domain>` in your browser and start working.
+
+> **Already running a web server on ports 80/443?** The installer detects it and switches to `external` mode. Hustl then listens only on `127.0.0.1:3000`; a ready-made proxy block is written to `/opt/hustl/Caddyfile.snippet`. Force it with `HUSTL_PROXY=external`. If Caddy itself runs in a container, use `HUSTL_PROXY=external PROXY_NETWORK=web` and `/opt/hustl/Caddyfile.docker.snippet`.
+
+## Install with an agent
+
+If you don't want to type the commands yourself, open [`INSTALL-WITH-AGENT.md`](INSTALL-WITH-AGENT.md) and copy the prompt into your AI assistant. The agent asks about your VPS, SSH access, domain, firewall and backups, then guides you through each step and checks the result. The guide is currently in German.
+
+## Download the desktop app
+
+The desktop app is a slim Electron shell around the same web interface. On first launch it asks for your server URL.
+
+| Platform | Download | Notes |
+|---|---|---|
+| Windows | [Hustl for Windows](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-win.exe) | Installer, 64-bit |
+| macOS (Apple Silicon) | [Hustl for macOS arm64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg) | M1–M4 |
+| macOS (Intel) | [Hustl for macOS x64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-x64.dmg) | Intel Macs |
+| Linux | [Hustl for Linux](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-linux.AppImage) | AppImage, x86_64 |
+
+Or browse [all releases](https://github.com/bitm4ncer/hustl/releases/latest).
+
+The builds are **unsigned**, so you need to allow them once:
+
+- **Windows:** "More info" → "Run anyway".
+- **macOS:** right-click the app → "Open" → "Open", or run `xattr -dr com.apple.quarantine /Applications/Hustl.app`.
+- **Linux:** `chmod +x Hustl-linux.AppImage && ./Hustl-linux.AppImage`.
+
+### PWA: no download at all
+
+The PWA is the easiest way to use Hustl on any device:
+
+1. Open your Hustl URL in the browser and sign in with your passkey.
+2. Choose **Install app** in Chrome/Edge, or **Add to Home Screen** in Safari on iOS.
+3. The app starts without browser chrome and unlocks with Face ID or Windows Hello.
+
+Works on Windows, macOS, Linux, iPhone, iPad and Android.
+
+## What it costs
+
+Hustl is free and open source under the ISC license. There is no subscription and no license fee.
+
+| Item | Typical cost |
+|---|---|
+| Hustl | 0 € |
+| VPS (2 GB RAM) | 5–10 € / month |
+| Domain | about 1 € / month |
+
+You pay your server provider directly. Hustl never sees your invoices or customer data.
+
+## FAQ
+
+**Do I need to be technical?**
+A little. You need to copy three commands and point a domain at your server. If that sounds unpleasant, use the [agent guide](INSTALL-WITH-AGENT.md) — it asks the questions and walks you through the installation. You can also ask a friend or colleague to run the installer; it is a one-time job.
+
+**Where is my data?**
+In a SQLite database and as PDFs on your own server. There is no cloud, no account with us and no analytics. Backups only leave the server if you set up an offsite target such as restic.
+
+**Can I use Hustl on my phone?**
+Yes. Install it as a PWA: open the URL in Safari, tap Share and choose "Add to Home Screen". Sign-in uses Face ID or Touch ID. There is no App Store app.
+
+**What is a passkey?**
+A passwordless login using Face ID, Touch ID, Windows Hello or a security key. You can add more devices later with a recovery code. Store the ten recovery codes separately from your phone or laptop.
+
+**Is it secure?**
+Hustl uses WebAuthn passkeys, HttpOnly session cookies, CSRF protection and rate limits. HTTPS is handled by Caddy in the bundled setup. You are responsible for server updates and backups; the installer creates a daily SQLite snapshot.
+
+**Can I export my data?**
+Yes. Download a full archive as a ZIP with the database, all PDFs and CSV files. For your tax adviser there is also a monthly export.
+
+**Can I import data from another tool?**
+Bank statements and receipt PDFs can be imported. There is no universal one-click importer for invoices from other tools, so a migration usually needs a small script or manual work.
+
+**Does Hustl support e-invoicing?**
+Yes. Hustl creates hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). Before the first real send, validate a sample invoice with the official KoSIT validator: the library checks the XML structure, not every business rule.
+
+**Is there a hosted version?**
+No. Hustl is deliberately self-hosted so your data stays with you. You can run it on a server of your choice, including a server from a hosting provider.
+
+## Good to know
+
+- **Single user.** Hustl is deliberately not a multi-tenant platform.
+- **The server must be online.** There is no offline writing mode; the server is the single source of truth.
+- **Some features are local-only.** SMTP email sending, GoCardless bank sync, Notion import and the template editor on mobile are only available in the local Electron development mode. The packaged desktop app loads the same web UI.
+- **Unsigned builds.** Windows SmartScreen and macOS Gatekeeper ask for approval on first launch.
+- **Backups are mandatory.** Without a working backup there is no second copy of your data.
+- **E-invoicing needs a test.** Validate a sample with the KoSIT validator before sending real e-invoices.
+
+## Technical details
+
+<details>
+<summary><strong>Requirements and detailed installation</strong></summary>
 
 | | |
 |---|---|
 | Server | 2 vCPU, at least 2 GB RAM (4 GB recommended), 10 GB free disk |
 | OS | Debian 12/13 or Ubuntu 22.04/24.04, x86_64 or arm64 |
-| Domain | e.g. `hustl.example.com`, with A and AAAA records pointing to the VPS |
+| Domain | e.g. `hustl.example.com`, A and AAAA records pointing to the VPS |
 | Ports | 22 (SSH), 80 and 443 open |
 | Access | SSH access with a key or password |
 | Tools | `git` for the clone; the installer installs `curl` if needed |
 
-### One command
+The installer supports two modes:
 
-```bash
-# Fetch the repository onto the VPS (repository access required)
-sudo mkdir -p /opt/hustl
-sudo chown "$USER":"$USER" /opt/hustl
-git clone https://github.com/bitm4ncer/hustl.git /opt/hustl/src
-cd /opt/hustl/src
+- **`bundled`** (default when ports 80/443 are free): Hustl plus Caddy with automatic HTTPS.
+- **`external`** (when a web server is already running): Hustl listens on `127.0.0.1:3000` and you proxy to it.
 
-# Install — prompts for domain and email
-sudo ./deploy/selfhost/install.sh
-```
-
-Non-interactive, e.g. for an agent or a script:
+Non-interactive installation:
 
 ```bash
 sudo HUSTL_DOMAIN=hustl.example.com \
@@ -72,61 +211,14 @@ sudo HUSTL_DOMAIN=hustl.example.com \
      ./deploy/selfhost/install.sh
 ```
 
-The installer does everything that is needed:
+Useful environment variables: `HUSTL_DOMAIN`, `ACME_EMAIL`, `HUSTL_PROXY`, `HUSTL_DIR`, `HUSTL_PORT`, `PROXY_NETWORK`, `HUSTL_ASSUME_YES`.
 
-1. checks the system, Docker and ports 80/443
-2. builds the Hustl image and creates `/opt/hustl`
-3. starts Hustl and — in `bundled` mode — Caddy with automatic HTTPS
-4. waits for the health check and sets up a daily backup at 03:30
-5. prints the one-time setup link for the first passkey
-
-Then open `https://<your-domain>/setup?token=…`, create your **first passkey** and store the **ten recovery codes**. The token is consumed afterwards. You can add another device later with a recovery code.
-
-> **Already running a web server on ports 80/443?** The installer detects this and switches to `external` mode. Hustl then only listens on `127.0.0.1:3000`; the ready-made block is at `/opt/hustl/Caddyfile.snippet`. Force the mode with `HUSTL_PROXY=external`. If Caddy itself runs in a container, start with `HUSTL_PROXY=external PROXY_NETWORK=web` and use `/opt/hustl/Caddyfile.docker.snippet` (proxy to `hustl:3000`).
-
-### Install with an agent
-
-If you don't want to type the installation yourself: [`INSTALL-WITH-AGENT.md`](INSTALL-WITH-AGENT.md) contains a copy-paste prompt with a question catalogue (VPS ready? SSH? domain? Docker? firewall?) and a runbook. The agent checks the current state, asks before destructive steps and verifies every step. The guide is currently in German.
-
-## Install locally
-
-Hustl always needs a reachable server instance. There are two ways to use it day to day:
-
-### PWA (recommended, all platforms)
-
-1. Open `https://<your-domain>` in a browser and sign in with your passkey.
-2. Choose "Install app" in the browser (Chrome/Edge) or "Add to Home Screen" on iOS.
-3. The app starts without browser chrome, with Face ID or Windows Hello.
-
-Works on Windows, macOS, Linux, iPhone, iPad and Android — no build and no installer.
-
-### Native desktop app
-
-The desktop app is a slim Electron shell around the same web UI. On first launch it asks for your server URL and stores it locally.
-
-| Platform | File | Note |
-|---|---|---|
-| Windows | `Hustl-Setup-<version>.exe` | NSIS installer, no admin rights required |
-| macOS | `Hustl-<version>-arm64.dmg` or `-x64.dmg` | Apple Silicon or Intel |
-| Linux | `Hustl-<version>.AppImage` | `chmod +x` and run |
-
-Downloads: [github.com/bitm4ncer/hustl/releases/latest](https://github.com/bitm4ncer/hustl/releases/latest)
-
-The builds are **unsigned**, so you need to allow them once:
-
-- **Windows:** "More info" → "Run anyway".
-- **macOS:** right-click the app → "Open" → "Open", or
-  `xattr -dr com.apple.quarantine /Applications/Hustl.app`.
-- **Linux:** `chmod +x Hustl-*.AppImage && ./Hustl-*.AppImage`.
-
-Change the server URL later: menu **Hustl → Change server URL…** or `Ctrl+Shift+S` (`⌘⇧S` on macOS).
-
-## After installation
+After installation:
 
 | Task | Where |
 |---|---|
 | Sign in | `https://<your-domain>` |
-| First start / passkey | `https://<your-domain>/setup?token=…` (printed by the installer) |
+| First start / passkey | `https://<your-domain>/setup?token=…` |
 | Add another device | Login → "Lost your passkey?" → recovery code |
 | Download full archive | Settings → Data → "Download archive" |
 | Logs | `docker logs -f hustl` |
@@ -134,7 +226,10 @@ Change the server URL later: menu **Hustl → Change server URL…** or `Ctrl+Sh
 | Data | `/opt/hustl/data` |
 | Configuration | `/opt/hustl/.env` |
 
-## Operations
+</details>
+
+<details>
+<summary><strong>Updates, backups, restore and domain changes</strong></summary>
 
 ### Update
 
@@ -187,9 +282,12 @@ The new bootstrap token is in `/opt/hustl/data/bootstrap-token.txt`.
 
 ### Lost your passkey?
 
-If another passkey exists, sign in with it. If not, the only option is the shell reset (see above). That's why you should **store recovery codes separately from the device** and add a second device with a code when needed.
+If another passkey exists, sign in with it. If not, the only option is the shell reset above. That's why you should **store recovery codes separately from the device** and add a second device with a code when needed.
 
-## Technical overview
+</details>
+
+<details>
+<summary><strong>Technology and development</strong></summary>
 
 - **Stack:** Electron 42, TypeScript, React 19, Vite 7, Tailwind 3
 - **Server:** Fastify 5, `node:sqlite` (no native dependencies), Chromium for PDF, `node-zugferd` for e-invoices
@@ -198,7 +296,7 @@ If another passkey exists, sign in with it. If not, the only option is the shell
 - **Data:** `/data/hustl.db`, PDFs under `/data/invoices`, `/data/offers`, `/data/expenses`, `/data/statements`, templates under `/data/template`
 - **Backup:** SQLite snapshot plus files; optional restic with client-side encryption
 
-```
+```text
 src/
 ├─ core/        DB, export, import, bank, receipts (no Electron)
 ├─ server/      Fastify, auth, RPC, files, archive
@@ -209,8 +307,6 @@ deploy/
 ├─ Dockerfile
 └─ selfhost/    installer, compose, Caddy, backup, restore
 ```
-
-## Development
 
 Requires Node 24 or newer.
 
@@ -233,20 +329,13 @@ npm run dist:mac     # macOS DMG (x64 + arm64)
 npm run dist:linux   # Linux AppImage
 ```
 
-The release workflow `.github/workflows/release.yml` builds all three packages on a `v*` tag and attaches them to the GitHub release.
+The release workflow `.github/workflows/release.yml` builds all three packages on a `v*` tag and attaches them to the GitHub release. The landing page is in `site/` and is deployed to GitHub Pages by `.github/workflows/pages.yml`.
 
-## Limitations
-
-- **Single user.** Hustl is deliberately not a multi-tenant platform.
-- **No offline writing.** The server is the single source of truth; the app is not usable without a connection.
-- **Not in the web/PWA version:** SMTP email sending, GoCardless bank sync, Notion import and the template editor on mobile. The packaged desktop client loads the same web UI; these features only exist in the local Electron development mode.
-- **Unsigned builds.** Windows SmartScreen and macOS Gatekeeper need a manual approval on first launch.
-- **E-invoicing:** Generated files follow EN 16931. Before the first real send, validate a sample invoice with the official KoSIT validator; the library checks the XML structure, not all business rules.
-- **Backups are mandatory.** Without a working backup there is no second copy of your data.
+</details>
 
 ## Privacy
 
-Your invoices, clients and receipts live on your VPS — not at Hustl. There is no analytics, no telemetry and no third-party account. Sign-in uses passkeys; no password is stored. Backups leave the server only if you set up restic or another offsite target — and then they are encrypted client-side.
+Your invoices, clients and receipts live on your server — not at Hustl. There is no analytics, no telemetry and no third-party account. Sign-in uses passkeys; no password is stored. Backups leave the server only if you set up restic or another offsite target — and then they are encrypted client-side.
 
 ## License
 

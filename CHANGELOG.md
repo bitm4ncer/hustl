@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.1.0 – 2026-11-07
+
+Neue öffentliche Website, verständlichere Dokumentation und stabile Download-Links.
+
+### Neu
+
+- **Landingpage** unter [bitm4ncer.github.io/hustl](https://bitm4ncer.github.io/hustl/):
+  Funktionen, Screenshots mit fiktiven Demo-Daten, Installation, Downloads und FAQ
+- **Stabile Download-Namen** für alle Releases:
+  `Hustl-win.exe`, `Hustl-mac-arm64.dmg`, `Hustl-mac-x64.dmg`, `Hustl-linux.AppImage`
+- **README auf Deutsch und Englisch** komplett überarbeitet: für nicht-technische
+  Leser verständlich, mit Screenshots, Kosten, FAQ und den technischen Details am Ende
+- **GitHub Pages** wird automatisch aus `site/` veröffentlicht
+
+### Verbessert
+
+- Desktop-Downloads sind jetzt direkt und versionsunabhängig verlinkbar
+- Klarere Erklärung, was Hustl kostet, was du für den Betrieb brauchst und wo die
+  Grenzen liegen
+- README verlinkt Website, Screenshots und den Agenten-Leitfaden
+
+### Bekannte Grenzen
+
+- Ein Benutzer pro Instanz
+- Kein Offline-Schreibbetrieb
+- E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht in der Web-Version
+- Installer sind unsigniert (Windows SmartScreen / macOS Gatekeeper)
+
 ## 1.0.0 – 2026-11-06
 
 Erste öffentliche Version. Hustl ist jetzt self-hosted: eine Web-App/PWA auf

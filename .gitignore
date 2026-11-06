@@ -17,3 +17,8 @@ out/
 .e2e-server.log
 test-results/
 playwright-report/
+
+# local demo data and landing-page review screenshots
+.demo-data/
+.review/
+
