@@ -6,8 +6,8 @@ Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.
 
 ### Neu
 
-- **Englische Landingpage** unter `/en/` mit DE/EN-Umschalter, hreflang,
-  Canonical und Sitemap-Einträgen
+- **Zweisprachige Landingpage**: Englisch als Default auf `/`, Deutsch unter
+  `/de/`, mit DE/EN-Umschalter, hreflang, Canonical und Sitemap-Einträgen
 - **Hosting-Abschnitt**: VPS, eigener Server/NAS, Raspberry Pi/Heimserver,
   PaaS/Kubernetes mit persistentem Volume
 - **FAQ zu Single-User-Betrieb**

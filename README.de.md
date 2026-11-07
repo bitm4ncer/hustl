@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://bitm4ncer.github.io/hustl/"><img alt="Website" src="https://img.shields.io/badge/website-hustl-ff8c66"></a>
+  <a href="https://bitm4ncer.github.io/hustl/de/"><img alt="Website" src="https://img.shields.io/badge/website-hustl-ff8c66"></a>
   <a href="https://github.com/bitm4ncer/hustl/releases/latest"><img alt="Download für Windows, macOS und Linux" src="https://img.shields.io/badge/download-Windows%20%7C%20macOS%20%7C%20Linux-555"></a>
   <a href="LICENSE"><img alt="Lizenz: ISC" src="https://img.shields.io/badge/lizenz-ISC-blue"></a>
   <img alt="Self-hosted mit Docker" src="https://img.shields.io/badge/self--hosted-Docker-2496ED?logo=docker&logoColor=white">
@@ -25,7 +25,7 @@
 Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Studios in Deutschland. Sie läuft auf einem kleinen Server, den du selbst mietest. Deine Rechnungen, Kunden und Belege bleiben dort — nicht bei uns. Du nutzt Hustl im Browser, installierst es auf dem Handy als App oder nimmst die Desktop-App für Windows, macOS und Linux.
 
 <p align="center">
-  <a href="https://bitm4ncer.github.io/hustl/"><strong>Website & Screenshots →</strong></a>
+  <a href="https://bitm4ncer.github.io/hustl/de/"><strong>Website & Screenshots →</strong></a>
 </p>
 
 ## Für wen ist Hustl?
@@ -59,7 +59,7 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 </p>
 
 <p align="center">
-  <a href="https://bitm4ncer.github.io/hustl/"><strong>Mehr Screenshots auf der Website →</strong></a>
+  <a href="https://bitm4ncer.github.io/hustl/de/"><strong>Mehr Screenshots auf der Website →</strong></a>
 </p>
 
 ## In drei Schritten starten

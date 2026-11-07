@@ -5,17 +5,17 @@
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/"/>
   </url>
   <url>
-    <loc>https://bitm4ncer.github.io/hustl/en/</loc>
+    <loc>https://bitm4ncer.github.io/hustl/de/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/"/>
   </url>
 </urlset>

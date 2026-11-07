@@ -1,26 +1,26 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hustl – Rechnungen, Angebote und Finanzen auf deinem Server</title>
-  <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte und Finanzen. Für Freelancer und kleine Studios. Open Source, ohne Cloud.">
+  <title>Hustl – Invoices, offers and finances on your own server</title>
+  <meta name="description" content="Hustl is the self-hosted app for invoices, offers, projects and finances. For freelancers and small studios. Open source, no cloud.">
   <meta name="theme-color" content="#101012">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Hustl – Deine Rechnungen. Deine Daten. Dein Server.">
-  <meta property="og:description" content="Rechnungen, Angebote, Projekte und Finanzen in einer ruhigen App. Self-hosted, Open Source, ohne Cloud-Zwang.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:title" content="Hustl – Your invoices. Your data. Your server.">
+  <meta property="og:description" content="Invoices, offers, projects and finances in one calm app. Self-hosted, open source, no cloud lock-in.">
   <meta property="og:url" content="https://bitm4ncer.github.io/hustl/">
-  <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
+  <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og-en.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hustl – Rechnungen, Angebote und Finanzen auf deinem Server">
-  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image:alt" content="Hustl – invoices, offers and finances on your own server">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
+  <meta name="twitter:image" content="https://bitm4ncer.github.io/hustl/assets/og-en.png">
   <link rel="canonical" href="https://bitm4ncer.github.io/hustl/">
-  <link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/">
-  <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/en/">
+  <link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/de/">
+  <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/">
   <link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,7 +29,7 @@
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <svg class="svg-sprite" aria-hidden="true" focusable="false">
     <symbol id="i-github" viewBox="0 0 24 24">
@@ -93,21 +93,18 @@
     <symbol id="i-cloud" viewBox="0 0 24 24">
       <path d="M7 18.5h10a4 4 0 0 0 .8-7.9A6 6 0 0 0 6.3 9.2 4.7 4.7 0 0 0 7 18.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
     </symbol>
-    <symbol id="i-arrow-up" viewBox="0 0 24 24">
-      <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
   </svg>
 
   <header class="site-header" id="top">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Hustl – nach oben">
+      <a class="brand" href="#top" aria-label="Hustl – back to top">
         <img src="assets/logo.png" width="34" height="34" alt="">
         <span>Hustl</span>
       </a>
 
-      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-        <a href="#funktionen">Funktionen</a>
-        <a href="#einblicke">Einblicke</a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
         <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
@@ -115,15 +112,15 @@
       </nav>
 
       <div class="header-actions">
-        <div class="lang-switch" role="group" aria-label="Sprache wählen">
-          <a href="./" hreflang="de" aria-current="page">DE</a>
-          <a href="en/" hreflang="en" lang="en" aria-label="English">EN</a>
+        <div class="lang-switch" role="group" aria-label="Choose language">
+          <a href="de/" hreflang="de" lang="de" aria-label="Deutsch">DE</a>
+          <a href="./" hreflang="en" aria-current="page">EN</a>
         </div>
-        <a class="icon-btn github-link" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer" aria-label="Hustl auf GitHub öffnen" title="GitHub">
+        <a class="icon-btn github-link" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer" aria-label="Open Hustl on GitHub" title="GitHub">
           <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
         </a>
         <a class="btn btn-primary btn-small header-cta" href="#download">Download</a>
-        <button class="menu-btn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
           <span></span><span></span>
         </button>
       </div>
@@ -133,38 +130,38 @@
   <main id="main">
     <section class="hero">
       <div class="wrap hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> Self-hosted &middot; Open Source &middot; Für Freelancer</p>
-        <h1>Deine Rechnungen.<br>Deine Daten.<br><span class="accent">Dein Server.</span></h1>
-        <p class="lede">Hustl bringt Rechnungen, Angebote, Projekte und Finanzen in eine ruhige App – auf deinem eigenen Server. Kein Cloud-Konto, keine Telemetrie, keine monatliche Software-Miete.</p>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Self-hosted &middot; Open source</p>
+        <h1>Your invoices.<br>Your data.<br><span class="accent">Your server.</span></h1>
+        <p class="lede">Hustl brings invoices, offers, projects and finances into one calm app — on your own server. No cloud account, no telemetry, no monthly software subscription.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#installation">
-            In ca. 20 Minuten starten
+            Start in about 20 minutes
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
           <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
             <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
-            GitHub ansehen
+            View on GitHub
           </a>
         </div>
-        <p class="hero-meta">Windows &middot; macOS &middot; Linux &middot; PWA <span>·</span> kostenlos &amp; Open Source</p>
+        <p class="hero-meta">Windows &middot; macOS &middot; Linux &middot; PWA <span>·</span> free &amp; open source</p>
       </div>
 
       <div class="wrap hero-visual reveal">
         <div class="browser">
           <div class="browser-bar">
             <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="browser-url">hustl.deine-domain.de</span>
+            <span class="browser-url">hustl.your-domain.com</span>
             <span class="browser-spacer" aria-hidden="true"></span>
           </div>
-          <img src="assets/screens/invoices.webp" width="2000" height="1389" alt="Hustl Rechnungsübersicht mit bezahlten Rechnungen und fiktiven Demo-Daten" fetchpriority="high">
+          <img src="assets/screens/invoices.webp" width="2000" height="1389" alt="Hustl invoice overview with paid invoices and fictional demo data" fetchpriority="high">
         </div>
         <div class="float-card float-paid" aria-hidden="true">
           <span class="status-dot status-green"></span>
-          <span><strong>2.142,00 €</strong><small>Rechnung bezahlt</small></span>
+          <span><strong>€2,142.00</strong><small>Invoice paid</small></span>
         </div>
         <div class="float-card float-einvoice" aria-hidden="true">
           <span class="status-dot status-accent"></span>
-          <span><strong>E-Rechnung</strong><small>PDF/A-3 &middot; EN 16931</small></span>
+          <span><strong>E-invoice</strong><small>PDF/A-3 &middot; EN 16931</small></span>
         </div>
       </div>
     </section>
@@ -173,142 +170,142 @@
       <div class="wrap trust-grid">
         <div class="trust-item">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"></use></svg>
-          <div><strong>Daten bleiben bei dir</strong><span>Auf deinem eigenen VPS</span></div>
+          <div><strong>Your data stays with you</strong><span>On your own VPS</span></div>
         </div>
         <div class="trust-item">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"></use></svg>
-          <div><strong>Passkeys statt Passwörter</strong><span>Face ID, Touch ID, Windows Hello</span></div>
+          <div><strong>Passkeys, not passwords</strong><span>Face ID, Touch ID, Windows Hello</span></div>
         </div>
         <div class="trust-item">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg>
-          <div><strong>E-Rechnung inklusive</strong><span>EN 16931 &middot; ZUGFeRD / Factur-X</span></div>
+          <div><strong>E-invoicing included</strong><span>EN 16931 &middot; ZUGFeRD / Factur-X</span></div>
         </div>
         <div class="trust-item">
           <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
-          <div><strong>Open Source</strong><span>ISC-Lizenz &middot; auf GitHub</span></div>
+          <div><strong>Open source</strong><span>ISC license &middot; on GitHub</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="funktionen">
+    <section class="section" id="features">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">Alles an einem Ort</p>
-          <h2>Vom Angebot bis zur bezahlten Rechnung.</h2>
-          <p>Keine zehn Tools, keine doppelte Buchführung. Hustl deckt den Weg von der ersten Idee bis zum Monatsabschluss ab – ohne dich mit Software zu beschäftigen, die du nicht brauchst.</p>
+          <p class="eyebrow">Everything in one place</p>
+          <h2>From the first offer to the paid invoice.</h2>
+          <p>No ten tools, no double bookkeeping. Hustl covers the path from the first idea to the monthly close — without software you don't need.</p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-invoice"></use></svg></span>
-            <h3>Rechnungen</h3>
-            <p>Entwurf, Nummer, PDF. Mit fortlaufendem Nummernkreis, Storno und Korrektur – ohne Excel-Tabelle daneben.</p>
+            <h3>Invoices</h3>
+            <p>Draft, number, PDF. With a sequential number range, cancellations and corrections — no spreadsheet on the side.</p>
           </article>
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg></span>
-            <h3>E-Rechnung</h3>
-            <p>ZUGFeRD / Factur-X als hybrides PDF/A-3 nach EN 16931. Für Kunden, die digitale Rechnungen erwarten.</p>
+            <h3>E-invoicing</h3>
+            <p>ZUGFeRD / Factur-X as a hybrid PDF/A-3 according to EN 16931. For clients who expect digital invoices.</p>
           </article>
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-offer"></use></svg></span>
-            <h3>Angebote</h3>
-            <p>Versionen, Status und PDF. Auf Knopfdruck in Kunde und Projekt umwandeln – ohne doppelt zu tippen.</p>
+            <h3>Offers</h3>
+            <p>Versions, status and PDF. Turn an accepted offer into a client and project without typing it twice.</p>
           </article>
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-projects"></use></svg></span>
-            <h3>Projekte &amp; Kunden</h3>
-            <p>Stunden, Fixpreise und offene Posten. Alles am richtigen Ort, mit einem klaren Blick auf den Zeitrahmen.</p>
+            <h3>Projects &amp; clients</h3>
+            <p>Hours, fixed prices and open items. Everything in the right place, with a clear view of the timeframe.</p>
           </article>
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-finance"></use></svg></span>
-            <h3>Finanzen</h3>
-            <p>Einnahmen, Ausgaben, Fixkosten, Prognose und Monatsexport. Deine Zahlen, ohne Excel-Akrobatik.</p>
+            <h3>Finance</h3>
+            <p>Income, expenses, fixed costs, forecast and monthly export. Your numbers without spreadsheet acrobatics.</p>
           </article>
           <article class="feature-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-device"></use></svg></span>
-            <h3>Überall dabei</h3>
-            <p>PWA auf iPhone, iPad und Desktop. Dazu Desktop-Apps für Windows, macOS und Linux – eine Oberfläche, alle Geräte.</p>
+            <h3>Everywhere</h3>
+            <p>PWA on iPhone, iPad and desktop. Plus desktop apps for Windows, macOS and Linux — one interface, all devices.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="einblicke">
+    <section class="section section-soft" id="screens">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">Einblicke</p>
-          <h2>Ruhig, aufgeräumt, schnell.</h2>
-          <p>Keine Dashboards, die dich erschlagen. Nur die Dinge, die du für Rechnungen, Projekte und Finanzen wirklich brauchst.</p>
+          <p class="eyebrow">A closer look</p>
+          <h2>Calm, tidy, fast.</h2>
+          <p>No dashboards that overwhelm you. Just what you need for invoices, projects and finances.</p>
         </div>
 
         <div class="showcase reveal">
           <div class="showcase-copy">
-            <span class="showcase-kicker">Rechnungen</span>
-            <h3>Rechnungen, die nicht im Weg stehen.</h3>
-            <p>Erstelle Rechnungen aus Projekten, finalisiere sie mit einem Klick und behalte offene Posten im Blick. Nummern werden fortlaufend vergeben, PDFs automatisch erzeugt.</p>
+            <span class="showcase-kicker">Invoices</span>
+            <h3>Invoices that stay out of your way.</h3>
+            <p>Create invoices from projects, finalize them with one click and keep an eye on open items. Numbers are assigned sequentially, PDFs are generated automatically.</p>
             <ul class="check-list">
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Entwurf, finalisiert, bezahlt – ein klarer Status</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> E-Rechnung als PDF/A-3, wenn du sie brauchst</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Storno und Korrektur ohne Nummernchaos</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Draft, finalized, paid — one clear status</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> E-invoice as PDF/A-3 when you need it</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Cancellations and corrections without number chaos</li>
             </ul>
           </div>
           <div class="showcase-visual">
             <div class="browser browser-small">
               <div class="browser-bar">
                 <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="browser-url">Rechnungen</span>
+                <span class="browser-url">Invoices</span>
                 <span class="browser-spacer" aria-hidden="true"></span>
               </div>
-              <img src="assets/screens/invoices.webp" width="2000" height="1389" alt="Rechnungsliste in Hustl" loading="lazy">
+              <img src="assets/screens/invoices.webp" width="2000" height="1389" alt="Invoice list in Hustl" loading="lazy">
             </div>
           </div>
         </div>
 
         <div class="showcase showcase-reverse reveal">
           <div class="showcase-copy">
-            <span class="showcase-kicker">Finanzen</span>
-            <h3>Finanzen, die du verstehst.</h3>
-            <p>Das Dashboard zeigt Einnahmen, Ausgaben und Gewinn – auf Zahlungs- oder Rechnungsbasis. Fixkosten und Belege sind schon eingerechnet, die Prognose denkt mit.</p>
+            <span class="showcase-kicker">Finance</span>
+            <h3>Finance you can actually read.</h3>
+            <p>The dashboard shows income, expenses and profit — on a cash or invoice basis. Fixed costs and receipts are already included, and the forecast thinks ahead.</p>
             <ul class="check-list">
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Monats-, Quartals- und Jahresansicht</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Fixkosten, Belege und offene Rechnungen</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Export für die Steuerberatung</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Month, quarter and year views</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Fixed costs, receipts and open invoices</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Export for your tax adviser</li>
             </ul>
           </div>
           <div class="showcase-visual">
             <div class="browser browser-small">
               <div class="browser-bar">
                 <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="browser-url">Finanzen</span>
+                <span class="browser-url">Finance</span>
                 <span class="browser-spacer" aria-hidden="true"></span>
               </div>
-              <img src="assets/screens/finance.webp" width="1800" height="1250" alt="Finanzdashboard in Hustl" loading="lazy">
+              <img src="assets/screens/finance.webp" width="1800" height="1250" alt="Finance dashboard in Hustl" loading="lazy">
             </div>
           </div>
         </div>
 
         <div class="showcase reveal">
           <div class="showcase-copy">
-            <span class="showcase-kicker">Unterwegs</span>
-            <h3>Dein Studio in der Tasche.</h3>
-            <p>Öffne Hustl im Browser und installiere es als PWA. Auf dem iPhone mit Face ID, am Desktop mit Windows Hello. Kein App Store, kein zusätzliches Konto.</p>
+            <span class="showcase-kicker">On the go</span>
+            <h3>Your studio in your pocket.</h3>
+            <p>Open Hustl in your browser and install it as a PWA. On iPhone with Face ID, on desktop with Windows Hello. No app store, no extra account.</p>
             <ul class="check-list">
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Installierbar auf iPhone, iPad und Android</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Anmeldung per Passkey</li>
-              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Eine App, alle Geräte</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Installable on iPhone, iPad and Android</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> Passkey sign-in</li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg> One app, all devices</li>
             </ul>
           </div>
           <div class="showcase-visual showcase-phone">
             <div class="phone">
               <div class="phone-notch" aria-hidden="true"></div>
               <div class="phone-screen">
-                <img src="assets/screens/mobile-invoices.webp" width="780" height="1688" alt="Hustl als PWA auf dem iPhone" loading="lazy">
+                <img src="assets/screens/mobile-invoices.webp" width="780" height="1688" alt="Hustl as a PWA on iPhone" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <p class="demo-note reveal">Alle Screenshots zeigen fiktive Demo-Daten. Namen, Beträge und Adressen sind erfunden.</p>
+        <p class="demo-note reveal">All screenshots show fictional demo data. Names, amounts and addresses are invented. The app UI is available in German and English.</p>
       </div>
     </section>
 
@@ -316,57 +313,57 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Installation</p>
-          <h2>In drei Schritten startklar.</h2>
-          <p>Hustl läuft auf deinem eigenen Server. Der Installer nimmt dir Docker, HTTPS (im gebündelten Modus), Autostart und den täglichen Datenbank-Snapshot ab.</p>
+          <h2>Three steps to get started.</h2>
+          <p>Hustl runs on your own server. The installer takes care of Docker, HTTPS (in bundled mode), autostart and a daily database snapshot.</p>
         </div>
 
         <div class="steps">
           <article class="step reveal">
             <span class="step-number">01</span>
-            <h3>Server &amp; Domain</h3>
-            <p>Ein kleiner VPS mit 2 GB RAM und eine Domain, die darauf zeigt. Bei den meisten Anbietern ist das in wenigen Minuten eingerichtet.</p>
+            <h3>Server &amp; domain</h3>
+            <p>A small VPS with 2 GB RAM and a domain pointing to it. Most providers set this up in a few minutes.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">02</span>
-            <h3>Installer starten</h3>
-            <p>Ein Befehl holt Hustl, baut den Container und richtet HTTPS (im gebündelten Modus), den Datenbank-Snapshot und Autostart ein. Du wirst nach Domain und E-Mail gefragt.</p>
+            <h3>Run the installer</h3>
+            <p>One command fetches Hustl, builds the container and sets up HTTPS (in bundled mode), the database snapshot and autostart. It asks for your domain and email.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">03</span>
-            <h3>Passkey anlegen</h3>
-            <p>Öffne den Setup-Link, lege deinen ersten Passkey an und bewahre die Recovery-Codes auf. Danach gehört der Server dir.</p>
+            <h3>Create your passkey</h3>
+            <p>Open the setup link, create your first passkey and store the recovery codes. After that, the server is yours.</p>
           </article>
         </div>
 
         <div class="install-panel reveal">
           <div class="install-copy">
-            <h3>Du willst das nicht selbst machen?</h3>
-            <p>Der Agenten-Leitfaden führt dich und einen KI-Assistenten Schritt für Schritt durch die Installation – inklusive Fragen zu VPS, SSH, Domain, Firewall und Backup. Kopieren, einfügen, Fragen beantworten.</p>
+            <h3>Don't want to do it yourself?</h3>
+            <p>The agent guide walks you and an AI assistant through the installation step by step — including VPS, SSH, domain, firewall and backups. Copy, paste, answer the questions. The guide is currently in German.</p>
             <a class="btn btn-primary" href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">
-              Zum Agenten-Leitfaden
+              Open the agent guide
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
             </a>
           </div>
           <div class="requirements">
-            <h4>Was du brauchst</h4>
+            <h4>What you need</h4>
             <ul>
-              <li><strong>VPS</strong><span>2 vCPU, 2 GB RAM (4 GB empfohlen), 20 GB Speicher empfohlen</span></li>
-              <li><strong>Domain</strong><span>A-Record (AAAA bei IPv6) auf den Server</span></li>
-              <li><strong>Zugang</strong><span>SSH mit Key oder Passwort</span></li>
-              <li><strong>Git</strong><span>für den Clone; die meisten Server haben es</span></li>
-              <li><strong>Zeit</strong><span>ca. 15–30 Minuten; DNS kann länger brauchen</span></li>
+              <li><strong>VPS</strong><span>2 vCPU, 2 GB RAM (4 GB recommended), 20 GB disk recommended</span></li>
+              <li><strong>Domain</strong><span>A record (AAAA for IPv6) pointing to the server</span></li>
+              <li><strong>Access</strong><span>SSH with a key or password</span></li>
+              <li><strong>Git</strong><span>for the clone; most servers have it</span></li>
+              <li><strong>Time</strong><span>about 15–30 minutes; DNS can take longer</span></li>
             </ul>
-            <p class="requirements-note">Du hast noch keinen Server? Der Leitfaden erklärt auch, worauf du beim Anbieter achten solltest.</p>
+            <p class="requirements-note">No server yet? The guide also explains what to look for when choosing a provider.</p>
           </div>
         </div>
 
         <details class="terminal reveal">
-          <summary>Für Terminal-Fans: die drei Befehle</summary>
+          <summary>For terminal fans: the three commands</summary>
           <div class="terminal-body">
             <pre><code>sudo mkdir -p /opt/hustl &amp;&amp; sudo chown "$USER":"$USER" /opt/hustl
 git clone https://github.com/bitm4ncer/hustl.git /opt/hustl/src
 cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
-            <button class="btn btn-ghost btn-small" type="button" data-copy>Befehle kopieren</button>
+            <button class="btn btn-ghost btn-small" type="button" data-copy>Copy commands</button>
           </div>
         </details>
       </div>
@@ -376,38 +373,38 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Hosting</p>
-          <h2>Wo kann Hustl laufen?</h2>
-          <p>Der eigene VPS ist der einfachste Weg. Hustl läuft aber auch auf vorhandener Hardware – solange Docker und ein dauerhafter Speicher vorhanden sind.</p>
+          <h2>Where can Hustl run?</h2>
+          <p>Your own VPS is the easiest path. Hustl also runs on hardware you already have — as long as Docker and persistent storage are available.</p>
         </div>
 
         <div class="hosting-grid">
           <article class="hosting-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"></use></svg></span>
-            <h3>VPS (empfohlen)</h3>
-            <p>Hetzner, Netcup, IONOS, Contabo oder ein anderer Anbieter. Der Installer richtet Docker, HTTPS (gebündelt) und den Datenbank-Snapshot ein.</p>
-            <span class="hosting-tag">ab ca. 5 € / Monat</span>
+            <h3>VPS (recommended)</h3>
+            <p>Hetzner, Netcup, IONOS, Contabo or another provider. The installer sets up Docker, HTTPS (bundled) and the database snapshot.</p>
+            <span class="hosting-tag">from about €5 / month</span>
           </article>
           <article class="hosting-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"></use></svg></span>
-            <h3>Eigener Server / NAS</h3>
-            <p>Linux-Server, Synology/QNAP mit Docker oder ein Heimserver. Der Installer ist für Debian/Ubuntu; auf NAS nutzt du <code>compose.external.yml</code> manuell und richtest Reverse Proxy und Backup selbst ein.</p>
-            <span class="hosting-tag">vorhandene Hardware</span>
+            <h3>Own server / NAS</h3>
+            <p>A Linux server, Synology/QNAP with Docker or a home server. The installer targets Debian/Ubuntu; on a NAS, use <code>compose.external.yml</code> manually and set up the reverse proxy and backups yourself.</p>
+            <span class="hosting-tag">existing hardware</span>
           </article>
           <article class="hosting-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-device"></use></svg></span>
-            <h3>Raspberry Pi / Mini-PC</h3>
-            <p>Docker auf arm64, 4 GB RAM empfohlen. Für Zugriff von außen Cloudflare Tunnel oder Tailscale Funnel; stabile Stromversorgung und Backups einplanen.</p>
-            <span class="hosting-tag">einmalige Hardware</span>
+            <h3>Raspberry Pi / mini PC</h3>
+            <p>Docker on arm64, 4 GB RAM recommended. For external access use Cloudflare Tunnel or Tailscale Funnel; plan for stable power and backups.</p>
+            <span class="hosting-tag">one-time hardware</span>
           </article>
           <article class="hosting-card reveal">
             <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud"></use></svg></span>
             <h3>PaaS / Kubernetes</h3>
-            <p>Railway, Render, Fly.io oder ein Cluster – für Erfahrene, wenn die SQLite-Datei auf einem persistenten, blockbasierten Volume liegt. Eine Replica, kein NFS/SMB. Shared Hosting und Serverless ohne Persistent Disk gehen nicht.</p>
-            <span class="hosting-tag">für Erfahrene</span>
+            <p>Railway, Render, Fly.io or a cluster — for experienced users, as long as the SQLite file lives on a persistent, block-backed volume. One replica, no NFS/SMB. Shared hosting and serverless without persistent disk won't work.</p>
+            <span class="hosting-tag">for experienced users</span>
           </article>
         </div>
 
-        <p class="hosting-note reveal">Die Desktop-App ist <strong>kein eigener Server</strong>: Sie braucht eine erreichbare Hustl-URL. Ein kostenloses Cloud-Kontingent (z. B. Oracle Cloud Free Tier, ARM) kann zum Ausprobieren reichen – Verfügbarkeit und Bedingungen ändern sich.</p>
+        <p class="hosting-note reveal">The desktop app is <strong>not a server</strong>: it needs a reachable Hustl URL. A free cloud allowance (e.g. Oracle Cloud Free Tier, ARM) may be enough for testing — availability and terms change.</p>
       </div>
     </section>
 
@@ -415,8 +412,8 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Download</p>
-          <h2>Für deinen Rechner.</h2>
-          <p>Die Desktop-App ist eine schlanke Hülle um deine Hustl-Instanz. Beim ersten Start fragt sie nach deiner Server-URL – mehr braucht sie nicht.</p>
+          <h2>For your computer.</h2>
+          <p>The desktop app is a slim shell around your Hustl instance. On first launch it asks for your server URL — nothing else.</p>
         </div>
 
         <div class="download-grid">
@@ -443,9 +440,9 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         </div>
 
         <div class="download-foot reveal">
-          <p><strong>PWA statt Download:</strong> Öffne deine Hustl-URL im Browser und wähle „App installieren“ (Chrome/Edge) oder „Zum Home-Bildschirm“ (iOS). Kein Installer, keine Updates – einfach die Website.</p>
-          <p class="muted">Die Desktop-Builds sind unsigniert. Windows und macOS fragen beim ersten Start nach einer Freigabe. <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md#desktop-app-herunterladen" target="_blank" rel="noreferrer">Hilfe im README</a></p>
-          <a class="btn btn-ghost btn-small" href="https://github.com/bitm4ncer/hustl/releases/latest" target="_blank" rel="noreferrer">Alle Releases auf GitHub</a>
+          <p><strong>PWA instead of a download:</strong> Open your Hustl URL in the browser and choose “Install app” (Chrome/Edge) or “Add to Home Screen” (iOS). No installer, no updates — just the website.</p>
+          <p class="muted">The desktop builds are unsigned. Windows and macOS ask for approval on first launch. <a href="https://github.com/bitm4ncer/hustl#download-the-desktop-app" target="_blank" rel="noreferrer">Help in the README</a></p>
+          <a class="btn btn-ghost btn-small" href="https://github.com/bitm4ncer/hustl/releases/latest" target="_blank" rel="noreferrer">All releases on GitHub</a>
         </div>
       </div>
     </section>
@@ -454,54 +451,54 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
       <div class="wrap faq-wrap">
         <div class="section-head reveal">
           <p class="eyebrow">FAQ</p>
-          <h2>Noch Fragen?</h2>
-          <p>Die wichtigsten Antworten, bevor du einen Server mietest.</p>
+          <h2>Still have questions?</h2>
+          <p>The most important answers before you rent a server.</p>
         </div>
 
         <div class="faq reveal">
           <details>
-            <summary>Was kostet Hustl?</summary>
-            <p>Die App ist kostenlos und Open Source (ISC). Du zahlst nur deinen Server – je nach Anbieter etwa 5–15 € im Monat – und eine Domain, meist 5–30 € im Jahr (0,40–2,50 € im Monat). Der Preis hängt von TLD und Anbieter ab; Aktionen im ersten Jahr sind oft günstiger als die Verlängerung. Kein Abo, keine Lizenzgebühr.</p>
+            <summary>What does Hustl cost?</summary>
+            <p>The app is free and open source (ISC). You only pay for your server — roughly €5–15 per month depending on the provider — and a domain, usually €5–30 per year (€0.40–2.50 per month). The price depends on the TLD and registrar; first-year offers are often cheaper than renewals. No subscription, no license fee.</p>
           </details>
           <details>
-            <summary>Wo liegen meine Daten?</summary>
-            <p>In einer SQLite-Datenbank und als PDFs auf deinem eigenen Server. Es gibt keine Cloud, kein Konto bei uns und keine Analytics. Backups verlassen den Server nur, wenn du selbst ein Offsite-Ziel einrichtest.</p>
+            <summary>Where is my data?</summary>
+            <p>In a SQLite database and as PDFs on your own server. There is no cloud, no account with us and no analytics. Backups only leave the server if you set up an offsite target such as restic.</p>
           </details>
           <details>
-            <summary>Brauche ich einen Server?</summary>
-            <p>Ja. Hustl ist bewusst self-hosted und kein gehosteter Dienst. Ein kleiner VPS reicht. Der Installer richtet Docker, HTTPS (im gebündelten Modus) und einen täglichen Datenbank-Snapshot ein. Wenn dir das zu technisch ist, nimm den Agenten-Leitfaden.</p>
+            <summary>Do I need a server?</summary>
+            <p>Yes. Hustl is deliberately self-hosted and not a hosted service. A small VPS is enough. The installer sets up Docker, HTTPS (in bundled mode) and a daily database snapshot. If that sounds too technical, use the agent guide.</p>
           </details>
           <details>
-            <summary>Kann ich Hustl mit mehreren Personen nutzen?</summary>
-            <p>Hustl ist für eine Person pro Instanz gedacht. Du kannst mehrere Passkeys und Geräte nutzen, aber es gibt keine Rollen, Teams oder getrennten Benutzerkonten.</p>
+            <summary>Can I use Hustl with a team?</summary>
+            <p>Hustl is designed for one person per instance. You can use multiple passkeys and devices, but there are no roles, teams or separate user accounts.</p>
           </details>
           <details>
-            <summary>Kann ich Hustl auch auf einem NAS oder zu Hause betreiben?</summary>
-            <p>Ja, wenn Docker und ein dauerhafter Speicher vorhanden sind – zum Beispiel auf einer Synology/QNAP-NAS, einem Heimserver oder einem Raspberry Pi. Für Zugriff von außen brauchst du einen Reverse Proxy oder einen Tunnel wie Cloudflare Tunnel. Die <a href="#hosting">Hosting-Optionen</a> stehen oben.</p>
+            <summary>Can I run Hustl on a NAS or at home?</summary>
+            <p>Yes, if Docker and persistent storage are available — for example on a Synology/QNAP NAS, a home server or a Raspberry Pi. For external access you need a reverse proxy or a tunnel such as Cloudflare Tunnel. See the <a href="#hosting">hosting options</a> above.</p>
           </details>
           <details>
-            <summary>Kann ich Hustl auf dem iPhone nutzen?</summary>
-            <p>Ja, als PWA. Öffne deine Hustl-URL in Safari, tippe auf „Teilen“ und wähle „Zum Home-Bildschirm“. Die Anmeldung läuft über Face ID oder Touch ID.</p>
+            <summary>Can I use Hustl on my iPhone?</summary>
+            <p>Yes, as a PWA. Open your Hustl URL in Safari, tap “Share” and choose “Add to Home Screen”. Sign-in uses Face ID or Touch ID.</p>
           </details>
           <details>
-            <summary>Was ist ein Passkey?</summary>
-            <p>Ein Login ohne Passwort: Face ID, Touch ID, Windows Hello oder ein Sicherheitsschlüssel. Du kannst mehrere Geräte hinzufügen und zehn Recovery-Codes aufbewahren – für den Fall, dass ein Gerät verloren geht.</p>
+            <summary>What is a passkey?</summary>
+            <p>A passwordless login using Face ID, Touch ID, Windows Hello or a security key. You can add more devices later with a recovery code. Store the ten recovery codes separately from your phone or laptop.</p>
           </details>
           <details>
-            <summary>Sind meine Daten sicher?</summary>
-            <p>Hustl nutzt Passkeys, HttpOnly-Session-Cookies und CSRF-Schutz. HTTPS übernimmt dein Reverse Proxy – im gebündelten Modus Caddy. Updates und Backups liegen in deiner Verantwortung. Der Installer legt täglich einen Datenbank-Snapshot an; PDFs und Belege kommen nur mit restic oder dem Vollarchiv dazu.</p>
+            <summary>Is it secure?</summary>
+            <p>Hustl uses passkeys, HttpOnly session cookies and CSRF protection. HTTPS is handled by your reverse proxy — Caddy in bundled mode. Updates and backups are your responsibility. The installer creates a daily database snapshot; PDFs and receipts are only included with restic or the full archive.</p>
           </details>
           <details>
-            <summary>Kann ich meine Daten exportieren?</summary>
-            <p>Ja. Du kannst ein Vollarchiv als ZIP mit Datenbank, allen PDFs und CSV-Dateien herunterladen. Für die Steuerberatung gibt es zusätzlich einen Monatsexport.</p>
+            <summary>Can I export my data?</summary>
+            <p>Yes. Download a full archive as a ZIP with the database, all PDFs and CSV files. For your tax adviser there is also a monthly export.</p>
           </details>
           <details>
-            <summary>Gibt es eine gehostete Version?</summary>
-            <p>Nein. Hustl ist absichtlich self-hosted, damit deine Rechnungen und Kundendaten bei dir bleiben. Du kannst die App aber auf einem Server deines Vertrauens oder bei einem Anbieter deiner Wahl betreiben.</p>
+            <summary>Is there a hosted version?</summary>
+            <p>No. Hustl is deliberately self-hosted so your invoices and customer data stay with you. You can run it on a server you trust or at a hosting provider of your choice.</p>
           </details>
           <details>
-            <summary>Was ist mit E-Rechnung?</summary>
-            <p>Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand deshalb eine Beispielrechnung mit dem offiziellen KoSIT-Validator testen.</p>
+            <summary>What about e-invoicing?</summary>
+            <p>Hustl creates hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). It checks the data model, not full XSD/Schematron conformance. Before the first real send, validate a sample with the official KoSIT validator.</p>
           </details>
         </div>
       </div>
@@ -510,12 +507,12 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
     <section class="cta">
       <div class="wrap cta-inner reveal">
         <div>
-          <p class="eyebrow">Bereit?</p>
-          <h2>Dein Studio. Deine Regeln.</h2>
-          <p>Keine Cloud, kein Abo, keine Daten bei einem Dritten. Nur du, deine Rechnungen und ein Server, der dir gehört.</p>
+          <p class="eyebrow">Ready?</p>
+          <h2>Your studio. Your rules.</h2>
+          <p>No cloud, no subscription, no data with a third party. Just you, your invoices and a server you own.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="#installation">Installation starten</a>
+          <a class="btn btn-primary" href="#installation">Start installation</a>
           <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
             <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
             GitHub
@@ -528,38 +525,38 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="Hustl – nach oben">
+        <a class="brand" href="#top" aria-label="Hustl – back to top">
           <img src="assets/logo.png" width="32" height="32" alt="">
           <span>Hustl</span>
         </a>
-        <p>Rechnungen, Angebote und Finanzen für Soloselbstständige. Self-hosted, offen und ohne Cloud-Zwang.</p>
-        <p class="footer-small">Ein unabhängiges Open-Source-Projekt von bitm4ncer.</p>
+        <p>Invoices, offers and finances for freelancers. Self-hosted, open and without cloud lock-in.</p>
+        <p class="footer-small">An independent open-source project by bitm4ncer.</p>
       </div>
       <div class="footer-col">
-        <h4>Produkt</h4>
-        <a href="#funktionen">Funktionen</a>
-        <a href="#einblicke">Einblicke</a>
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Ressourcen</h4>
+        <h4>Resources</h4>
         <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">Dokumentation</a>
-        <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agenten-Leitfaden</a>
+        <a href="https://github.com/bitm4ncer/hustl#readme" target="_blank" rel="noreferrer">Documentation</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agent guide</a>
         <a href="https://github.com/bitm4ncer/hustl/issues" target="_blank" rel="noreferrer">Issues</a>
       </div>
       <div class="footer-col">
-        <h4>Rechtliches</h4>
-        <a href="https://github.com/bitm4ncer/hustl/blob/main/LICENSE" target="_blank" rel="noreferrer">ISC-Lizenz</a>
-        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md#datenschutz" target="_blank" rel="noreferrer">Datenschutz</a>
-        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.md" target="_blank" rel="noreferrer">English README</a>
+        <h4>Legal</h4>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/LICENSE" target="_blank" rel="noreferrer">ISC License</a>
+        <a href="https://github.com/bitm4ncer/hustl#privacy" target="_blank" rel="noreferrer">Privacy</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">German README</a>
       </div>
     </div>
     <div class="wrap footer-bottom">
       <span>&copy; <span data-year>2026</span> bitm4ncer</span>
-      <span>Keine Telemetrie &middot; Keine Cloud &middot; Nur dein Server</span>
+      <span>No telemetry &middot; No cloud &middot; Just your server</span>
     </div>
   </footer>
 
