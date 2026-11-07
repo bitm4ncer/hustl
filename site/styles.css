@@ -606,6 +606,189 @@ summary:focus-visible {
   line-height: 1.65;
 }
 
+/* ---------- Planner ---------- */
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: start;
+  gap: 64px;
+}
+.planner-copy {
+  display: grid;
+  gap: 26px;
+}
+.planner-point {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+}
+.planner-point-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.planner-point-icon .icon {
+  width: 18px;
+  height: 18px;
+}
+.planner-point h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.planner-point p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.planner-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+.planner-panel {
+  width: 100%;
+  max-width: 520px;
+  padding: 26px;
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+}
+.planner-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.planner-kicker {
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.planner-head h3 {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.planner-chip {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+}
+.planner-list {
+  display: grid;
+  gap: 3px;
+  list-style: none;
+}
+.planner-task {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 11px;
+  margin: 0 -10px;
+  padding: 10px;
+  border-radius: 12px;
+}
+.planner-check {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 6px;
+  background: var(--surface-3);
+  color: var(--accent-contrast);
+}
+.planner-check.done {
+  background: var(--accent);
+}
+.planner-check .icon {
+  width: 12px;
+  height: 12px;
+}
+.planner-task-title {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.planner-task.done .planner-task-title {
+  color: var(--faint);
+  text-decoration: line-through;
+  text-decoration-color: rgba(139, 137, 135, 0.55);
+}
+.planner-task small {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+.planner-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  color: var(--faint);
+  font-size: 11.5px;
+}
+.planner-progress {
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+.planner-progress i {
+  display: block;
+  width: 40%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+.planner-recurring {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.planner-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+.planner-recurring strong {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.planner-recurring small {
+  display: block;
+  margin-top: 1px;
+  color: var(--faint);
+  font-size: 11px;
+}
+
 /* ---------- Showcases ---------- */
 
 .showcase {
@@ -1159,7 +1342,14 @@ summary:focus-visible {
   .float-card {
     display: none;
   }
-  .showcase {
+  .header-inner {
+    gap: 18px;
+  }
+  .main-nav {
+    gap: 18px;
+  }
+  .showcase,
+  .planner-grid {
     gap: 42px;
   }
 }
@@ -1266,6 +1456,16 @@ summary:focus-visible {
     gap: 30px;
     margin-bottom: 70px;
   }
+  .planner-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .planner-copy {
+    gap: 20px;
+  }
+  .planner-visual {
+    justify-content: center;
+  }
   .showcase-reverse .showcase-copy,
   .showcase-reverse .showcase-visual {
     order: 0;
@@ -1300,6 +1500,16 @@ summary:focus-visible {
 @media (max-width: 520px) {
   .header-cta {
     display: none;
+  }
+  .planner-panel {
+    padding: 20px;
+  }
+  .planner-head h3 {
+    font-size: 21px;
+  }
+  .planner-task {
+    margin: 0 -8px;
+    padding: 9px 8px;
   }
   .hero h1 {
     font-size: clamp(2.2rem, 10vw, 2.9rem);

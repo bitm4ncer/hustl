@@ -33,7 +33,7 @@ Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Stu
 Hustl passt zu dir, wenn du:
 
 - als Freelancer arbeitest oder ein kleines Studio führst,
-- Rechnungen, Angebote, Projekte und Finanzen an einem Ort haben willst,
+- Rechnungen, Angebote, Projekte, Aufgaben und Finanzen an einem Ort haben willst,
 - deine Daten auf deinem eigenen Server haben willst statt in einer fremden Cloud,
 - mit einem kleinen Server einverstanden bist, der etwa **5–15 € im Monat** kostet.
 
@@ -47,7 +47,7 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 - **Kunden und Projekte** — Stundensätze, Fixpreise, Positionen und offene Posten.
 - **Finanzen** — Einnahmen, Ausgaben, Fixkosten, Dashboard, Prognose und Monatsexport.
 - **Belege und Kontoauszüge** — PDFs hochladen und Zahlungen den Rechnungen zuordnen.
-- **To-dos** — Kategorien für Aufgaben, Einkäufe, Lebensmittel und Weeklys.
+- **Planer und Aufgaben** — datierte Aufgaben für die nächsten 15 Tage, wiederkehrende Routinen mit täglichem, wöchentlichem oder monatlichem Reset und freie Listen für undatierte Ideen.
 - **Deutsch und Englisch** als Oberflächen- und Rechnungssprache, mit 12 Währungen.
 - **Vollarchiv** — ein ZIP mit Datenbank, allen PDFs und CSV-Dateien.
 

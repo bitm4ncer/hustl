@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hustl – Invoices, offers and finances on your own server</title>
-  <meta name="description" content="Hustl is the self-hosted app for invoices, offers, projects and finances. For freelancers and small studios. Open source, no cloud.">
+  <meta name="description" content="Hustl is the self-hosted app for invoices, offers, projects, tasks and finances. For freelancers and small studios. Open source, no cloud.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#101012">
   <script type="application/ld+json">
@@ -23,14 +23,14 @@
       "screenshot": "https://bitm4ncer.github.io/hustl/assets/screens/invoices.webp",
       "sameAs": ["https://github.com/bitm4ncer/hustl"],
       "inLanguage": ["en", "de"],
-      "description": "Self-hosted invoicing, offers, projects and finance app for freelancers and small studios."
+      "description": "Self-hosted invoicing, offers, projects, tasks and finance app for freelancers and small studios."
     }
   </script>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:title" content="Hustl – Your invoices. Your data. Your server.">
-  <meta property="og:description" content="Invoices, offers, projects and finances in one calm app. Self-hosted, open source, no cloud lock-in.">
+  <meta property="og:description" content="Invoices, offers, projects, tasks and finances in one calm app. Self-hosted, open source, no cloud lock-in.">
   <meta property="og:url" content="https://bitm4ncer.github.io/hustl/">
   <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og-en.png">
   <meta property="og:image:width" content="1200">
@@ -125,6 +125,7 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
+        <a href="#planner">Planner</a>
         <a href="#screens">Screens</a>
         <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
@@ -153,7 +154,7 @@
       <div class="wrap hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span> Self-hosted &middot; Open source</p>
         <h1>Your invoices.<br>Your data.<br><span class="accent">Your server.</span></h1>
-        <p class="lede">Hustl brings invoices, offers, projects and finances into one calm app — on your own server. No cloud account, no telemetry, no monthly software subscription.</p>
+        <p class="lede">Hustl brings invoices, offers, projects, tasks and finances into one calm app — on your own server. No cloud account, no telemetry, no monthly software subscription.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#installation">
             Start in about 20 minutes
@@ -247,6 +248,84 @@
             <h3>Everywhere</h3>
             <p>PWA on iPhone, iPad and desktop. Plus desktop apps for Windows, macOS and Linux — one interface, all devices.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planner">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Planner &amp; tasks</p>
+          <h2>The day starts in the planner.</h2>
+          <p>Dated tasks, recurring routines and free lists live next to your projects and invoices. No second to-do app, no context switch.</p>
+        </div>
+
+        <div class="planner-grid">
+          <div class="planner-copy reveal">
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>A 15-day view</h3>
+                <p>See what is due at a glance. Move a task when plans change — the note and the context come with it.</p>
+              </div>
+            </div>
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>Routines that reset themselves</h3>
+                <p>Categories can reset daily, weekly or monthly. Bookkeeping, follow-ups and studio routines stay visible without being recreated.</p>
+              </div>
+            </div>
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>Lists, notes and streaks</h3>
+                <p>Keep undated ideas in free lists, add a note to any task and see how consistently your routines are running.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="planner-visual reveal" aria-hidden="true">
+            <div class="planner-panel">
+              <div class="planner-head">
+                <div>
+                  <span class="planner-kicker">Monday · Today</span>
+                  <h3>Today</h3>
+                </div>
+                <span class="planner-chip">3 open</span>
+              </div>
+              <ul class="planner-list">
+                <li class="planner-task done">
+                  <span class="planner-check done"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg></span>
+                  <div><span class="planner-task-title">Send invoice to Studio Nordlicht</span><small>Invoice 2026-042 · paid</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Follow up on the Atelier Mira offer</span><small>Offer ANG-2026-018 · sent 4 days ago</small></div>
+                </li>
+                <li class="planner-task done">
+                  <span class="planner-check done"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg></span>
+                  <div><span class="planner-task-title">October bookkeeping</span><small>Receipts filed · statement imported</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Prepare kickoff for Kranich &amp; Co.</span><small>Thursday · 10:00</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Update the project timeline</span><small>Nordlicht website · this week</small></div>
+                </li>
+              </ul>
+              <div class="planner-foot">
+                <span>2 of 5 done</span>
+                <span class="planner-progress"><i></i></span>
+              </div>
+              <div class="planner-recurring">
+                <span class="planner-dot"></span>
+                <span><strong>Bookkeeping</strong><small>Resets every Monday</small></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -550,12 +629,13 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           <img src="assets/logo.png" width="32" height="32" alt="">
           <span>Hustl</span>
         </a>
-        <p>Invoices, offers and finances for freelancers. Self-hosted, open and without cloud lock-in.</p>
+        <p>Invoices, offers, projects, tasks and finances for freelancers. Self-hosted, open and without cloud lock-in.</p>
         <p class="footer-small">An independent open-source project by bitm4ncer.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
         <a href="#features">Features</a>
+        <a href="#planner">Planner</a>
         <a href="#screens">Screens</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>

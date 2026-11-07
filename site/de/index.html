@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hustl – Rechnungen, Angebote und Finanzen auf deinem Server</title>
-  <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte und Finanzen. Für Freelancer und kleine Studios. Open Source, ohne Cloud.">
+  <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte, Aufgaben und Finanzen. Für Freelancer und kleine Studios. Open Source, ohne Cloud.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#101012">
   <script type="application/ld+json">
@@ -23,13 +23,13 @@
       "screenshot": "https://bitm4ncer.github.io/hustl/assets/screens/invoices.webp",
       "sameAs": ["https://github.com/bitm4ncer/hustl"],
       "inLanguage": ["de", "en"],
-      "description": "Self-hosted App für Rechnungen, Angebote, Projekte und Finanzen für Freelancer und kleine Studios."
+      "description": "Self-hosted App für Rechnungen, Angebote, Projekte, Aufgaben und Finanzen für Freelancer und kleine Studios."
     }
   </script>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="Hustl – Deine Rechnungen. Deine Daten. Dein Server.">
-  <meta property="og:description" content="Rechnungen, Angebote, Projekte und Finanzen in einer ruhigen App. Self-hosted, Open Source, ohne Cloud-Zwang.">
+  <meta property="og:description" content="Rechnungen, Angebote, Projekte, Aufgaben und Finanzen in einer ruhigen App. Self-hosted, Open Source, ohne Cloud-Zwang.">
   <meta property="og:url" content="https://bitm4ncer.github.io/hustl/de/">
   <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
   <meta property="og:image:width" content="1200">
@@ -128,6 +128,7 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <a href="#funktionen">Funktionen</a>
+        <a href="#planer">Planer</a>
         <a href="#einblicke">Einblicke</a>
         <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
@@ -156,7 +157,7 @@
       <div class="wrap hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot"></span> Self-hosted &middot; Open Source &middot; Für Freelancer</p>
         <h1>Deine Rechnungen.<br>Deine Daten.<br><span class="accent">Dein Server.</span></h1>
-        <p class="lede">Hustl bringt Rechnungen, Angebote, Projekte und Finanzen in eine ruhige App – auf deinem eigenen Server. Kein Cloud-Konto, keine Telemetrie, keine monatliche Software-Miete.</p>
+        <p class="lede">Hustl bringt Rechnungen, Angebote, Projekte, Aufgaben und Finanzen in eine ruhige App – auf deinem eigenen Server. Kein Cloud-Konto, keine Telemetrie, keine monatliche Software-Miete.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#installation">
             In ca. 20 Minuten starten
@@ -250,6 +251,84 @@
             <h3>Überall dabei</h3>
             <p>PWA auf iPhone, iPad und Desktop. Dazu Desktop-Apps für Windows, macOS und Linux – eine Oberfläche, alle Geräte.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planer">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Planer &amp; Aufgaben</p>
+          <h2>Der Tag beginnt im Planer.</h2>
+          <p>Datierte Aufgaben, wiederkehrende Routinen und freie Listen leben neben deinen Projekten und Rechnungen. Kein zweites To-do-Tool, kein Kontextwechsel.</p>
+        </div>
+
+        <div class="planner-grid">
+          <div class="planner-copy reveal">
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>15 Tage im Blick</h3>
+                <p>Sieh auf einen Blick, was ansteht. Verschiebe eine Aufgabe, wenn sich Pläne ändern – Notiz und Kontext wandern mit.</p>
+              </div>
+            </div>
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>Routinen, die sich selbst zurücksetzen</h3>
+                <p>Kategorien können täglich, wöchentlich oder monatlich zurücksetzen. Buchhaltung, Nachfassen und Studio-Routinen bleiben sichtbar, ohne neu angelegt zu werden.</p>
+              </div>
+            </div>
+            <div class="planner-point">
+              <span class="planner-point-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <div>
+                <h3>Listen, Notizen und Statistik</h3>
+                <p>Undatierte Ideen bleiben in freien Listen, jede Aufgabe kann eine Notiz bekommen, und du siehst, wie konsequent deine Routinen laufen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="planner-visual reveal" aria-hidden="true">
+            <div class="planner-panel">
+              <div class="planner-head">
+                <div>
+                  <span class="planner-kicker">Montag · Heute</span>
+                  <h3>Heute</h3>
+                </div>
+                <span class="planner-chip">3 offen</span>
+              </div>
+              <ul class="planner-list">
+                <li class="planner-task done">
+                  <span class="planner-check done"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg></span>
+                  <div><span class="planner-task-title">Rechnung an Studio Nordlicht senden</span><small>Rechnung 2026-042 · bezahlt</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Angebot für Atelier Mira nachfassen</span><small>Angebot ANG-2026-018 · vor 4 Tagen gesendet</small></div>
+                </li>
+                <li class="planner-task done">
+                  <span class="planner-check done"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg></span>
+                  <div><span class="planner-task-title">Buchhaltung Oktober</span><small>Belege abgelegt · Kontoauszug importiert</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Kickoff für Kranich &amp; Co. vorbereiten</span><small>Donnerstag · 10:00</small></div>
+                </li>
+                <li class="planner-task">
+                  <span class="planner-check"></span>
+                  <div><span class="planner-task-title">Projekt-Zeitplan aktualisieren</span><small>Nordlicht Website · diese Woche</small></div>
+                </li>
+              </ul>
+              <div class="planner-foot">
+                <span>2 von 5 erledigt</span>
+                <span class="planner-progress"><i></i></span>
+              </div>
+              <div class="planner-recurring">
+                <span class="planner-dot"></span>
+                <span><strong>Buchhaltung</strong><small>Jeden Montag zurückgesetzt</small></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -553,12 +632,13 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           <img src="../assets/logo.png" width="32" height="32" alt="">
           <span>Hustl</span>
         </a>
-        <p>Rechnungen, Angebote und Finanzen für Soloselbstständige. Self-hosted, offen und ohne Cloud-Zwang.</p>
+        <p>Rechnungen, Angebote, Projekte, Aufgaben und Finanzen für Soloselbstständige. Self-hosted, offen und ohne Cloud-Zwang.</p>
         <p class="footer-small">Ein unabhängiges Open-Source-Projekt von bitm4ncer.</p>
       </div>
       <div class="footer-col">
         <h4>Produkt</h4>
         <a href="#funktionen">Funktionen</a>
+        <a href="#planer">Planer</a>
         <a href="#einblicke">Einblicke</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>

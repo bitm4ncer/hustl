@@ -33,7 +33,7 @@ Hustl is an invoicing and finance app for freelancers and small studios in Germa
 Hustl is a good fit if you:
 
 - work as a freelancer or run a small studio,
-- want invoices, offers, projects and finances in one place,
+- want invoices, offers, projects, tasks and finances in one place,
 - want your data on your own server instead of someone else's cloud,
 - are okay with a small server that costs about **5–15 € per month**.
 
@@ -47,7 +47,7 @@ Hustl is **not** a good fit if you need a multi-user team platform, want a fully
 - **Clients and projects** — hourly rates, fixed prices, line items and open items.
 - **Finance** — income, expenses, fixed costs, dashboard, forecast and monthly export.
 - **Receipts and bank statements** — upload PDFs and match payments to invoices.
-- **To-dos** — categories for tasks, shopping, groceries and weeklies.
+- **Planner and tasks** — dated tasks for the next 15 days, recurring routines that reset daily, weekly or monthly, and free lists for undated ideas.
 - **German and English** UI and document language, with 12 currencies.
 - **Full archive** — one ZIP with the database, all PDFs and CSV files.
 
