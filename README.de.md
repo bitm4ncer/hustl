@@ -48,6 +48,7 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 - **Finanzen** — Einnahmen, Ausgaben, Fixkosten, Dashboard, Prognose und Monatsexport.
 - **Belege und Kontoauszüge** — PDFs hochladen und Zahlungen den Rechnungen zuordnen.
 - **Planer und Aufgaben** — datierte Aufgaben für die nächsten 15 Tage, wiederkehrende Routinen mit täglichem, wöchentlichem oder monatlichem Reset und freie Listen für undatierte Ideen.
+- **Helles und dunkles Theme** — Systemeinstellung folgen oder fest wählen; beide vollständig gestaltet.
 - **Deutsch und Englisch** als Oberflächen- und Rechnungssprache, mit 12 Währungen.
 - **Vollarchiv** — ein ZIP mit Datenbank, allen PDFs und CSV-Dateien.
 

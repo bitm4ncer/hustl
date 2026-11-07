@@ -789,6 +789,72 @@ summary:focus-visible {
   font-size: 11px;
 }
 
+/* ---------- Appearance / light theme ---------- */
+
+.appearance-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 64px;
+}
+.appearance-copy {
+  max-width: 440px;
+}
+.appearance-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+.appearance-choice span {
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: var(--faint);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.appearance-choice .active {
+  background: var(--text);
+  color: var(--bg);
+}
+.appearance-note {
+  margin-top: 20px;
+  color: var(--faint);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+.appearance-shots {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: 18px;
+}
+.appearance-shots .browser {
+  width: 100%;
+}
+.appearance-shots .browser img,
+.appearance-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.appearance-phone {
+  width: 100%;
+  max-width: 180px;
+  justify-self: end;
+  padding: 7px;
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+}
+.appearance-phone .phone-screen {
+  border-radius: 22px;
+}
+
 /* ---------- Showcases ---------- */
 
 .showcase {
@@ -1349,7 +1415,8 @@ summary:focus-visible {
     gap: 18px;
   }
   .showcase,
-  .planner-grid {
+  .planner-grid,
+  .appearance-grid {
     gap: 42px;
   }
 }
@@ -1456,7 +1523,8 @@ summary:focus-visible {
     gap: 30px;
     margin-bottom: 70px;
   }
-  .planner-grid {
+  .planner-grid,
+  .appearance-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
@@ -1465,6 +1533,14 @@ summary:focus-visible {
   }
   .planner-visual {
     justify-content: center;
+  }
+  .appearance-copy {
+    max-width: none;
+  }
+  .appearance-shots {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
   }
   .showcase-reverse .showcase-copy,
   .showcase-reverse .showcase-visual {
@@ -1510,6 +1586,13 @@ summary:focus-visible {
   .planner-task {
     margin: 0 -8px;
     padding: 9px 8px;
+  }
+  .appearance-shots {
+    grid-template-columns: 1fr;
+  }
+  .appearance-phone {
+    max-width: 190px;
+    justify-self: center;
   }
   .hero h1 {
     font-size: clamp(2.2rem, 10vw, 2.9rem);
