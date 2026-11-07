@@ -1,0 +1,39 @@
+# Hustl
+
+> Hustl is a self-hosted invoicing and finance app for freelancers and small studios. It runs on your own server, with no cloud account and no telemetry in the app.
+
+## Canonical pages
+
+- English: https://bitm4ncer.github.io/hustl/
+- German: https://bitm4ncer.github.io/hustl/de/
+- Source: https://github.com/bitm4ncer/hustl
+- Documentation: https://github.com/bitm4ncer/hustl#readme
+- German documentation: https://github.com/bitm4ncer/hustl/blob/main/README.de.md
+- Installation with an agent: https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md
+- Latest release: https://github.com/bitm4ncer/hustl/releases/latest
+- License: https://github.com/bitm4ncer/hustl/blob/main/LICENSE (ISC)
+
+## What it does
+
+- Invoices, sequential numbering, PDF export and e-invoices according to EN 16931 (ZUGFeRD / Factur-X)
+- Offers with versions, status and PDF
+- Clients and projects with hours, fixed prices and open items
+- Finance dashboard with income, expenses, fixed costs, forecast and monthly export
+- Receipt PDFs, bank statement import and payment matching
+- Tasks, German/English UI, 12 currencies and a full archive
+
+## Hosting
+
+The recommended setup is a Debian/Ubuntu VPS with Docker and a domain. The installer sets up Docker, HTTPS in bundled mode, a daily database snapshot and autostart. Alternatives: an existing Linux server or NAS with Docker, a Raspberry Pi/home server, or a PaaS/Kubernetes environment with a persistent block volume and one replica. Shared hosting and serverless platforms without persistent storage are not suitable. The desktop app is a shell around a reachable server URL, not a standalone server.
+
+## Requirements
+
+- Linux host with Docker and persistent storage
+- 2 vCPU, 2 GB RAM minimum, 4 GB recommended
+- 20 GB disk recommended
+- Domain with an A record (AAAA for IPv6)
+- About 15–30 minutes for the first build, plus DNS propagation
+
+## Not included
+
+SMTP email sending, GoCardless bank sync and Notion import are not part of the current release. The app is designed for one person per instance; multiple passkeys and devices are supported, but there are no roles or teams.

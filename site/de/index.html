@@ -5,7 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hustl – Rechnungen, Angebote und Finanzen auf deinem Server</title>
   <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte und Finanzen. Für Freelancer und kleine Studios. Open Source, ohne Cloud.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#101012">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Hustl",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows, macOS, Linux, iOS, Android",
+      "url": "https://bitm4ncer.github.io/hustl/de/",
+      "downloadUrl": "https://github.com/bitm4ncer/hustl/releases/latest",
+      "softwareVersion": "1.1.1",
+      "license": "https://github.com/bitm4ncer/hustl/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "screenshot": "https://bitm4ncer.github.io/hustl/assets/screens/invoices.webp",
+      "sameAs": ["https://github.com/bitm4ncer/hustl"],
+      "inLanguage": ["de", "en"],
+      "description": "Self-hosted App für Rechnungen, Angebote, Projekte und Finanzen für Freelancer und kleine Studios."
+    }
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="Hustl – Deine Rechnungen. Deine Daten. Dein Server.">
@@ -23,6 +43,7 @@
   <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/">
   <link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/">
   <link rel="icon" href="../assets/logo.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="../llms.txt" title="LLM-freundliche Website-Zusammenfassung">
   <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
@@ -563,6 +584,8 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
     </div>
   </footer>
 
+  <script src="../analytics-config.js" defer></script>
+  <script src="../analytics.js" defer></script>
   <script src="../app.js" defer></script>
 </body>
 </html>
