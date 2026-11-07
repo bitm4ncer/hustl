@@ -55,7 +55,7 @@ Hustl is **not** a good fit if you need a multi-user team platform, want a fully
 ## See it
 
 <p align="center">
-  <img src="site/assets/screens/invoices.webp" alt="Hustl invoice list with demo data" width="860"><br>
+  <img src="site/assets/screens/invoices-en.webp" alt="Hustl invoice list with demo data" width="860"><br>
   <sub>Demo data — all names, addresses and amounts are fictional.</sub>
 </p>
 
