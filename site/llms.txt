@@ -24,6 +24,10 @@
 - Light and dark themes that follow the system or stay fixed
 - German/English UI, 12 currencies and a full archive
 
+## Who it is for
+
+Solo freelancers and one-person studios who want one calm place for projects, tasks, invoices and finances, no software subscription, and control over their data on their own server. Hustl is built for one person per instance: several passkeys, but no roles or approvals.
+
 ## Hosting
 
 The recommended setup is a Debian/Ubuntu VPS with Docker and a domain. The installer sets up Docker, HTTPS in bundled mode, a daily database snapshot and autostart. Alternatives: an existing Linux server or NAS with Docker, a Raspberry Pi/home server, or a PaaS/Kubernetes environment with a persistent block volume and one replica. Shared hosting and serverless platforms without persistent storage are not suitable. The desktop app is a shell around a reachable server URL, not a standalone server.
