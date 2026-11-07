@@ -122,15 +122,15 @@ Keine Secrets in der Übergabe.
 
 ## Was der Agent tun wird
 
-1. **Bestandsaufnahme** – VPS, SSH, OS, RAM, Disk, DNS, Ports, Docker, Firewall.
-2. **Entscheidung** – `bundled` (eigenes Caddy) oder `external` (vorhandener
+1. **Bestandsaufnahme**: VPS, SSH, OS, RAM, Disk, DNS, Ports, Docker, Firewall.
+2. **Entscheidung**: `bundled` (eigenes Caddy) oder `external` (vorhandener
    Caddy/Nginx).
-3. **Installation** – Image bauen, `/opt/hustl` anlegen, Container starten,
+3. **Installation**: Image bauen, `/opt/hustl` anlegen, Container starten,
    Healthcheck abwarten.
-4. **Zugang** – Setup-Link öffnen, ersten Passkey anlegen, Recovery-Codes
+4. **Zugang**: Setup-Link öffnen, ersten Passkey anlegen, Recovery-Codes
    sichern.
-5. **Absicherung** – Backup-Timer prüfen, Restore-Test, Firewall.
-6. **Übergabe** – URLs, Pfade, Update- und Backup-Befehle.
+5. **Absicherung**: Backup-Timer prüfen, Restore-Test, Firewall.
+6. **Übergabe**: URLs, Pfade, Update- und Backup-Befehle.
 
 ## Manuelle Kurzfassung
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.1 – 2026-11-07
+## 1.1.1 (2026-11-07)
 
 Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.
 
@@ -14,10 +14,10 @@ Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.
 
 ### Korrigiert
 
-- Domainpreise realistisch: ca. 5–30 €/Jahr je nach TLD und Anbieter statt
+- Domainpreise realistisch: ca. 5 bis 30 €/Jahr je nach TLD und Anbieter statt
   pauschal 1 €/Monat
 - VPS-Empfehlung: 2 GB Minimum, 4 GB empfohlen, 20 GB Speicher empfohlen;
-  erster Build 15–30 Minuten
+  erster Build 15 bis 30 Minuten
 - Installer installiert `git` nach; Git steht in den Voraussetzungen
 - NAS/PaaS-Hinweise: Installer nur für Debian/Ubuntu; SQLite braucht eine
   Replica und ein blockbasiertes Volume
@@ -30,7 +30,7 @@ Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.
 - HTTPS-Hinweis für den `external`-Modus; Caddy-Logs nur im gebündelten Modus
 - Kontrast und mobile Navigation verbessert
 
-## 1.1.0 – 2026-11-07
+## 1.1.0 (2026-11-07)
 
 Neue öffentliche Website, verständlichere Dokumentation und stabile Download-Links.
 
@@ -58,7 +58,7 @@ Neue öffentliche Website, verständlichere Dokumentation und stabile Download-L
 - E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht enthalten
 - Installer sind unsigniert (Windows SmartScreen / macOS Gatekeeper)
 
-## 1.0.0 – 2026-11-06
+## 1.0.0 (2026-11-06)
 
 Erste öffentliche Version. Hustl ist jetzt self-hosted: eine Web-App/PWA auf
 dem eigenen VPS, dazu eine schlanke Desktop-Shell für Windows, macOS und Linux.

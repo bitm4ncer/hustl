@@ -34,7 +34,7 @@ The recommended setup is a Debian/Ubuntu VPS with Docker and a domain. The insta
 - 2 vCPU, 2 GB RAM minimum, 4 GB recommended
 - 20 GB disk recommended
 - Domain with an A record (AAAA for IPv6)
-- About 15–30 minutes for the first build, plus DNS propagation
+- About 15 to 30 minutes for the first build, plus DNS propagation
 
 ## Not included
 

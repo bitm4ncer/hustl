@@ -22,7 +22,7 @@
 
 ---
 
-Hustl is an invoicing and finance app for freelancers and small studios in Germany. It runs on a small server that you rent yourself. Your invoices, clients and receipts stay there — not with us. Use Hustl in the browser, install it on your phone as an app, or use the desktop app for Windows, macOS and Linux.
+Hustl is an invoicing and finance app for freelancers and small studios in Germany. It runs on a small server that you rent yourself. Your invoices, clients and receipts stay there, not with us. Use Hustl in the browser, install it on your phone as an app, or use the desktop app for Windows, macOS and Linux.
 
 <p align="center">
   <a href="https://bitm4ncer.github.io/hustl/"><strong>Website & screenshots →</strong></a>
@@ -35,28 +35,28 @@ Hustl is a good fit if you:
 - work as a freelancer or run a small studio,
 - want invoices, offers, projects, tasks and finances in one place,
 - want your data on your own server instead of someone else's cloud,
-- are okay with a small server that costs about **5–15 € per month**.
+- are okay with a small server that costs about **5 to 15 € per month**.
 
 Hustl is **not** a good fit if you need a multi-user team platform, want a fully hosted service with no setup, or need to work completely offline.
 
 ## What Hustl does
 
-- **Invoices** — create, number, finalize and download as PDF.
-- **E-invoices** — hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X).
-- **Offers** — versions, status and PDF; turn an accepted offer into a client and project.
-- **Clients and projects** — hourly rates, fixed prices, line items and open items.
-- **Finance** — income, expenses, fixed costs, dashboard, forecast and monthly export.
-- **Receipts and bank statements** — upload PDFs and match payments to invoices.
-- **Planner and tasks** — dated tasks for the next 15 days, recurring routines that reset daily, weekly or monthly, and free lists for undated ideas.
-- **Light and dark themes** — follow the system or choose one; both are fully styled.
+- **Invoices**: create, number, finalize and download as PDF.
+- **E-invoices**: hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X).
+- **Offers**: versions, status and PDF; turn an accepted offer into a client and project.
+- **Clients and projects**: hourly rates, fixed prices, line items and open items.
+- **Finance**: income, expenses, fixed costs, dashboard, forecast and monthly export.
+- **Receipts and bank statements**: upload PDFs and match payments to invoices.
+- **Planner and tasks**: dated tasks for the next 15 days, recurring routines that reset daily, weekly or monthly, and free lists for undated ideas.
+- **Light and dark themes**: follow the system or choose one; both are fully styled.
 - **German and English** UI and document language, with 12 currencies.
-- **Full archive** — one ZIP with the database, all PDFs and CSV files.
+- **Full archive**: one ZIP with the database, all PDFs and CSV files.
 
 ## See it
 
 <p align="center">
   <img src="site/assets/screens/invoices-en.webp" alt="Hustl invoice list with demo data" width="860"><br>
-  <sub>Demo data — all names, addresses and amounts are fictional.</sub>
+  <sub>Demo data: all names, addresses and amounts are fictional.</sub>
 </p>
 
 <p align="center">
@@ -65,7 +65,7 @@ Hustl is **not** a good fit if you need a multi-user team platform, want a fully
 
 ## Start in three steps
 
-You need two things: a small server (a **VPS**, a computer you rent by the month) and a domain that points to it. A VPS with 2 GB RAM is enough and costs roughly 5–15 € per month. Point the domain at it; DNS can take a little while to propagate.
+You need two things: a small server (a **VPS**, a computer you rent by the month) and a domain that points to it. A VPS with 2 GB RAM is enough and costs roughly 5 to 15 € per month. Point the domain at it; DNS can take a little while to propagate.
 
 ### 1. Get a server and a domain
 
@@ -85,7 +85,7 @@ cd /opt/hustl/src
 sudo ./deploy/selfhost/install.sh
 ```
 
-The installer asks for your domain and an email address for the HTTPS certificate. It then builds Hustl, starts Docker, sets up HTTPS (in bundled mode), autostart and a daily database snapshot at 03:30. The image is built on the server; on a small VPS the first build can take 15–30 minutes.
+The installer asks for your domain and an email address for the HTTPS certificate. It then builds Hustl, starts Docker, sets up HTTPS (in bundled mode), autostart and a daily database snapshot at 03:30. The image is built on the server; on a small VPS the first build can take 15 to 30 minutes.
 
 ### 3. Create your passkey
 
@@ -95,7 +95,7 @@ Open the setup link printed by the installer:
 https://<your-domain>/setup?token=…
 ```
 
-Create your first passkey — Face ID, Touch ID, Windows Hello or a security key — and store the **ten recovery codes** somewhere safe. The setup link can only be used once.
+Create your first passkey: Face ID, Touch ID, Windows Hello or a security key. Store the **ten recovery codes** somewhere safe. The setup link can only be used once.
 
 That's it. Open `https://<your-domain>` in your browser and start working.
 
@@ -141,10 +141,10 @@ Hustl is free and open source under the ISC license. There is no subscription an
 | Item | Typical cost |
 |---|---|
 | Hustl | 0 € |
-| VPS (2 GB RAM, 4 GB recommended) | about 5–15 € / month |
-| Domain | about 5–30 € / year (0.40–2.50 € / month) |
+| VPS (2 GB RAM, 4 GB recommended) | about 5 to 15 € / month |
+| Domain | about 5 to 30 € / year (0.40 to 2.50 € / month) |
 
-The domain price depends on the TLD and the registrar. A `.de` domain often costs around 5–20 € per year, a `.com` around 15–30 €; first-year offers are often cheaper than renewals. You pay your server provider directly. Hustl never sees your invoices or customer data.
+The domain price depends on the TLD and the registrar. A `.de` domain often costs around 5 to 20 € per year, a `.com` around 15 to 30 €; first-year offers are often cheaper than renewals. You pay your server provider directly. Hustl never sees your invoices or customer data.
 
 ## Where can Hustl run?
 
@@ -164,7 +164,7 @@ A free cloud allowance (for example Oracle Cloud Free Tier on ARM) can be enough
 ## FAQ
 
 **Do I need to be technical?**
-A little. You need to copy three commands and point a domain at your server. If that sounds unpleasant, use the [agent guide](INSTALL-WITH-AGENT.md) — it asks the questions and walks you through the installation. You can also ask a friend or colleague to run the installer; it is a one-time job.
+A little. You need to copy three commands and point a domain at your server. If that sounds unpleasant, use the [agent guide](INSTALL-WITH-AGENT.md); it asks the questions and walks you through the installation. You can also ask a friend or colleague to run the installer; it is a one-time job.
 
 **Where is my data?**
 In a SQLite database and as PDFs on your own server. There is no cloud, no account with us and no analytics. Backups only leave the server if you set up an offsite target such as restic.
@@ -176,7 +176,7 @@ Yes. Install it as a PWA: open the URL in Safari, tap Share and choose "Add to H
 A passwordless login using Face ID, Touch ID, Windows Hello or a security key. You can add more devices later with a recovery code. Store the ten recovery codes separately from your phone or laptop.
 
 **Is it secure?**
-Hustl uses WebAuthn passkeys, HttpOnly session cookies, CSRF protection and rate limits. HTTPS is handled by your reverse proxy — Caddy in the bundled setup. You are responsible for server updates and backups; the installer creates a daily database snapshot. PDFs, receipts and statements are only included if you use restic or download the full archive.
+Hustl uses WebAuthn passkeys, HttpOnly session cookies, CSRF protection and rate limits. HTTPS is handled by your reverse proxy (Caddy in the bundled setup). You are responsible for server updates and backups; the installer creates a daily database snapshot. PDFs, receipts and statements are only included if you use restic or download the full archive.
 
 **Can I export my data?**
 Yes. Download a full archive as a ZIP with the database, all PDFs and CSV files. For your tax adviser there is also a monthly export.
@@ -209,7 +209,7 @@ No. Hustl is deliberately self-hosted so your data stays with you. You can run i
 | Server | 2 vCPU, at least 2 GB RAM (4 GB recommended), 20 GB free disk recommended |
 | OS | Debian 12/13 or Ubuntu 22.04/24.04, x86_64 or arm64 |
 | Domain | e.g. `hustl.example.com`, A record (and AAAA for IPv6) pointing to the VPS |
-| Time | about 15–30 minutes, plus DNS propagation |
+| Time | about 15 to 30 minutes, plus DNS propagation |
 | Ports | 22 (SSH), 80 and 443 open |
 | Access | SSH access with a key or password |
 | Tools | `git` for the clone (and updates); the installer installs `curl` and `git` if needed |
@@ -352,7 +352,7 @@ The release workflow `.github/workflows/release.yml` builds all three packages o
 
 ## Privacy
 
-Your invoices, clients and receipts live on your server — not at Hustl. There is no analytics, no telemetry and no third-party account. Sign-in uses passkeys; no password is stored. Backups leave the server only if you set up restic or another offsite target. restic encrypts client-side; with other targets, encryption is your responsibility.
+Your invoices, clients and receipts live on your server, not at Hustl. There is no analytics, no telemetry and no third-party account. Sign-in uses passkeys; no password is stored. Backups leave the server only if you set up restic or another offsite target. restic encrypts client-side; with other targets, encryption is your responsibility.
 
 ## License
 

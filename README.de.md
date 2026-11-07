@@ -22,7 +22,7 @@
 
 ---
 
-Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Studios in Deutschland. Sie läuft auf einem kleinen Server, den du selbst mietest. Deine Rechnungen, Kunden und Belege bleiben dort — nicht bei uns. Du nutzt Hustl im Browser, installierst es auf dem Handy als App oder nimmst die Desktop-App für Windows, macOS und Linux.
+Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Studios in Deutschland. Sie läuft auf einem kleinen Server, den du selbst mietest. Deine Rechnungen, Kunden und Belege bleiben dort, nicht bei uns. Du nutzt Hustl im Browser, installierst es auf dem Handy als App oder nimmst die Desktop-App für Windows, macOS und Linux.
 
 <p align="center">
   <a href="https://bitm4ncer.github.io/hustl/de/"><strong>Website & Screenshots →</strong></a>
@@ -35,28 +35,28 @@ Hustl passt zu dir, wenn du:
 - als Freelancer arbeitest oder ein kleines Studio führst,
 - Rechnungen, Angebote, Projekte, Aufgaben und Finanzen an einem Ort haben willst,
 - deine Daten auf deinem eigenen Server haben willst statt in einer fremden Cloud,
-- mit einem kleinen Server einverstanden bist, der etwa **5–15 € im Monat** kostet.
+- mit einem kleinen Server einverstanden bist, der etwa **5 bis 15 € im Monat** kostet.
 
 Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benutzern brauchst, einen komplett gehosteten Dienst ohne Einrichtung willst oder vollständig offline arbeiten musst.
 
 ## Was Hustl kann
 
-- **Rechnungen** — schreiben, nummerieren, finalisieren und als PDF herunterladen.
-- **E-Rechnung** — hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X).
-- **Angebote** — Versionen, Status und PDF; ein angenommenes Angebot wird zu Kunde und Projekt.
-- **Kunden und Projekte** — Stundensätze, Fixpreise, Positionen und offene Posten.
-- **Finanzen** — Einnahmen, Ausgaben, Fixkosten, Dashboard, Prognose und Monatsexport.
-- **Belege und Kontoauszüge** — PDFs hochladen und Zahlungen den Rechnungen zuordnen.
-- **Planer und Aufgaben** — datierte Aufgaben für die nächsten 15 Tage, wiederkehrende Routinen mit täglichem, wöchentlichem oder monatlichem Reset und freie Listen für undatierte Ideen.
-- **Helles und dunkles Theme** — Systemeinstellung folgen oder fest wählen; beide vollständig gestaltet.
+- **Rechnungen**: schreiben, nummerieren, finalisieren und als PDF herunterladen.
+- **E-Rechnung**: hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X).
+- **Angebote**: Versionen, Status und PDF; ein angenommenes Angebot wird zu Kunde und Projekt.
+- **Kunden und Projekte**: Stundensätze, Fixpreise, Positionen und offene Posten.
+- **Finanzen**: Einnahmen, Ausgaben, Fixkosten, Dashboard, Prognose und Monatsexport.
+- **Belege und Kontoauszüge**: PDFs hochladen und Zahlungen den Rechnungen zuordnen.
+- **Planer und Aufgaben**: datierte Aufgaben für die nächsten 15 Tage, wiederkehrende Routinen mit täglichem, wöchentlichem oder monatlichem Reset und freie Listen für undatierte Ideen.
+- **Helles und dunkles Theme**: Systemeinstellung folgen oder fest wählen; beide vollständig gestaltet.
 - **Deutsch und Englisch** als Oberflächen- und Rechnungssprache, mit 12 Währungen.
-- **Vollarchiv** — ein ZIP mit Datenbank, allen PDFs und CSV-Dateien.
+- **Vollarchiv**: ein ZIP mit Datenbank, allen PDFs und CSV-Dateien.
 
 ## So sieht es aus
 
 <p align="center">
   <img src="site/assets/screens/invoices.webp" alt="Hustl Rechnungsliste mit Demo-Daten" width="860"><br>
-  <sub>Demo-Daten — alle Namen, Adressen und Beträge sind erfunden.</sub>
+  <sub>Demo-Daten: alle Namen, Adressen und Beträge sind erfunden.</sub>
 </p>
 
 <p align="center">
@@ -65,7 +65,7 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 
 ## In drei Schritten starten
 
-Du brauchst zwei Dinge: einen kleinen Server (einen **VPS**, also einen gemieteten Computer) und eine Domain, die darauf zeigt. Ein VPS mit 2 GB RAM reicht und kostet ungefähr 5–15 € im Monat. Richte die Domain darauf; DNS braucht manchmal etwas Zeit.
+Du brauchst zwei Dinge: einen kleinen Server (einen **VPS**, also einen gemieteten Computer) und eine Domain, die darauf zeigt. Ein VPS mit 2 GB RAM reicht und kostet ungefähr 5 bis 15 € im Monat. Richte die Domain darauf; DNS braucht manchmal etwas Zeit.
 
 ### 1. Server und Domain besorgen
 
@@ -85,7 +85,7 @@ cd /opt/hustl/src
 sudo ./deploy/selfhost/install.sh
 ```
 
-Der Installer fragt nach deiner Domain und einer E-Mail-Adresse für das HTTPS-Zertifikat. Danach baut er Hustl, startet Docker und richtet HTTPS (im gebündelten Modus), Autostart und einen täglichen Datenbank-Snapshot um 03:30 ein. Das Image wird auf dem Server gebaut; auf einem kleinen VPS kann der erste Build 15–30 Minuten dauern.
+Der Installer fragt nach deiner Domain und einer E-Mail-Adresse für das HTTPS-Zertifikat. Danach baut er Hustl, startet Docker und richtet HTTPS (im gebündelten Modus), Autostart und einen täglichen Datenbank-Snapshot um 03:30 ein. Das Image wird auf dem Server gebaut; auf einem kleinen VPS kann der erste Build 15 bis 30 Minuten dauern.
 
 ### 3. Passkey anlegen
 
@@ -95,7 +95,7 @@ Der Installer fragt nach deiner Domain und einer E-Mail-Adresse für das HTTPS-Z
 https://<deine-domain>/setup?token=…
 ```
 
-Lege deinen ersten Passkey an — Face ID, Touch ID, Windows Hello oder ein Sicherheitsschlüssel — und bewahre die **zehn Recovery-Codes** sicher auf. Der Setup-Link funktioniert nur einmal.
+Lege deinen ersten Passkey an: Face ID, Touch ID, Windows Hello oder ein Sicherheitsschlüssel. Bewahre die **zehn Recovery-Codes** sicher auf. Der Setup-Link funktioniert nur einmal.
 
 Das war's. Öffne `https://<deine-domain>` im Browser und leg los.
 
@@ -141,10 +141,10 @@ Hustl ist kostenlos und Open Source unter der ISC-Lizenz. Es gibt kein Abo und k
 | Posten | Typische Kosten |
 |---|---|
 | Hustl | 0 € |
-| VPS (2 GB RAM, 4 GB empfohlen) | etwa 5–15 € / Monat |
-| Domain | etwa 5–30 € / Jahr (0,40–2,50 € / Monat) |
+| VPS (2 GB RAM, 4 GB empfohlen) | etwa 5 bis 15 € / Monat |
+| Domain | etwa 5 bis 30 € / Jahr (0,40 bis 2,50 € / Monat) |
 
-Der Domainpreis hängt von TLD und Anbieter ab. Eine `.de`-Domain kostet oft rund 5–20 € im Jahr, eine `.com` rund 15–30 €; Aktionen im ersten Jahr sind häufig günstiger als die Verlängerung. Du bezahlst direkt deinen Server-Anbieter. Hustl sieht deine Rechnungen und Kundendaten nie.
+Der Domainpreis hängt von TLD und Anbieter ab. Eine `.de`-Domain kostet oft rund 5 bis 20 € im Jahr, eine `.com` rund 15 bis 30 €; Aktionen im ersten Jahr sind häufig günstiger als die Verlängerung. Du bezahlst direkt deinen Server-Anbieter. Hustl sieht deine Rechnungen und Kundendaten nie.
 
 ## Wo kann Hustl laufen?
 
@@ -164,7 +164,7 @@ Ein kostenloses Cloud-Kontingent (zum Beispiel Oracle Cloud Free Tier auf ARM) k
 ## Häufige Fragen
 
 **Muss ich technisch sein?**
-Ein bisschen. Du musst drei Befehle kopieren und eine Domain auf deinen Server zeigen lassen. Wenn dir das unangenehm ist, nimm den [Agenten-Leitfaden](INSTALL-WITH-AGENT.md) — er stellt die Fragen und führt dich durch die Installation. Du kannst auch jemanden aus deinem Umfeld fragen; die Installation ist eine einmalige Sache.
+Ein bisschen. Du musst drei Befehle kopieren und eine Domain auf deinen Server zeigen lassen. Wenn dir das unangenehm ist, nimm den [Agenten-Leitfaden](INSTALL-WITH-AGENT.md); er stellt die Fragen und führt dich durch die Installation. Du kannst auch jemanden aus deinem Umfeld fragen; die Installation ist eine einmalige Sache.
 
 **Wo liegen meine Daten?**
 In einer SQLite-Datenbank und als PDFs auf deinem eigenen Server. Es gibt keine Cloud, kein Konto bei uns und keine Analytics. Backups verlassen den Server nur, wenn du selbst ein Offsite-Ziel wie restic einrichtest.
@@ -176,7 +176,7 @@ Ja, als PWA: Öffne die URL in Safari, tippe auf „Teilen“ und wähle „Zum 
 Ein Login ohne Passwort, mit Face ID, Touch ID, Windows Hello oder einem Sicherheitsschlüssel. Weitere Geräte kannst du später mit einem Recovery-Code hinzufügen. Bewahre die zehn Recovery-Codes getrennt von Handy oder Laptop auf.
 
 **Ist das sicher?**
-Hustl nutzt WebAuthn-Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und Rate-Limits. HTTPS übernimmt dein Reverse Proxy – im gebündelten Setup Caddy. Für Server-Updates und Backups bist du selbst verantwortlich; der Installer legt täglich einen Datenbank-Snapshot an. PDFs, Belege und Kontoauszüge kommen nur mit restic oder dem Vollarchiv dazu.
+Hustl nutzt WebAuthn-Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und Rate-Limits. HTTPS übernimmt dein Reverse Proxy (im gebündelten Setup Caddy). Für Server-Updates und Backups bist du selbst verantwortlich; der Installer legt täglich einen Datenbank-Snapshot an. PDFs, Belege und Kontoauszüge kommen nur mit restic oder dem Vollarchiv dazu.
 
 **Kann ich meine Daten exportieren?**
 Ja. Du kannst ein Vollarchiv als ZIP mit Datenbank, allen PDFs und CSV-Dateien herunterladen. Für die Steuerberatung gibt es zusätzlich einen Monatsexport.
@@ -209,7 +209,7 @@ Nein. Hustl ist bewusst self-hosted, damit deine Daten bei dir bleiben. Du kanns
 | Server | 2 vCPU, mindestens 2 GB RAM (4 GB empfohlen), 20 GB freier Platz empfohlen |
 | System | Debian 12/13 oder Ubuntu 22.04/24.04, x86_64 oder arm64 |
 | Domain | z. B. `hustl.example.com`, A-Record (AAAA bei IPv6) auf den VPS |
-| Zeit | ca. 15–30 Minuten, plus DNS-Propagierung |
+| Zeit | ca. 15 bis 30 Minuten, plus DNS-Propagierung |
 | Ports | 22 (SSH), 80 und 443 offen |
 | Zugang | SSH-Zugang mit Key oder Passwort |
 | Werkzeuge | `git` für den Clone (und Updates); `curl` und `git` installiert der Installer bei Bedarf nach |
@@ -352,7 +352,7 @@ Der Release-Workflow `.github/workflows/release.yml` baut alle drei Pakete bei e
 
 ## Datenschutz
 
-Deine Rechnungen, Kunden und Belege liegen auf deinem Server — nicht bei Hustl. Es gibt keine Analytics, keine Telemetrie und kein Benutzerkonto bei einem Drittanbieter. Die Anmeldung erfolgt per Passkey; es wird kein Passwort gespeichert. Backups verlassen den Server nur, wenn du restic oder ein anderes Offsite-Ziel einrichtest. restic verschlüsselt clientseitig; bei anderen Zielen liegt die Verschlüsselung bei dir.
+Deine Rechnungen, Kunden und Belege liegen auf deinem Server, nicht bei Hustl. Es gibt keine Analytics, keine Telemetrie und kein Benutzerkonto bei einem Drittanbieter. Die Anmeldung erfolgt per Passkey; es wird kein Passwort gespeichert. Backups verlassen den Server nur, wenn du restic oder ein anderes Offsite-Ziel einrichtest. restic verschlüsselt clientseitig; bei anderen Zielen liegt die Verschlüsselung bei dir.
 
 ## Lizenz
 
