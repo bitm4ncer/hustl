@@ -126,11 +126,12 @@
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
         <a href="#planner">Planner</a>
+        <a href="#appearance">Light theme</a>
         <a href="#screens">Screens</a>
-        <a href="#installation">Installation</a>
-        <a href="#hosting">Hosting</a>
-        <a href="#download">Download</a>
+        <a href="#finance-flow">Finance</a>
+        <a href="#installation">Install</a>
         <a href="#faq">FAQ</a>
+        <a class="nav-download-mobile" href="#download">Download</a>
       </nav>
 
       <div class="header-actions">
@@ -490,7 +491,6 @@
             </div>
             <h3>Import the statement. Match the rest.</h3>
             <p>Upload a statement. Hustl lists transactions and suggests the invoice, expense or fixed cost.</p>
-            <p class="finance-callout">Currently N26 PDF statements only.</p>
             <div class="finance-shot">
               <div class="browser browser-small">
                 <div class="browser-bar">
@@ -501,6 +501,7 @@
                 <img src="assets/screens/finance-bank-en.webp" width="2000" height="1389" alt="Bank reconciliation with a matched invoice, expense and fixed cost" loading="lazy">
               </div>
             </div>
+            <p class="finance-callout">Currently N26 PDF statements only.</p>
             <details class="finance-details">
               <summary>How matching works</summary>
               <p>A debit can be linked to an expense or fixed cost, or turned into a new expense with a receipt PDF. A credit can mark an invoice paid. Matching links records instead of duplicating them.</p>
@@ -783,15 +784,19 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <h4>Product</h4>
         <a href="#features">Features</a>
         <a href="#planner">Planner</a>
-        <a href="#screens">Screens</a>
-        <a href="#appearance">Light theme</a>
         <a href="#finance-flow">Finance flow</a>
+        <a href="#appearance">Light theme</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#screens">Screens</a>
+        <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
-        <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="#download">Download</a>
         <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://github.com/bitm4ncer/hustl#readme" target="_blank" rel="noreferrer">Documentation</a>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agent guide</a>
@@ -809,6 +814,11 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
       <span>No telemetry &middot; No cloud &middot; Just your server</span>
     </div>
   </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+    <button class="lightbox-close" type="button" aria-label="Close screenshot">&times;</button>
+    <img id="lightbox-image" alt="">
+  </dialog>
 
   <script src="analytics-config.js" defer></script>
   <script src="analytics.js" defer></script>

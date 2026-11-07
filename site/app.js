@@ -4,8 +4,8 @@ const nav = document.getElementById('main-nav')
 const lang = document.documentElement.lang === 'en' ? 'en' : 'de'
 const labels =
   lang === 'en'
-    ? { openMenu: 'Open menu', closeMenu: 'Close menu', copied: 'Copied', manual: 'Copy manually' }
-    : { openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', copied: 'Kopiert', manual: 'Bitte manuell kopieren' }
+    ? { openMenu: 'Open menu', closeMenu: 'Close menu', copied: 'Copied', manual: 'Copy manually', enlarge: 'View larger' }
+    : { openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', copied: 'Kopiert', manual: 'Bitte manuell kopieren', enlarge: 'Größer ansehen' }
 
 if (header) {
   const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 8)
@@ -81,3 +81,48 @@ if (copyButton) {
 
 const year = document.querySelector('[data-year]')
 if (year) year.textContent = String(new Date().getFullYear())
+
+const lightbox = document.getElementById('lightbox')
+const lightboxImage = document.getElementById('lightbox-image')
+const lightboxClose = lightbox?.querySelector('.lightbox-close')
+const lightboxImages = document.querySelectorAll('main img')
+
+if (lightbox && lightboxImage && lightboxClose) {
+  const openLightbox = (image) => {
+    lightboxImage.src = image.currentSrc || image.src
+    lightboxImage.alt = image.alt || ''
+    lightbox.setAttribute('aria-label', image.alt || 'Screenshot')
+    document.body.style.overflow = 'hidden'
+    lightbox.showModal()
+    lightboxClose.focus()
+  }
+
+  const closeLightbox = () => {
+    if (lightbox.open) lightbox.close()
+  }
+
+  lightboxImages.forEach((image) => {
+    image.classList.add('lightboxable')
+    image.tabIndex = 0
+    image.setAttribute('role', 'button')
+    image.setAttribute('aria-label', `${image.alt || 'Screenshot'}: ${labels.enlarge}`)
+    image.addEventListener('click', () => openLightbox(image))
+    image.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return
+      event.preventDefault()
+      openLightbox(image)
+    })
+  })
+
+  lightboxClose.addEventListener('click', closeLightbox)
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox()
+  })
+  lightbox.addEventListener('close', () => {
+    lightboxImage.removeAttribute('src')
+    document.body.style.overflow = ''
+  })
+  lightbox.addEventListener('cancel', () => {
+    document.body.style.overflow = ''
+  })
+}

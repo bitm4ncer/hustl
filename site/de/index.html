@@ -129,11 +129,12 @@
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <a href="#funktionen">Funktionen</a>
         <a href="#planer">Planer</a>
+        <a href="#erscheinungsbild">Helles Theme</a>
         <a href="#einblicke">Einblicke</a>
+        <a href="#finanz-ablauf">Finanzen</a>
         <a href="#installation">Installation</a>
-        <a href="#hosting">Hosting</a>
-        <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
+        <a class="nav-download-mobile" href="#download">Download</a>
       </nav>
 
       <div class="header-actions">
@@ -493,7 +494,6 @@
             </div>
             <h3>Kontoauszug importieren. Rest abgleichen.</h3>
             <p>Lade einen Kontoauszug hoch. Hustl listet Buchungen und schlägt Rechnung, Ausgabe oder Fixkosten vor.</p>
-            <p class="finance-callout">Aktuell nur N26-PDF-Kontoauszüge.</p>
             <div class="finance-shot">
               <div class="browser browser-small">
                 <div class="browser-bar">
@@ -504,6 +504,7 @@
                 <img src="../assets/screens/finance-bank.webp" width="2000" height="1389" alt="Bank-Abgleich mit zugeordneter Rechnung, Ausgabe und Fixkosten" loading="lazy">
               </div>
             </div>
+            <p class="finance-callout">Aktuell nur N26-PDF-Kontoauszüge.</p>
             <details class="finance-details">
               <summary>Wie der Abgleich funktioniert</summary>
               <p>Eine Buchung kann einer Ausgabe oder einem Fixkosten-Eintrag zugeordnet oder mit einem Beleg als neue Ausgabe angelegt werden. Eine Gutschrift kann eine Rechnung als bezahlt markieren. Der Abgleich verknüpft Datensätze, statt sie doppelt zu buchen.</p>
@@ -786,15 +787,19 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <h4>Produkt</h4>
         <a href="#funktionen">Funktionen</a>
         <a href="#planer">Planer</a>
-        <a href="#einblicke">Einblicke</a>
-        <a href="#erscheinungsbild">Helles Theme</a>
         <a href="#finanz-ablauf">Finanzablauf</a>
+        <a href="#erscheinungsbild">Helles Theme</a>
+      </div>
+      <div class="footer-col">
+        <h4>Entdecken</h4>
+        <a href="#einblicke">Einblicke</a>
+        <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
-        <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h4>Ressourcen</h4>
+        <a href="#download">Download</a>
         <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">Dokumentation</a>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agenten-Leitfaden</a>
@@ -812,6 +817,11 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
       <span>Keine Telemetrie &middot; Keine Cloud &middot; Nur dein Server</span>
     </div>
   </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+    <button class="lightbox-close" type="button" aria-label="Screenshot schließen">&times;</button>
+    <img id="lightbox-image" alt="">
+  </dialog>
 
   <script src="../analytics-config.js" defer></script>
   <script src="../analytics.js" defer></script>
