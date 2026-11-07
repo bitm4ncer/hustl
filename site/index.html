@@ -451,6 +451,111 @@
       </div>
     </section>
 
+    <section class="section section-soft" id="finance-flow">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Finance, step by step</p>
+          <h2>From the receipt to the forecast.</h2>
+          <p>Four steps, no spreadsheet. Open a step for the details that matter.</p>
+        </div>
+
+        <div class="finance-flow-grid">
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">01</span>
+              <span class="finance-step-kicker">Receipts</span>
+            </div>
+            <h3>Drop a receipt.</h3>
+            <p>Upload a PDF; vendor, date, amount, currency and VAT are pre-filled for review.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Expenses</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="assets/screens/finance-expenses-en.webp" width="2000" height="1389" alt="Receipt upload and expense list in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>What gets read?</summary>
+              <p>Hustl reads the PDF text layer. Scanned images without text need manual fields; the PDF stays attached to the expense.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">02</span>
+              <span class="finance-step-kicker">Bank</span>
+            </div>
+            <h3>Import the statement. Match the rest.</h3>
+            <p>Upload a statement. Hustl lists transactions and suggests the invoice, expense or fixed cost.</p>
+            <p class="finance-callout">Currently N26 PDF statements only.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Bank</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="assets/screens/finance-bank-en.webp" width="2000" height="1389" alt="Bank reconciliation with a matched invoice, expense and fixed cost" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>How matching works</summary>
+              <p>A debit can be linked to an expense or fixed cost, or turned into a new expense with a receipt PDF. A credit can mark an invoice paid. Matching links records instead of duplicating them.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">03</span>
+              <span class="finance-step-kicker">Fixed costs</span>
+            </div>
+            <h3>Fixed costs, no surprises.</h3>
+            <p>Add rent, insurance or software once. Choose monthly, quarterly or yearly, with start and end.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Fixed costs</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="assets/screens/finance-fixed-en.webp" width="2000" height="1389" alt="Fixed costs list in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>Fixed costs in the bank tab</summary>
+              <p>Active fixed costs are match targets for debit transactions. When one matches, the transaction is linked to the fixed cost instead of creating a second expense.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">04</span>
+              <span class="finance-step-kicker">Forecast</span>
+            </div>
+            <h3>A forecast you can explain.</h3>
+            <p>The solid line is realized revenue by invoice date. The dashed line adds open project pipeline.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Finance</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="assets/screens/finance-en.webp" width="1800" height="1250" alt="Finance dashboard with income forecast in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>What is in the curve?</summary>
+              <p>Open projects are added at their end date, net of amounts already invoiced. Overdue projects land today; projects without a timeframe are shown separately. This is an income forecast, not profit; expenses and fixed costs are not included.</p>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="installation">
       <div class="wrap">
         <div class="section-head reveal">
@@ -680,6 +785,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <a href="#planner">Planner</a>
         <a href="#screens">Screens</a>
         <a href="#appearance">Light theme</a>
+        <a href="#finance-flow">Finance flow</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
         <a href="#faq">FAQ</a>

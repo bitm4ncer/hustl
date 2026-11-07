@@ -46,7 +46,7 @@ Hustl is **not** a good fit if you need a multi-user team platform, want a fully
 - **Offers**: versions, status and PDF; turn an accepted offer into a client and project.
 - **Clients and projects**: hourly rates, fixed prices, line items and open items.
 - **Finance**: income, expenses, fixed costs, dashboard, forecast and monthly export.
-- **Receipts and bank statements**: upload PDFs and match payments to invoices.
+- **Receipts and bank statements**: upload receipt PDFs and import N26 PDF statements; match transactions to invoices, expenses and fixed costs.
 - **Planner and tasks**: dated tasks for the next 15 days, recurring routines that reset daily, weekly or monthly, and free lists for undated ideas.
 - **Light and dark themes**: follow the system or choose one; both are fully styled.
 - **German and English** UI and document language, with 12 currencies.

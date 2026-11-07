@@ -454,6 +454,111 @@
       </div>
     </section>
 
+    <section class="section section-soft" id="finanz-ablauf">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Finanzen, Schritt für Schritt</p>
+          <h2>Vom Beleg zur Prognose.</h2>
+          <p>Vier Schritte, keine Excel-Tabelle. Öffne einen Schritt für die Details, die zählen.</p>
+        </div>
+
+        <div class="finance-flow-grid">
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">01</span>
+              <span class="finance-step-kicker">Belege</span>
+            </div>
+            <h3>Beleg reinziehen. Fertig.</h3>
+            <p>Lade ein PDF hoch; Anbieter, Datum, Betrag, Währung und USt werden zur Prüfung vorbefüllt.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Ausgaben</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="../assets/screens/finance-expenses.webp" width="2000" height="1389" alt="Beleg-Upload und Ausgabenliste in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>Was wird gelesen?</summary>
+              <p>Hustl liest die Textebene des PDFs. Scans ohne Textebene brauchen manuelle Felder; das PDF bleibt am Beleg.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">02</span>
+              <span class="finance-step-kicker">Kontoauszug</span>
+            </div>
+            <h3>Kontoauszug importieren. Rest abgleichen.</h3>
+            <p>Lade einen Kontoauszug hoch. Hustl listet Buchungen und schlägt Rechnung, Ausgabe oder Fixkosten vor.</p>
+            <p class="finance-callout">Aktuell nur N26-PDF-Kontoauszüge.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Bank</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="../assets/screens/finance-bank.webp" width="2000" height="1389" alt="Bank-Abgleich mit zugeordneter Rechnung, Ausgabe und Fixkosten" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>Wie der Abgleich funktioniert</summary>
+              <p>Eine Buchung kann einer Ausgabe oder einem Fixkosten-Eintrag zugeordnet oder mit einem Beleg als neue Ausgabe angelegt werden. Eine Gutschrift kann eine Rechnung als bezahlt markieren. Der Abgleich verknüpft Datensätze, statt sie doppelt zu buchen.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">03</span>
+              <span class="finance-step-kicker">Fixkosten</span>
+            </div>
+            <h3>Fixkosten ohne Überraschungen.</h3>
+            <p>Miete, Versicherung oder Software einmal anlegen. Monatlich, quartalsweise oder jährlich, mit Start und Ende.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Fixkosten</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="../assets/screens/finance-fixed.webp" width="2000" height="1389" alt="Fixkostenliste in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>Fixkosten im Bank-Abgleich</summary>
+              <p>Aktive Fixkosten sind Treffer für Ausgaben im Kontoauszug. Passt eine Buchung, wird sie mit dem Fixkosten-Eintrag verknüpft, statt eine zweite Ausgabe anzulegen.</p>
+            </details>
+          </article>
+
+          <article class="finance-flow-card reveal">
+            <div class="finance-flow-top">
+              <span class="finance-step-number">04</span>
+              <span class="finance-step-kicker">Prognose</span>
+            </div>
+            <h3>Eine Prognose, die du erklären kannst.</h3>
+            <p>Die durchgezogene Linie ist realisierter Umsatz nach Rechnungsdatum. Die gestrichelte Linie ergänzt offene Projekt-Pipeline.</p>
+            <div class="finance-shot">
+              <div class="browser browser-small">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">Finanzen</span>
+                  <span class="browser-spacer" aria-hidden="true"></span>
+                </div>
+                <img src="../assets/screens/finance.webp" width="1800" height="1250" alt="Finanzdashboard mit Einnahmen-Prognose in Hustl" loading="lazy">
+              </div>
+            </div>
+            <details class="finance-details">
+              <summary>Was steckt in der Kurve?</summary>
+              <p>Offene Projekte werden am Enddatum addiert, abzüglich bereits berechneter Beträge. Überfällige Projekte landen heute; Projekte ohne Zeitraum werden separat ausgewiesen. Es ist eine Umsatzprognose, kein Gewinn; Ausgaben und Fixkosten sind nicht enthalten.</p>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="installation">
       <div class="wrap">
         <div class="section-head reveal">
@@ -683,6 +788,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <a href="#planer">Planer</a>
         <a href="#einblicke">Einblicke</a>
         <a href="#erscheinungsbild">Helles Theme</a>
+        <a href="#finanz-ablauf">Finanzablauf</a>
         <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
         <a href="#faq">FAQ</a>

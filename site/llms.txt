@@ -19,7 +19,7 @@
 - Offers with versions, status and PDF
 - Clients and projects with hours, fixed prices and open items
 - Finance dashboard with income, expenses, fixed costs, forecast and monthly export
-- Receipt PDFs, bank statement import and payment matching
+- Receipt PDFs, N26 statement import and payment matching
 - Planner with dated tasks, recurring routines and free lists
 - Light and dark themes that follow the system or stay fixed
 - German/English UI, 12 currencies and a full archive
