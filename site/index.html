@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hustl – Rechnungen, Angebote und Finanzen auf deinem Server</title>
-  <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte und Finanzen. Für Soloselbstständige und kleine Studios. Open Source, ohne Cloud und ohne Telemetrie.">
+  <meta name="description" content="Hustl ist die self-hosted App für Rechnungen, Angebote, Projekte und Finanzen. Für Freelancer und kleine Studios. Open Source, ohne Cloud.">
   <meta name="theme-color" content="#101012">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -15,8 +15,13 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hustl – Rechnungen, Angebote und Finanzen auf deinem Server">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
+  <link rel="canonical" href="https://bitm4ncer.github.io/hustl/">
+  <link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/">
+  <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/en/">
+  <link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -82,6 +87,12 @@
     <symbol id="i-linux" viewBox="0 0 24 24">
       <path d="M5 5.5 9 4v3.5L5 9V5.5Zm0 5L9 9v3.5L5 14v-3.5Zm0 5L9 14v3.5L5 19v-3.5ZM15 5.5 19 7v2L15 7.5V5.5Zm0 5L19 11v2l-4-1.5V10.5Zm0 5 4-.5v2l-4 .5v-2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="m3.5 10.5 8.5-7 8.5 7V20h-5v-6h-7v6h-5V10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24">
+      <path d="M7 18.5h10a4 4 0 0 0 .8-7.9A6 6 0 0 0 6.3 9.2 4.7 4.7 0 0 0 7 18.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
     <symbol id="i-arrow-up" viewBox="0 0 24 24">
       <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
@@ -98,11 +109,16 @@
         <a href="#funktionen">Funktionen</a>
         <a href="#einblicke">Einblicke</a>
         <a href="#installation">Installation</a>
+        <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Sprache wählen">
+          <a href="./" hreflang="de" aria-current="page">DE</a>
+          <a href="en/" hreflang="en" lang="en" aria-label="English">EN</a>
+        </div>
         <a class="icon-btn github-link" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer" aria-label="Hustl auf GitHub öffnen" title="GitHub">
           <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
         </a>
@@ -122,7 +138,7 @@
         <p class="lede">Hustl bringt Rechnungen, Angebote, Projekte und Finanzen in eine ruhige App – auf deinem eigenen Server. Kein Cloud-Konto, keine Telemetrie, keine monatliche Software-Miete.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#installation">
-            In 15 Minuten starten
+            In ca. 20 Minuten starten
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
           <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
@@ -301,7 +317,7 @@
         <div class="section-head reveal">
           <p class="eyebrow">Installation</p>
           <h2>In drei Schritten startklar.</h2>
-          <p>Hustl läuft auf deinem eigenen Server. Der Installer nimmt dir Docker, HTTPS, Autostart und das tägliche Backup ab.</p>
+          <p>Hustl läuft auf deinem eigenen Server. Der Installer nimmt dir Docker, HTTPS (im gebündelten Modus), Autostart und den täglichen Datenbank-Snapshot ab.</p>
         </div>
 
         <div class="steps">
@@ -313,7 +329,7 @@
           <article class="step reveal">
             <span class="step-number">02</span>
             <h3>Installer starten</h3>
-            <p>Ein Befehl holt Hustl, baut den Container und richtet HTTPS, Backup und Autostart ein. Du wirst nach Domain und E-Mail gefragt.</p>
+            <p>Ein Befehl holt Hustl, baut den Container und richtet HTTPS (im gebündelten Modus), den Datenbank-Snapshot und Autostart ein. Du wirst nach Domain und E-Mail gefragt.</p>
           </article>
           <article class="step reveal">
             <span class="step-number">03</span>
@@ -334,10 +350,11 @@
           <div class="requirements">
             <h4>Was du brauchst</h4>
             <ul>
-              <li><strong>VPS</strong><span>2 vCPU, 2 GB RAM, 10 GB Speicher</span></li>
-              <li><strong>Domain</strong><span>A- und AAAA-Record auf den Server</span></li>
+              <li><strong>VPS</strong><span>2 vCPU, 2 GB RAM (4 GB empfohlen), 20 GB Speicher empfohlen</span></li>
+              <li><strong>Domain</strong><span>A-Record (AAAA bei IPv6) auf den Server</span></li>
               <li><strong>Zugang</strong><span>SSH mit Key oder Passwort</span></li>
-              <li><strong>Zeit</strong><span>ca. 15 Minuten</span></li>
+              <li><strong>Git</strong><span>für den Clone; die meisten Server haben es</span></li>
+              <li><strong>Zeit</strong><span>ca. 15–30 Minuten; DNS kann länger brauchen</span></li>
             </ul>
             <p class="requirements-note">Du hast noch keinen Server? Der Leitfaden erklärt auch, worauf du beim Anbieter achten solltest.</p>
           </div>
@@ -352,6 +369,45 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
             <button class="btn btn-ghost btn-small" type="button" data-copy>Befehle kopieren</button>
           </div>
         </details>
+      </div>
+    </section>
+
+    <section class="section" id="hosting">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Hosting</p>
+          <h2>Wo kann Hustl laufen?</h2>
+          <p>Der eigene VPS ist der einfachste Weg. Hustl läuft aber auch auf vorhandener Hardware – solange Docker und ein dauerhafter Speicher vorhanden sind.</p>
+        </div>
+
+        <div class="hosting-grid">
+          <article class="hosting-card reveal">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"></use></svg></span>
+            <h3>VPS (empfohlen)</h3>
+            <p>Hetzner, Netcup, IONOS, Contabo oder ein anderer Anbieter. Der Installer richtet Docker, HTTPS (gebündelt) und den Datenbank-Snapshot ein.</p>
+            <span class="hosting-tag">ab ca. 5 € / Monat</span>
+          </article>
+          <article class="hosting-card reveal">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"></use></svg></span>
+            <h3>Eigener Server / NAS</h3>
+            <p>Linux-Server, Synology/QNAP mit Docker oder ein Heimserver. Der Installer ist für Debian/Ubuntu; auf NAS nutzt du <code>compose.external.yml</code> manuell und richtest Reverse Proxy und Backup selbst ein.</p>
+            <span class="hosting-tag">vorhandene Hardware</span>
+          </article>
+          <article class="hosting-card reveal">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-device"></use></svg></span>
+            <h3>Raspberry Pi / Mini-PC</h3>
+            <p>Docker auf arm64, 4 GB RAM empfohlen. Für Zugriff von außen Cloudflare Tunnel oder Tailscale Funnel; stabile Stromversorgung und Backups einplanen.</p>
+            <span class="hosting-tag">einmalige Hardware</span>
+          </article>
+          <article class="hosting-card reveal">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud"></use></svg></span>
+            <h3>PaaS / Kubernetes</h3>
+            <p>Railway, Render, Fly.io oder ein Cluster – für Erfahrene, wenn die SQLite-Datei auf einem persistenten, blockbasierten Volume liegt. Eine Replica, kein NFS/SMB. Shared Hosting und Serverless ohne Persistent Disk gehen nicht.</p>
+            <span class="hosting-tag">für Erfahrene</span>
+          </article>
+        </div>
+
+        <p class="hosting-note reveal">Die Desktop-App ist <strong>kein eigener Server</strong>: Sie braucht eine erreichbare Hustl-URL. Ein kostenloses Cloud-Kontingent (z. B. Oracle Cloud Free Tier, ARM) kann zum Ausprobieren reichen – Verfügbarkeit und Bedingungen ändern sich.</p>
       </div>
     </section>
 
@@ -371,7 +427,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </a>
           <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg" rel="noreferrer">
             <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"></use></svg></span>
-            <span class="download-info"><strong>macOS</strong><small>Apple Silicon &middot; M1–M4</small></span>
+            <span class="download-info"><strong>macOS</strong><small>Apple Silicon</small></span>
             <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
           <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-x64.dmg" rel="noreferrer">
@@ -388,7 +444,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
 
         <div class="download-foot reveal">
           <p><strong>PWA statt Download:</strong> Öffne deine Hustl-URL im Browser und wähle „App installieren“ (Chrome/Edge) oder „Zum Home-Bildschirm“ (iOS). Kein Installer, keine Updates – einfach die Website.</p>
-          <p class="muted">Die Desktop-Builds sind unsigniert. Windows und macOS fragen beim ersten Start nach einer Freigabe. <a href="https://github.com/bitm4ncer/hustl#download-the-desktop-app" target="_blank" rel="noreferrer">Hilfe im README</a></p>
+          <p class="muted">Die Desktop-Builds sind unsigniert. Windows und macOS fragen beim ersten Start nach einer Freigabe. <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md#desktop-app-herunterladen" target="_blank" rel="noreferrer">Hilfe im README</a></p>
           <a class="btn btn-ghost btn-small" href="https://github.com/bitm4ncer/hustl/releases/latest" target="_blank" rel="noreferrer">Alle Releases auf GitHub</a>
         </div>
       </div>
@@ -405,7 +461,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <div class="faq reveal">
           <details>
             <summary>Was kostet Hustl?</summary>
-            <p>Die App ist kostenlos und Open Source (ISC). Du zahlst nur deinen Server – je nach Anbieter etwa 5–10 € im Monat – und eine Domain, meist rund 1 € im Monat. Kein Abo, keine Lizenzgebühr.</p>
+            <p>Die App ist kostenlos und Open Source (ISC). Du zahlst nur deinen Server – je nach Anbieter etwa 5–15 € im Monat – und eine Domain, meist 5–30 € im Jahr (0,40–2,50 € im Monat). Der Preis hängt von TLD und Anbieter ab; Aktionen im ersten Jahr sind oft günstiger als die Verlängerung. Kein Abo, keine Lizenzgebühr.</p>
           </details>
           <details>
             <summary>Wo liegen meine Daten?</summary>
@@ -413,7 +469,15 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>Brauche ich einen Server?</summary>
-            <p>Ja. Hustl ist bewusst self-hosted und kein gehosteter Dienst. Ein kleiner VPS reicht. Der Installer richtet Docker, HTTPS und ein tägliches Backup ein. Wenn dir das zu technisch ist, nimm den Agenten-Leitfaden.</p>
+            <p>Ja. Hustl ist bewusst self-hosted und kein gehosteter Dienst. Ein kleiner VPS reicht. Der Installer richtet Docker, HTTPS (im gebündelten Modus) und einen täglichen Datenbank-Snapshot ein. Wenn dir das zu technisch ist, nimm den Agenten-Leitfaden.</p>
+          </details>
+          <details>
+            <summary>Kann ich Hustl mit mehreren Personen nutzen?</summary>
+            <p>Hustl ist für eine Person pro Instanz gedacht. Du kannst mehrere Passkeys und Geräte nutzen, aber es gibt keine Rollen, Teams oder getrennten Benutzerkonten.</p>
+          </details>
+          <details>
+            <summary>Kann ich Hustl auch auf einem NAS oder zu Hause betreiben?</summary>
+            <p>Ja, wenn Docker und ein dauerhafter Speicher vorhanden sind – zum Beispiel auf einer Synology/QNAP-NAS, einem Heimserver oder einem Raspberry Pi. Für Zugriff von außen brauchst du einen Reverse Proxy oder einen Tunnel wie Cloudflare Tunnel. Die <a href="#hosting">Hosting-Optionen</a> stehen oben.</p>
           </details>
           <details>
             <summary>Kann ich Hustl auf dem iPhone nutzen?</summary>
@@ -425,7 +489,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>Sind meine Daten sicher?</summary>
-            <p>Hustl nutzt Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und HTTPS über Caddy. Updates und Backups liegen in deiner Verantwortung; der Installer richtet dafür einen täglichen Snapshot ein.</p>
+            <p>Hustl nutzt Passkeys, HttpOnly-Session-Cookies und CSRF-Schutz. HTTPS übernimmt dein Reverse Proxy – im gebündelten Modus Caddy. Updates und Backups liegen in deiner Verantwortung. Der Installer legt täglich einen Datenbank-Snapshot an; PDFs und Belege kommen nur mit restic oder dem Vollarchiv dazu.</p>
           </details>
           <details>
             <summary>Kann ich meine Daten exportieren?</summary>
@@ -437,7 +501,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>Was ist mit E-Rechnung?</summary>
-            <p>Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Vor dem ersten echten Versand lohnt sich ein Test mit dem offiziellen KoSIT-Validator, weil die Bibliothek die XML-Struktur prüft, nicht jede Geschäftsregel.</p>
+            <p>Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand deshalb eine Beispielrechnung mit dem offiziellen KoSIT-Validator testen.</p>
           </details>
         </div>
       </div>
@@ -475,20 +539,21 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <h4>Produkt</h4>
         <a href="#funktionen">Funktionen</a>
         <a href="#einblicke">Einblicke</a>
+        <a href="#hosting">Hosting</a>
         <a href="#download">Download</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h4>Ressourcen</h4>
         <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://github.com/bitm4ncer/hustl#readme" target="_blank" rel="noreferrer">Dokumentation</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">Dokumentation</a>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agenten-Leitfaden</a>
         <a href="https://github.com/bitm4ncer/hustl/issues" target="_blank" rel="noreferrer">Issues</a>
       </div>
       <div class="footer-col">
         <h4>Rechtliches</h4>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/LICENSE" target="_blank" rel="noreferrer">ISC-Lizenz</a>
-        <a href="https://github.com/bitm4ncer/hustl#privacy" target="_blank" rel="noreferrer">Datenschutz</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md#datenschutz" target="_blank" rel="noreferrer">Datenschutz</a>
         <a href="https://github.com/bitm4ncer/hustl/blob/main/README.md" target="_blank" rel="noreferrer">English README</a>
       </div>
     </div>

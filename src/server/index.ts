@@ -26,7 +26,7 @@ declare module 'fastify' {
   }
 }
 
-const APP_VERSION = process.env.HUSTL_VERSION ?? '1.1.0'
+const APP_VERSION = process.env.HUSTL_VERSION ?? '1.1.1'
 
 /**
  * Baut die Fastify-Instanz, startet sie aber nicht. Tests injizieren Requests,

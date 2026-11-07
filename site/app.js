@@ -1,6 +1,11 @@
 const header = document.querySelector('.site-header')
 const menuButton = document.querySelector('.menu-btn')
 const nav = document.getElementById('main-nav')
+const lang = document.documentElement.lang === 'en' ? 'en' : 'de'
+const labels =
+  lang === 'en'
+    ? { openMenu: 'Open menu', closeMenu: 'Close menu', copied: 'Copied', manual: 'Copy manually' }
+    : { openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', copied: 'Kopiert', manual: 'Bitte manuell kopieren' }
 
 if (header) {
   const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 8)
@@ -12,19 +17,22 @@ if (menuButton && nav) {
   const closeNav = () => {
     nav.classList.remove('open')
     menuButton.setAttribute('aria-expanded', 'false')
-    menuButton.setAttribute('aria-label', 'Menü öffnen')
+    menuButton.setAttribute('aria-label', labels.openMenu)
   }
 
   menuButton.addEventListener('click', () => {
     const open = nav.classList.toggle('open')
     menuButton.setAttribute('aria-expanded', String(open))
-    menuButton.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen')
+    menuButton.setAttribute('aria-label', open ? labels.closeMenu : labels.openMenu)
   })
 
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav))
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeNav()
+    if (event.key !== 'Escape') return
+    const wasOpen = nav.classList.contains('open')
+    closeNav()
+    if (wasOpen) menuButton.focus()
   })
 
   document.addEventListener('click', (event) => {
@@ -61,9 +69,9 @@ if (copyButton) {
     const text = pre?.innerText ?? ''
     try {
       await navigator.clipboard.writeText(text)
-      copyButton.textContent = 'Kopiert'
+      copyButton.textContent = labels.copied
     } catch {
-      copyButton.textContent = 'Bitte manuell kopieren'
+      copyButton.textContent = labels.manual
     }
     window.setTimeout(() => {
       copyButton.textContent = original

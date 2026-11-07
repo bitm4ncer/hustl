@@ -41,7 +41,7 @@ FRAGENKATALOG (eine nach der anderen)
    Richte bei Bedarf einen Key ein, bevor du weitermachst.
 3. Welches Betriebssystem und welche Architektur? Prüfe
    `cat /etc/os-release`, `uname -m`, `free -h`, `df -h /`.
-   Mindestens 2 GB RAM und 10 GB freier Platz sind nötig.
+   Mindestens 2 GB RAM (4 GB empfohlen) und 20 GB freier Platz (empfohlen, 10 GB Minimum) sind nötig.
 4. Welche Domain oder Subdomain soll Hustl bekommen? Prüfe die DNS-Auflösung
    (A und AAAA) und vergleiche sie mit der öffentlichen IP des VPS.
    Ist die Domain bei Cloudflare proxied (orange Wolke)? Für die
@@ -142,8 +142,10 @@ sudo HUSTL_DOMAIN=hustl.example.com \
      ./deploy/selfhost/install.sh
 ```
 
-Voraussetzungen: Debian 12/Ubuntu 24.04 (oder vergleichbar), 2 GB RAM,
-10 GB frei, Ports 22/80/443 offen, Domain zeigt per A/AAAA auf den VPS.
+Voraussetzungen: Debian 12/Ubuntu 24.04 (oder vergleichbar), 2 GB RAM
+(4 GB empfohlen), 20 GB frei empfohlen (10 GB Minimum), Ports 22/80/443 offen,
+Domain zeigt per A-Record (AAAA bei IPv6) auf den VPS. `git` wird für den Clone
+benötigt; der Installer installiert es bei Bedarf für Updates nach.
 
 ## Wenn schon ein Webserver läuft
 

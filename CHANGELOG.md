@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.1.1 – 2026-11-07
+
+Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.
+
+### Neu
+
+- **Englische Landingpage** unter `/en/` mit DE/EN-Umschalter, hreflang,
+  Canonical und Sitemap-Einträgen
+- **Hosting-Abschnitt**: VPS, eigener Server/NAS, Raspberry Pi/Heimserver,
+  PaaS/Kubernetes mit persistentem Volume
+- **FAQ zu Single-User-Betrieb**
+
+### Korrigiert
+
+- Domainpreise realistisch: ca. 5–30 €/Jahr je nach TLD und Anbieter statt
+  pauschal 1 €/Monat
+- VPS-Empfehlung: 2 GB Minimum, 4 GB empfohlen, 20 GB Speicher empfohlen;
+  erster Build 15–30 Minuten
+- Installer installiert `git` nach; Git steht in den Voraussetzungen
+- NAS/PaaS-Hinweise: Installer nur für Debian/Ubuntu; SQLite braucht eine
+  Replica und ein blockbasiertes Volume
+- Backup klargestellt: der tägliche Snapshot enthält die Datenbank; PDFs und
+  Belege kommen über restic oder das Vollarchiv dazu
+- `.env` wird bei Updates neu geschrieben, Daten bleiben erhalten
+- SMTP, GoCardless und Notion-Import sind nicht enthalten; der Vorlagen-Editor
+  ist in der Web-Oberfläche verfügbar
+- E-Rechnung: Datenmodell-Prüfung, keine vollständige XSD/Schematron-Validierung
+- HTTPS-Hinweis für den `external`-Modus; Caddy-Logs nur im gebündelten Modus
+- Kontrast und mobile Navigation verbessert
+
 ## 1.1.0 – 2026-11-07
 
 Neue öffentliche Website, verständlichere Dokumentation und stabile Download-Links.
@@ -25,7 +55,7 @@ Neue öffentliche Website, verständlichere Dokumentation und stabile Download-L
 
 - Ein Benutzer pro Instanz
 - Kein Offline-Schreibbetrieb
-- E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht in der Web-Version
+- E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht enthalten
 - Installer sind unsigniert (Windows SmartScreen / macOS Gatekeeper)
 
 ## 1.0.0 – 2026-11-06
@@ -43,7 +73,7 @@ dem eigenen VPS, dazu eine schlanke Desktop-Shell für Windows, macOS und Linux.
 - **12 Währungen** für Rechnungen und Angebote
 - **To-dos** mit Kategorien und Reset-Regeln
 - **Vollarchiv** mit Datenbank, PDFs und CSV-Tabellen
-- **Tägliches Backup** per systemd-Timer, optional restic für Offsite
+- **Täglicher Datenbank-Snapshot** per systemd-Timer, optional restic für Offsite
 
 ### Bestehende Funktionen
 
@@ -58,12 +88,12 @@ dem eigenen VPS, dazu eine schlanke Desktop-Shell für Windows, macOS und Linux.
 
 - Installer: `sudo ./deploy/selfhost/install.sh`
 - Agenten-Installation: `INSTALL-WITH-AGENT.md`
-- Backup: täglich um 03:30 nach `/opt/hustl/backups`
+- Backup: täglicher Datenbank-Snapshot um 03:30 nach `/opt/hustl/backups`
 - Update: `cd /opt/hustl/src && git pull && sudo ./deploy/selfhost/install.sh`
 
 ### Bekannte Grenzen
 
 - Ein Benutzer pro Instanz
 - Kein Offline-Schreibbetrieb
-- E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht in der Web-Version
+- E-Mail-Versand, GoCardless-Banksync und Notion-Import sind nicht enthalten
 - Installer sind unsigniert (Windows SmartScreen / macOS Gatekeeper)

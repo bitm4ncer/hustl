@@ -69,4 +69,4 @@ chmod 600 "$INSTALL_DIR/data/hustl.db"
 
 echo "==> Starte Hustl"
 docker compose -f "$INSTALL_DIR/docker-compose.yml" up -d hustl
-echo "Restore abgeschlossen."
+echo "Restore abgeschlossen. Hinweis: Wiederhergestellt wurde nur die Datenbank; PDFs und Belege separat aus restic oder dem Vollarchiv einspielen."

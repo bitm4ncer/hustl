@@ -35,7 +35,7 @@ Hustl passt zu dir, wenn du:
 - als Freelancer arbeitest oder ein kleines Studio führst,
 - Rechnungen, Angebote, Projekte und Finanzen an einem Ort haben willst,
 - deine Daten auf deinem eigenen Server haben willst statt in einer fremden Cloud,
-- mit einem kleinen Server einverstanden bist, der etwa **5–10 € im Monat** kostet.
+- mit einem kleinen Server einverstanden bist, der etwa **5–15 € im Monat** kostet.
 
 Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benutzern brauchst, einen komplett gehosteten Dienst ohne Einrichtung willst oder vollständig offline arbeiten musst.
 
@@ -64,11 +64,11 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 
 ## In drei Schritten starten
 
-Du brauchst zwei Dinge: einen kleinen Server (einen **VPS**, also einen gemieteten Computer) und eine Domain, die darauf zeigt. Ein VPS mit 2 GB RAM reicht und kostet ungefähr 5–10 € im Monat.
+Du brauchst zwei Dinge: einen kleinen Server (einen **VPS**, also einen gemieteten Computer) und eine Domain, die darauf zeigt. Ein VPS mit 2 GB RAM reicht und kostet ungefähr 5–15 € im Monat. Richte die Domain darauf; DNS braucht manchmal etwas Zeit.
 
 ### 1. Server und Domain besorgen
 
-Nimm Debian 12/13 oder Ubuntu 22.04/24.04 mit mindestens 2 vCPU, 2 GB RAM und 10 GB freiem Speicher. Richte die A- und AAAA-Records einer Domain wie `hustl.example.com` auf den Server. Die Ports 22, 80 und 443 müssen offen sein.
+Nimm Debian 12/13 oder Ubuntu 22.04/24.04 mit mindestens 2 vCPU, 2 GB RAM (4 GB empfohlen) und 20 GB freiem Speicher (empfohlen). Richte den A-Record einer Domain wie `hustl.example.com` auf den Server (AAAA nur bei IPv6). Die Ports 22, 80 und 443 müssen offen sein.
 
 Wenn du das noch nie gemacht hast: Der [Agenten-Leitfaden](INSTALL-WITH-AGENT.md) führt dich Schritt für Schritt durch, inklusive VPS-Auswahl und DNS.
 
@@ -84,7 +84,7 @@ cd /opt/hustl/src
 sudo ./deploy/selfhost/install.sh
 ```
 
-Der Installer fragt nach deiner Domain und einer E-Mail-Adresse für das HTTPS-Zertifikat. Danach baut er Hustl, startet Docker und richtet HTTPS, Autostart und ein tägliches Backup um 03:30 ein.
+Der Installer fragt nach deiner Domain und einer E-Mail-Adresse für das HTTPS-Zertifikat. Danach baut er Hustl, startet Docker und richtet HTTPS (im gebündelten Modus), Autostart und einen täglichen Datenbank-Snapshot um 03:30 ein. Das Image wird auf dem Server gebaut; auf einem kleinen VPS kann der erste Build 15–30 Minuten dauern.
 
 ### 3. Passkey anlegen
 
@@ -106,12 +106,12 @@ Wenn du die Befehle nicht selbst tippen willst, öffne [`INSTALL-WITH-AGENT.md`]
 
 ## Desktop-App herunterladen
 
-Die Desktop-App ist eine schlanke Electron-Hülle um dieselbe Web-Oberfläche. Beim ersten Start fragt sie nach deiner Server-URL.
+Die Desktop-App ist eine schlanke Electron-Hülle um dieselbe Web-Oberfläche. Sie ist **kein eigenständiger Server**: Beim ersten Start fragt sie nach deiner erreichbaren Hustl-URL.
 
 | Plattform | Download | Hinweis |
 |---|---|---|
 | Windows | [Hustl für Windows](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-win.exe) | Installer, 64-bit |
-| macOS (Apple Silicon) | [Hustl für macOS arm64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg) | M1–M4 |
+| macOS (Apple Silicon) | [Hustl für macOS arm64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg) | Apple Silicon |
 | macOS (Intel) | [Hustl für macOS x64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-x64.dmg) | Intel-Macs |
 | Linux | [Hustl für Linux](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-linux.AppImage) | AppImage, x86_64 |
 
@@ -140,10 +140,25 @@ Hustl ist kostenlos und Open Source unter der ISC-Lizenz. Es gibt kein Abo und k
 | Posten | Typische Kosten |
 |---|---|
 | Hustl | 0 € |
-| VPS (2 GB RAM) | 5–10 € / Monat |
-| Domain | etwa 1 € / Monat |
+| VPS (2 GB RAM, 4 GB empfohlen) | etwa 5–15 € / Monat |
+| Domain | etwa 5–30 € / Jahr (0,40–2,50 € / Monat) |
 
-Du bezahlst direkt deinen Server-Anbieter. Hustl sieht deine Rechnungen und Kundendaten nie.
+Der Domainpreis hängt von TLD und Anbieter ab. Eine `.de`-Domain kostet oft rund 5–20 € im Jahr, eine `.com` rund 15–30 €; Aktionen im ersten Jahr sind häufig günstiger als die Verlängerung. Du bezahlst direkt deinen Server-Anbieter. Hustl sieht deine Rechnungen und Kundendaten nie.
+
+## Wo kann Hustl laufen?
+
+Hustl ist ein Docker-Container mit einer SQLite-Datenbank. Es braucht einen Linux-Host mit Docker und einem dauerhaften Speicher.
+
+| Option | Geeignet für | Hinweise |
+|---|---|---|
+| **Eigener VPS** | die meisten Nutzer | Hetzner, Netcup, IONOS, Contabo oder ein anderer Anbieter. Der Installer richtet Docker, HTTPS (im gebündelten Modus) und Backups ein. |
+| **Vorhandener Server / NAS** | wenn Docker schon läuft | Linux-Server, Synology/QNAP mit Docker oder ein Heimserver. Der Installer ist für Debian/Ubuntu; auf NAS nutzt du `compose.external.yml` manuell und richtest Reverse Proxy und Backups selbst ein. |
+| **Raspberry Pi / Heimserver** | Datenschutz und einmalige Hardware | Braucht Docker auf arm64 und empfohlen 4 GB RAM. Für Zugriff von außen Cloudflare Tunnel oder Tailscale Funnel; stabile Stromversorgung und Backups einplanen. |
+| **PaaS / Kubernetes** | erfahrene Betreiber | Railway, Render, Fly.io oder ein Cluster funktionieren, wenn die SQLite-Datei auf einem persistenten, blockbasierten Volume mit einer Replica liegt (kein NFS/SMB). Shared Hosting, Vercel/Netlify und Serverless ohne Persistent Disk gehen nicht. |
+
+Ein kostenloses Cloud-Kontingent (zum Beispiel Oracle Cloud Free Tier auf ARM) kann zum Ausprobieren reichen; Verfügbarkeit und Bedingungen ändern sich. Eine offizielle gehostete Hustl-Version gibt es nicht.
+
+**Die Desktop-App ist keine Hosting-Option.** Sie ist eine Hülle um deine Web-Instanz und braucht eine erreichbare Hustl-URL.
 
 ## Häufige Fragen
 
@@ -160,7 +175,7 @@ Ja, als PWA: Öffne die URL in Safari, tippe auf „Teilen“ und wähle „Zum 
 Ein Login ohne Passwort, mit Face ID, Touch ID, Windows Hello oder einem Sicherheitsschlüssel. Weitere Geräte kannst du später mit einem Recovery-Code hinzufügen. Bewahre die zehn Recovery-Codes getrennt von Handy oder Laptop auf.
 
 **Ist das sicher?**
-Hustl nutzt WebAuthn-Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und Rate-Limits. HTTPS übernimmt Caddy im gebündelten Setup. Für Server-Updates und Backups bist du selbst verantwortlich; der Installer legt täglich einen SQLite-Snapshot an.
+Hustl nutzt WebAuthn-Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und Rate-Limits. HTTPS übernimmt dein Reverse Proxy – im gebündelten Setup Caddy. Für Server-Updates und Backups bist du selbst verantwortlich; der Installer legt täglich einen Datenbank-Snapshot an. PDFs, Belege und Kontoauszüge kommen nur mit restic oder dem Vollarchiv dazu.
 
 **Kann ich meine Daten exportieren?**
 Ja. Du kannst ein Vollarchiv als ZIP mit Datenbank, allen PDFs und CSV-Dateien herunterladen. Für die Steuerberatung gibt es zusätzlich einen Monatsexport.
@@ -169,16 +184,16 @@ Ja. Du kannst ein Vollarchiv als ZIP mit Datenbank, allen PDFs und CSV-Dateien h
 Kontoauszüge und Beleg-PDFs lassen sich importieren. Einen universellen Ein-Klick-Import für Rechnungen aus anderen Tools gibt es nicht; ein Umzug braucht meist ein kleines Skript oder etwas Handarbeit.
 
 **Unterstützt Hustl E-Rechnung?**
-Ja. Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Vor dem ersten echten Versand sollte eine Beispielrechnung mit dem offiziellen KoSIT-Validator geprüft werden: Die Bibliothek prüft die XML-Struktur, nicht jede Geschäftsregel.
+Ja. Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand sollte eine Beispielrechnung mit dem offiziellen KoSIT-Validator geprüft werden.
 
 **Gibt es eine gehostete Version?**
 Nein. Hustl ist bewusst self-hosted, damit deine Daten bei dir bleiben. Du kannst es auf einem Server deiner Wahl betreiben, auch bei einem Hosting-Anbieter.
 
 ## Gut zu wissen
 
-- **Ein Benutzer.** Hustl ist bewusst keine Multi-Tenant-Plattform.
+- **Ein Benutzer.** Eine Person pro Instanz; mehrere Passkeys und Geräte sind möglich, aber es gibt keine Rollen, Teams oder getrennten Benutzerkonten.
 - **Der Server muss online sein.** Es gibt keinen Offline-Schreibbetrieb; der Server ist die einzige Datenquelle.
-- **Einige Funktionen sind lokal.** E-Mail-Versand per SMTP, GoCardless-Banksync, Notion-Import und der Vorlagen-Editor auf dem Smartphone gibt es nur im lokalen Electron-Entwicklungsbetrieb. Der verpackte Desktop-Client lädt dieselbe Web-Oberfläche.
+- **Nicht enthalten:** E-Mail-Versand per SMTP, GoCardless-Banksync und Notion-Import sind nicht Teil von Hustl 1.1.1. Der Vorlagen-Editor ist in der Web-Oberfläche verfügbar.
 - **Unsignierte Builds.** Windows SmartScreen und macOS Gatekeeper brauchen beim ersten Start eine Freigabe.
 - **Backup ist Pflicht.** Ohne funktionierendes Backup gibt es keinen zweiten Datenstand.
 - **E-Rechnung braucht einen Test.** Prüfe eine Beispielrechnung mit dem KoSIT-Validator, bevor du echte E-Rechnungen versendest.
@@ -190,12 +205,13 @@ Nein. Hustl ist bewusst self-hosted, damit deine Daten bei dir bleiben. Du kanns
 
 | | |
 |---|---|
-| Server | 2 vCPU, mindestens 2 GB RAM (4 GB empfohlen), 10 GB freier Platz |
+| Server | 2 vCPU, mindestens 2 GB RAM (4 GB empfohlen), 20 GB freier Platz empfohlen |
 | System | Debian 12/13 oder Ubuntu 22.04/24.04, x86_64 oder arm64 |
-| Domain | z. B. `hustl.example.com`, A- und AAAA-Record auf den VPS |
+| Domain | z. B. `hustl.example.com`, A-Record (AAAA bei IPv6) auf den VPS |
+| Zeit | ca. 15–30 Minuten, plus DNS-Propagierung |
 | Ports | 22 (SSH), 80 und 443 offen |
 | Zugang | SSH-Zugang mit Key oder Passwort |
-| Werkzeuge | `git` für den Clone; `curl` installiert der Installer bei Bedarf nach |
+| Werkzeuge | `git` für den Clone (und Updates); `curl` und `git` installiert der Installer bei Bedarf nach |
 
 Der Installer kennt zwei Modi:
 
@@ -222,7 +238,7 @@ Nach der Installation:
 | Weiteres Gerät hinzufügen | Login → „Passkey verloren?“ → Recovery-Code |
 | Vollarchiv herunterladen | Einstellungen → Daten → „Archiv herunterladen“ |
 | Logs | `docker logs -f hustl` |
-| Caddy-Logs | `docker logs -f hustl-caddy` |
+| Caddy-Logs (gebündelter Modus) | `docker logs -f hustl-caddy` |
 | Daten | `/opt/hustl/data` |
 | Konfiguration | `/opt/hustl/.env` |
 
@@ -239,11 +255,11 @@ git pull
 sudo ./deploy/selfhost/install.sh
 ```
 
-Der Installer baut das Image neu, startet die Container neu und lässt Daten sowie `.env` unangetastet.
+Der Installer baut das Image neu und startet die Container neu. Die Daten bleiben erhalten; `.env` wird aus den aktuellen Installer-Werten neu geschrieben. Eigene Einstellungen gehören in die unterstützten Variablen oder in eine Sicherung.
 
 ### Backup
 
-Der Installer richtet einen systemd-Timer ein, der täglich um 03:30 einen konsistenten SQLite-Snapshot erzeugt:
+Der Installer richtet einen systemd-Timer ein, der täglich um 03:30 einen konsistenten SQLite-Snapshot erzeugt. **Dieser Snapshot enthält nur die Datenbank.** PDFs, Belege und Kontoauszüge kommen nur dazu, wenn du restic auf `/opt/hustl/data` laufen lässt oder das Vollarchiv herunterlädst.
 
 ```bash
 sudo /opt/hustl/backup.sh
@@ -268,7 +284,7 @@ sudo /opt/hustl/restore.sh --check /opt/hustl/backups/hustl-2026-11-04.db
 sudo /opt/hustl/restore.sh /opt/hustl/backups/hustl-2026-11-04.db
 ```
 
-Die aktuelle Datenbank wird vorher als `hustl.db.before-<zeitstempel>` gesichert. Ein Restore ohne geprüftes Backup ist keine gute Idee.
+Die aktuelle Datenbank wird vorher als `hustl.db.before-<zeitstempel>` gesichert. Ein Restore ohne geprüftes Backup ist keine gute Idee. `restore.sh` spielt nur die Datenbank zurück; PDFs und Belege kommen separat aus restic oder dem Vollarchiv.
 
 ### Domain wechseln
 
@@ -294,7 +310,7 @@ Wenn noch ein weiterer Passkey existiert: einfach damit anmelden. Wenn nicht, bl
 - **Betrieb:** Docker, non-root-Container, read-only Rootfs, 1-GB-Speicherlimit, kein nach außen veröffentlichter Port im `bundled`-Modus
 - **Sicherheit:** WebAuthn-Passkeys, HttpOnly-Session-Cookies, CSRF-Schutz und Rate-Limits; TLS über den Reverse Proxy (Caddy im `bundled`-Modus)
 - **Daten:** `/data/hustl.db`, PDFs unter `/data/invoices`, `/data/offers`, `/data/expenses`, `/data/statements`, Vorlagen unter `/data/template`
-- **Backup:** SQLite-Snapshot plus Dateien; optional restic mit clientseitiger Verschlüsselung
+- **Backup:** täglicher SQLite-Snapshot; komplette Dateien über restic oder das Archiv. restic verschlüsselt clientseitig; bei anderen Zielen liegt die Verschlüsselung bei dir.
 
 ```text
 src/
@@ -335,7 +351,7 @@ Der Release-Workflow `.github/workflows/release.yml` baut alle drei Pakete bei e
 
 ## Datenschutz
 
-Deine Rechnungen, Kunden und Belege liegen auf deinem Server — nicht bei Hustl. Es gibt keine Analytics, keine Telemetrie und kein Benutzerkonto bei einem Drittanbieter. Die Anmeldung erfolgt per Passkey; es wird kein Passwort gespeichert. Backups verlassen den Server nur, wenn du restic oder ein anderes Offsite-Ziel einrichtest — dann clientseitig verschlüsselt.
+Deine Rechnungen, Kunden und Belege liegen auf deinem Server — nicht bei Hustl. Es gibt keine Analytics, keine Telemetrie und kein Benutzerkonto bei einem Drittanbieter. Die Anmeldung erfolgt per Passkey; es wird kein Passwort gespeichert. Backups verlassen den Server nur, wenn du restic oder ein anderes Offsite-Ziel einrichtest. restic verschlüsselt clientseitig; bei anderen Zielen liegt die Verschlüsselung bei dir.
 
 ## Lizenz
 

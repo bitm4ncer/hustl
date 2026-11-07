@@ -133,6 +133,12 @@ if ! command -v curl >/dev/null 2>&1; then
   apt-get install -y -qq curl ca-certificates
 fi
 
+if ! command -v git >/dev/null 2>&1; then
+  log "Installiere git ..."
+  apt-get update -qq
+  apt-get install -y -qq git
+fi
+
 if ! command -v docker >/dev/null 2>&1; then
   warn "Docker ist nicht installiert."
   if [ "$ASSUME_YES" != 1 ] && [ -t 0 ]; then
@@ -208,7 +214,7 @@ ok "Image hustl:latest gebaut."
 
 # --- Konfiguration ----------------------------------------------------------
 HUSTL_VERSION="$(sed -n 's/.*"version": "\([^"]*\)".*/\1/p' "$REPO_ROOT/package.json" | head -n 1)"
-HUSTL_VERSION="${HUSTL_VERSION:-1.0.0}"
+HUSTL_VERSION="${HUSTL_VERSION:-1.1.1}"
 
 cat > "$ENV_FILE" <<EOF
 HUSTL_DOMAIN=$HUSTL_DOMAIN

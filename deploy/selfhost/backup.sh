@@ -28,6 +28,7 @@ latest="$(ls -1t "$INSTALL_DIR"/data/backups/hustl-*.db 2>/dev/null | head -n 1 
 if [ -n "$latest" ]; then
   cp "$latest" "$INSTALL_DIR/backups/hustl-${STAMP}.db"
   echo "==> Kopie: $INSTALL_DIR/backups/hustl-${STAMP}.db"
+  echo "Hinweis: Der Snapshot enthält nur die Datenbank. PDFs und Belege werden nur mit restic oder dem Vollarchiv gesichert."
 else
   echo "Warnung: kein Snapshot gefunden." >&2
 fi

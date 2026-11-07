@@ -1,6 +1,6 @@
 {
   "name": "hustl",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Hustl – self-hosted Rechnungs- und Finanztool für Soloselbstständige",
   "main": "out/main/index.js",
   "author": "bitm4ncer",
