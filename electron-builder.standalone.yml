@@ -2,6 +2,7 @@ extends: ./electron-builder.yml
 appId: com.hustl.standalone
 productName: Hustl Standalone
 extraMetadata:
+  name: hustl-standalone
   hustlVariant: standalone
   productName: Hustl Standalone
 directories:

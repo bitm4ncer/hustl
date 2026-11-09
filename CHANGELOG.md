@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.3 (2026-11-09)
+
+### Korrigiert
+
+- Standalone und Client nutzen getrennte Updater-Caches. Ohne das konnten sich
+  die Update-Pakete der beiden Varianten gegenseitig überschreiben.
+
 ## 1.1.2 (2026-11-09)
 
 Hustl Standalone als eigener Download, automatische Updates und Archiv-Restore.
