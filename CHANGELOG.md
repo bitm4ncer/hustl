@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.1.2 (2026-11-09)
+
+Hustl Standalone als eigener Download, automatische Updates und Archiv-Restore.
+
+### Neu
+
+- **Hustl Standalone**: läuft lokal ohne Server, Docker oder Konto. Die App
+  startet denselben Hustl-Server im Electron-Prozess und lauscht nur auf
+  `127.0.0.1`.
+- **Zwei getrennte Desktop-Downloads**: Standalone und Client mit eigenen
+  `appId`s, Datenordnern und Update-Kanälen. Beide lassen sich nebeneinander
+  installieren.
+- **Automatische Updates** für Windows und Linux; der Client nutzt `latest`,
+  die Standalone-App `standalone`. macOS bleibt bis zur Signierung manuell.
+- **Vollarchiv wiederherstellen** in den Einstellungen, mit Manifest-Prüfung,
+  SHA-256, Zip-Slip-Schutz und automatischem Sicherheitsbackup.
+- **Stabile Download-Namen** für Landingpage und README.
+
+### Geändert
+
+- Das Vollarchiv nimmt die laufende `hustl.db` nicht mehr doppelt auf.
+
 ## 1.1.1 (2026-11-07)
 
 Fachtcheck-Korrekturen, zweisprachige Website und genauere Betriebsangaben.

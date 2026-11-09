@@ -303,6 +303,40 @@ function NumberingSection(): React.ReactElement {
 
 function DataSection(): React.ReactElement {
   const [started, setStarted] = useState(false)
+  const [file, setFile] = useState<File | null>(null)
+  const [confirming, setConfirming] = useState(false)
+  const [restoring, setRestoring] = useState(false)
+  const [restarting, setRestarting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  async function restore(): Promise<void> {
+    if (!file) return
+    setRestoring(true)
+    setError(null)
+    try {
+      const response = await fetch(`/api/restore${confirming ? '?confirm=1' : ''}`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'content-type': 'application/zip', 'x-hustl-client': 'web' },
+        body: file
+      })
+      if (response.status === 409) {
+        setConfirming(true)
+        return
+      }
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as { error?: string } | null
+        throw new Error(body?.error || t.settings.data.restoreFailed)
+      }
+      setRestarting(true)
+      window.setTimeout(() => window.location.reload(), 3000)
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : String(cause))
+    } finally {
+      setRestoring(false)
+    }
+  }
+
   return (
     <Panel>
       <SectionTitle>{t.settings.data.title}</SectionTitle>
@@ -322,6 +356,51 @@ function DataSection(): React.ReactElement {
           {t.settings.data.running}
         </p>
       )}
+
+      <div className="mt-6 border-t pt-4" style={{ borderColor: 'var(--border)' }}>
+        <p className="mb-2 text-sm font-medium">{t.settings.data.restore}</p>
+        <p className="mb-3 text-xs" style={{ color: 'var(--text-muted)' }}>
+          {t.settings.data.restoreHint}
+        </p>
+        <input
+          type="file"
+          accept=".zip,application/zip"
+          onChange={(event) => {
+            setFile(event.target.files?.[0] ?? null)
+            setConfirming(false)
+            setError(null)
+          }}
+          className="mb-3 block text-sm"
+        />
+        {confirming && (
+          <p className="mb-2 text-xs" style={{ color: 'var(--accent)' }}>
+            {t.settings.data.restoreConfirm}
+          </p>
+        )}
+        <button
+          type="button"
+          disabled={!file || restoring}
+          onClick={() => void restore()}
+          className="inline-flex min-h-[48px] items-center rounded-[10px] px-4 py-2 text-sm font-medium disabled:opacity-50"
+          style={{ background: 'var(--accent)', color: 'var(--accent-contrast)' }}
+        >
+          {restoring
+            ? t.settings.data.restoreRunning
+            : confirming
+              ? t.settings.data.restoreConfirmAction
+              : t.settings.data.restoreAction}
+        </button>
+        {restarting && (
+          <p className="mt-2 text-xs" style={{ color: 'var(--text-muted)' }}>
+            {t.settings.data.restoreRestarting}
+          </p>
+        )}
+        {error && (
+          <p className="mt-2 text-xs" style={{ color: '#ff7b72' }}>
+            {error}
+          </p>
+        )}
+      </div>
     </Panel>
   )
 }

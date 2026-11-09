@@ -107,22 +107,49 @@ If you don't want to type the commands yourself, open [`INSTALL-WITH-AGENT.md`](
 
 ## Download the desktop app
 
-The desktop app is a slim Electron shell around the same web interface. It is **not a standalone server**: on first launch it asks for your reachable Hustl server URL.
+There are **two separate desktop downloads**. Both can be installed side by side and do not share any data.
+
+| Download | For | Server required? |
+|---|---|---|
+| **Hustl Standalone** | working locally, no setup | no |
+| **Hustl Client** | connecting to your own Hustl instance | yes |
+
+### Hustl Standalone
+
+Double-click and go. No account, no server URL, no Docker, no login. The app starts the same Hustl server locally and only listens on `127.0.0.1`.
 
 | Platform | Download | Notes |
 |---|---|---|
-| Windows | [Hustl for Windows](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-win.exe) | Installer, 64-bit |
-| macOS (Apple Silicon) | [Hustl for macOS arm64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg) | Apple Silicon |
-| macOS (Intel) | [Hustl for macOS x64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-x64.dmg) | Intel Macs |
-| Linux | [Hustl for Linux](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-linux.AppImage) | AppImage, x86_64 |
+| Windows | [Hustl Standalone for Windows](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Standalone-Setup.exe) | Installer, 64-bit |
+| Linux | [Hustl Standalone for Linux](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Standalone.AppImage) | AppImage, x86_64 |
+| macOS | — | coming with a signed build |
+
+Data lives in `%APPDATA%\Hustl Standalone\data` (Windows) or `~/.config/Hustl Standalone/data` (Linux). Back up the folder, or use **Settings → Data → Download archive**. The same tab can restore a full archive.
+
+### Hustl Client
+
+The slim Electron shell around a hosted instance. On first launch it asks for your server URL and stores it locally.
+
+| Platform | Download | Notes |
+|---|---|---|
+| Windows | [Hustl Client for Windows](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Setup.exe) | Installer, 64-bit |
+| macOS (Apple Silicon) | [Hustl Client for macOS arm64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-arm64.dmg) | Apple Silicon |
+| macOS (Intel) | [Hustl Client for macOS x64](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-x64.dmg) | Intel Macs |
+| Linux | [Hustl Client for Linux](https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl.AppImage) | AppImage, x86_64 |
+
+Change the server URL later via **Hustl → Change server URL…** or `Ctrl+Shift+S` (`⌘⇧S` on macOS).
 
 Or browse [all releases](https://github.com/bitm4ncer/hustl/releases/latest).
 
-The builds are **unsigned**, so you need to allow them once:
+### Signing
+
+Hustl is open source (ISC) and the builds are **unsigned**; certificates cost money every year and would raise the price. You need to allow them once:
 
 - **Windows:** "More info" → "Run anyway".
-- **macOS:** right-click the app → "Open" → "Open", or run `xattr -dr com.apple.quarantine /Applications/Hustl.app`.
-- **Linux:** `chmod +x Hustl-linux.AppImage && ./Hustl-linux.AppImage`.
+- **macOS (Client):** open the app once, then go to **System Settings → Privacy & Security** and choose **"Open Anyway"**. The old right-click trick no longer works on macOS 15+.
+- **Linux:** `chmod +x Hustl-*.AppImage && ./Hustl-*.AppImage`.
+
+A signed macOS standalone build with automatic updates follows once demand supports it.
 
 ### PWA: no download at all
 

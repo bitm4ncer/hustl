@@ -1,0 +1,30 @@
+extends: ./electron-builder.yml
+appId: com.hustl.standalone
+productName: Hustl Standalone
+extraMetadata:
+  hustlVariant: standalone
+  productName: Hustl Standalone
+directories:
+  output: dist/standalone
+files:
+  - '!out/renderer/**'
+extraResources:
+  - from: dist/web
+    to: web
+  - from: resources/icon.png
+    to: icon.png
+win:
+  executableName: HustlStandalone
+  artifactName: Hustl-Standalone-Setup-${version}.${ext}
+linux:
+  executableName: hustl-standalone
+  artifactName: Hustl-Standalone-${version}.${ext}
+appImage:
+  artifactName: Hustl-Standalone-${version}.${ext}
+nsis:
+  shortcutName: Hustl Standalone
+publish:
+  provider: github
+  owner: bitm4ncer
+  repo: hustl
+  channel: standalone

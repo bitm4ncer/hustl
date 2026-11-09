@@ -13,11 +13,15 @@ import { registerAuthRoutes } from './auth/routes'
 import { registerGuard } from './auth/guard'
 import { registerFileRoutes } from './files/routes'
 import { registerArchiveRoutes } from './archive/routes'
+import { registerRestoreRoutes } from './restore/routes'
+import { applyPendingRestore } from './restore/restore'
 import { simpleWebAuthn } from './auth/authenticator'
 import { createBootstrapToken, hasCredentials } from './auth/store'
-import { closePdfBrowser } from './pdf'
+import { closePdfBrowser, serverPdfRenderer } from './pdf'
 import { writeFileSync, mkdirSync } from 'node:fs'
 import type { ServerConfig } from './config'
+import type { Platform } from '../platform/types'
+import { rpcContext } from './rpc/registry'
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -26,23 +30,38 @@ declare module 'fastify' {
   }
 }
 
-const APP_VERSION = process.env.HUSTL_VERSION ?? '1.1.1'
+const APP_VERSION = process.env.HUSTL_VERSION ?? '1.1.2'
+
+export interface BuildServerOptions {
+  platform?: Platform
+  webRoot?: string
+  /** Wird nach einem erfolgreich vorbereiteten Restore aufgerufen. */
+  onRestart?: () => void
+}
 
 /**
  * Baut die Fastify-Instanz, startet sie aber nicht. Tests injizieren Requests,
  * `main.ts` ruft `listen`.
  */
-export async function buildServer(config: ServerConfig): Promise<FastifyInstance> {
+export async function buildServer(
+  config: ServerConfig,
+  options: BuildServerOptions = {}
+): Promise<FastifyInstance> {
   const app = Fastify({
     logger: { level: 'warn' },
     bodyLimit: 1024 * 1024,
     // Genau ein Proxy (Caddy) davor. Ohne das ist request.ip die
     // Container-Adresse und das Auth-Rate-Limit wird ein globaler Eimer.
-    trustProxy: true
+    // Im lokalen Betrieb aus, damit request.ip nicht fÃ¤lschbar ist.
+    trustProxy: config.trustProxy ?? config.local !== true
   })
 
+  applyPendingRestore(config.dataDir)
   app.decorate('db', initDatabase(config.dataDir))
   app.decorate('config', config)
+
+  const platform: Platform =
+    options.platform ?? { kind: 'web', dataDir: config.dataDir, renderPdf: serverPdfRenderer }
 
   await app.register(cookie)
   await app.register(rateLimit, { global: false })
@@ -52,12 +71,13 @@ export async function buildServer(config: ServerConfig): Promise<FastifyInstance
 
   registerAuthRoutes(app, { db: app.db, authenticator: simpleWebAuthn, config })
   registerGuard(app, { db: app.db, config })
-  registerFileRoutes(app, { db: app.db, dataDir: config.dataDir })
+  registerFileRoutes(app, { db: app.db, dataDir: config.dataDir, platform })
   registerArchiveRoutes(app, { db: app.db, dataDir: config.dataDir })
+  registerRestoreRoutes(app, { dataDir: config.dataDir, onRestart: options.onRestart })
 
-  // Erststart: Einmal-Token für die erste Passkey-Registrierung. Ohne ihn kann
+  // Erststart: Einmal-Token fÃ¼r die erste Passkey-Registrierung. Ohne ihn kann
   // sich niemand vor dem Besitzer eintragen.
-  if (!hasCredentials(app.db)) {
+  if (config.local !== true && !hasCredentials(app.db)) {
     const token = createBootstrapToken(app.db)
     mkdirSync(config.dataDir, { recursive: true })
     writeFileSync(join(config.dataDir, 'bootstrap-token.txt'), token + '\n', { mode: 0o600 })
@@ -81,10 +101,7 @@ export async function buildServer(config: ServerConfig): Promise<FastifyInstance
     const args = Array.isArray(body.args) ? body.args : []
 
     try {
-      const data = await dispatchRpc(method, args, {
-        db: app.db,
-        dataDir: config.dataDir
-      })
+      const data = await dispatchRpc(method, args, rpcContext(app.db, config.dataDir, platform))
       return reply.send({ ok: true, data })
     } catch (error) {
       if (error instanceof RpcError) {
@@ -102,8 +119,8 @@ export async function buildServer(config: ServerConfig): Promise<FastifyInstance
   })
 
   // Statische Auslieferung nur, wenn ein Web-Build existiert. Im Dev-Betrieb
-  // liefert Vite die Oberfläche, im Container dieses Verzeichnis.
-  const webRoot = join(process.cwd(), 'dist/web')
+  // liefert Vite die OberflÃ¤che, im Container dieses Verzeichnis.
+  const webRoot = options.webRoot ?? config.webRoot ?? join(process.cwd(), 'dist/web')
   if (existsSync(webRoot)) {
     await app.register(fastifyStatic, {
       root: webRoot,
@@ -125,8 +142,8 @@ export async function buildServer(config: ServerConfig): Promise<FastifyInstance
       if (url.startsWith('/api/')) {
         return reply.code(404).send({ ok: false, error: { code: 'NOT_FOUND', message: 'Not found' } })
       }
-      // Fehlende Dateien dürfen niemals HTML zurückgeben: ein Browser, der ein
-      // Icon oder Asset anfragt, würde sonst stillschweigend aufgeben.
+      // Fehlende Dateien dÃ¼rfen niemals HTML zurÃ¼ckgeben: ein Browser, der ein
+      // Icon oder Asset anfragt, wÃ¼rde sonst stillschweigend aufgeben.
       if (/\.[a-z0-9]{2,5}$/i.test(url)) {
         return reply.code(404).send('Not found')
       }
@@ -141,3 +158,4 @@ export async function buildServer(config: ServerConfig): Promise<FastifyInstance
 
   return app
 }
+

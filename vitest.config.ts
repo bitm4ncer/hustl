@@ -12,6 +12,6 @@ export default defineConfig({
     environment: 'node',
     // Don't scan git worktrees nested under the repo (e.g. .claude/worktrees/*),
     // which carry their own copies of these test files.
-    exclude: ['**/node_modules/**', '**/dist/**', '**/out/**', '**/.claude/**', '**/.worktrees/**', '**/worktrees/**', '**/tests/e2e/**']
+    exclude: ['**/node_modules/**', '**/dist/**', '**/out/**', '**/.claude/**', '**/.worktrees/**', '**/worktrees/**', '**/tests/e2e/**', '**/tests/e2e-local/**', '**/tests/e2e-electron/**']
   }
 })
