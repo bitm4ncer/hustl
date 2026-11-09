@@ -1,6 +1,7 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 import type { DatabaseSync } from 'node:sqlite'
 import type { ServerConfig } from '../config'
+import { isLoopbackAddress } from '../config'
 import { SESSION_COOKIE } from './routes'
 import { getSession, touchSession } from './store'
 
@@ -78,6 +79,15 @@ export function registerGuard(app: FastifyInstance, deps: { db: DatabaseSync; co
       if (request.headers['x-hustl-client'] !== 'web') {
         return forbidden(reply, 'Missing client header')
       }
+    }
+
+    // Lokaler Betrieb: kein Login, aber ausschließlich über Loopback.
+    // Die Socket-Adresse ist nicht fälschbar; X-Forwarded-For wird ignoriert.
+    if (config.local) {
+      if (!isLoopbackAddress(request.raw.socket.remoteAddress ?? '')) return unauthorized(reply)
+      const expectedHost = new URL(config.origin).host
+      if (request.headers.host !== expectedHost) return forbidden(reply, 'Invalid host')
+      return
     }
 
     if (isAuth) {

@@ -77,3 +77,9 @@ nsis:
   createDesktopShortcut: true
   createStartMenuShortcut: true
   shortcutName: Hustl
+
+publish:
+  provider: github
+  owner: bitm4ncer
+  repo: hustl
+  channel: latest

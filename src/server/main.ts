@@ -4,7 +4,7 @@ import { loadConfig } from './config'
 async function main(): Promise<void> {
   const config = loadConfig(process.env)
   const app = await buildServer(config)
-  await app.listen({ port: config.port, host: '0.0.0.0' })
+  await app.listen({ port: config.port, host: config.local ? '127.0.0.1' : '0.0.0.0' })
   // eslint-disable-next-line no-console
   console.log(`hustl listening on :${config.port} (data: ${config.dataDir})`)
 }

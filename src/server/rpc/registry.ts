@@ -30,11 +30,16 @@ import {
   type OpContext,
 } from '../../core/operations'
 import { buildPreviewInvoice, validateOffer } from '../../core/previews'
-import { serverPdfRenderer } from '../pdf'
+import type { Platform } from '../../platform/types'
 
 export interface RpcContext {
   db: DatabaseSync
   dataDir: string
+  platform: Platform
+}
+
+export function rpcContext(db: DatabaseSync, dataDir: string, platform: Platform): RpcContext {
+  return { db, dataDir, platform }
 }
 
 export interface RpcEntry {
@@ -62,7 +67,7 @@ function ops(ctx: RpcContext): OpContext {
   return {
     db: ctx.db,
     dataDir: ctx.dataDir,
-    platform: { kind: 'web', dataDir: ctx.dataDir, renderPdf: serverPdfRenderer },
+    platform: ctx.platform,
   }
 }
 

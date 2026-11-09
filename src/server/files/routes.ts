@@ -11,11 +11,12 @@ import { getInvoiceTemplate, saveInvoiceTemplate } from '../../core/db/invoice-t
 import { resolveDataPath, toStoredPath } from '../../core/paths'
 import { importExpensePdfBytes } from '../../core/operations'
 import { importStatement } from '../../core/bank/statement-import'
-import { serverPdfRenderer } from '../pdf'
+import type { Platform } from '../../platform/types'
 
 interface FileDeps {
   db: DatabaseSync
   dataDir: string
+  platform: Platform
 }
 
 function notFound(reply: FastifyReply): FastifyReply {
@@ -46,7 +47,7 @@ function sendStored(
 }
 
 export function registerFileRoutes(app: FastifyInstance, deps: FileDeps): void {
-  const { db, dataDir } = deps
+  const { db, dataDir, platform } = deps
 
   function unsupported(reply: FastifyReply): FastifyReply {
     return reply
@@ -81,7 +82,7 @@ export function registerFileRoutes(app: FastifyInstance, deps: FileDeps): void {
     try {
       return reply.send(
         await importExpensePdfBytes(
-          { db, dataDir, platform: { kind: 'web', dataDir, renderPdf: serverPdfRenderer } },
+          { db, dataDir, platform },
           upload.buffer,
           upload.filename
         )

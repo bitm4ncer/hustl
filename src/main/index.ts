@@ -1,5 +1,6 @@
-import { app, BrowserWindow, ipcMain, Menu, shell } from 'electron'
+import { app, BrowserWindow, dialog, ipcMain, Menu, shell } from 'electron'
 import type { MenuItemConstructorOptions } from 'electron'
+import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { initDatabase } from '../core/db/connection'
 import { registerIpcHandlers } from './ipc/handlers'
@@ -10,12 +11,24 @@ import {
   writeServerConfig
 } from './startup'
 import type { StartupTarget } from './startup'
+import {
+  createStandaloneWindow,
+  maybeImportLegacyData,
+  startStandaloneServer
+} from './standalone'
+import { resolveBuildVariant, type BuildVariant } from './variant'
+import { checkForUpdatesNow, setupAutoUpdater } from './updater'
 
 // Linux/Wayland (e.g. niri): let Electron pick the Wayland backend when the
 // session is Wayland and fall back to X11 otherwise, so we get native scaling
 // and crisp rendering instead of blurry XWayland. Harmless on X11 sessions.
 if (process.platform === 'linux') {
   app.commandLine.appendSwitch('ozone-platform-hint', 'auto')
+}
+
+// Portable/tests: ein eigener Datenordner, bevor irgendetwas userData liest.
+if (process.env.HUSTL_USER_DATA_DIR) {
+  app.setPath('userData', process.env.HUSTL_USER_DATA_DIR)
 }
 
 // App icon for the window + taskbar. In dev it lives in the project's
@@ -37,6 +50,7 @@ const windowChrome =
 let setupWindow: BrowserWindow | null = null
 let shellWindow: BrowserWindow | null = null
 let currentTarget: StartupTarget = { mode: 'local' }
+let stopStandalone: (() => Promise<void>) | null = null
 
 /** Lokaler Dev-Betrieb: eigener DB-Pfad, IPC und gebündeltes UI. */
 function createWindow(): void {
@@ -309,14 +323,19 @@ function buildMenu(): void {
     click: () => openSetupWindow()
   }
 
+  const checkUpdates: MenuItemConstructorOptions = {
+    label: 'Nach Updates suchen…',
+    click: () => void checkForUpdatesNow()
+  }
+
   const template: MenuItemConstructorOptions[] = []
 
   if (process.platform === 'darwin') {
-    template.push({ role: 'appMenu' }, { label: 'Server', submenu: [changeServer] })
+    template.push({ role: 'appMenu' }, { label: 'Server', submenu: [changeServer, checkUpdates] })
   } else {
     template.push({
       label: 'Hustl',
-      submenu: [changeServer, { type: 'separator' }, { role: 'quit', label: 'Beenden' }]
+      submenu: [changeServer, checkUpdates, { type: 'separator' }, { role: 'quit', label: 'Beenden' }]
     })
   }
 
@@ -363,7 +382,86 @@ function registerSetupIpc(): void {
   ipcMain.on('hustl:setup:close', () => setupWindow?.close())
 }
 
-app.whenReady().then(() => {
+function readBuildVariant(): BuildVariant {
+  let pkgVariant: string | undefined
+  try {
+    const pkg = JSON.parse(readFileSync(join(app.getAppPath(), 'package.json'), 'utf8')) as {
+      hustlVariant?: string
+    }
+    pkgVariant = pkg.hustlVariant
+  } catch {
+    pkgVariant = undefined
+  }
+  return resolveBuildVariant({
+    pkgVariant,
+    envVariant: process.env.HUSTL_VARIANT,
+    isPackaged: app.isPackaged
+  })
+}
+
+function registerStandaloneMenu(): void {
+  Menu.setApplicationMenu(
+    Menu.buildFromTemplate([
+      {
+        label: 'Hustl',
+        submenu: [
+          {
+            label: 'Über Hustl',
+            click: () =>
+              void dialog.showMessageBox({
+                message: `Hustl Standalone ${app.getVersion()}`,
+                detail: 'Lokale Ausgabe. Alle Daten bleiben auf diesem Rechner.'
+              })
+          },
+          { label: 'Nach Updates suchen…', click: () => void checkForUpdatesNow() },
+          { type: 'separator' },
+          { role: 'quit', label: 'Beenden' }
+        ]
+      },
+      { role: 'editMenu' },
+      { role: 'viewMenu' },
+      { role: 'windowMenu' }
+    ])
+  )
+}
+
+let quitting = false
+
+// Vor dem Ready: userData, Chromium-Profil und Updater-Cache hängen am Namen.
+if (readBuildVariant() === 'standalone') {
+  app.setName('Hustl Standalone')
+}
+
+app.on('before-quit', (event) => {
+  if (quitting || !stopStandalone) return
+  event.preventDefault()
+  quitting = true
+  void stopStandalone().finally(() => app.exit(0))
+})
+
+const hasLock = app.requestSingleInstanceLock()
+if (!hasLock) {
+  app.quit()
+} else {
+  app.on('second-instance', () => {
+    const win = BrowserWindow.getAllWindows()[0]
+    if (!win) return
+    if (win.isMinimized()) win.restore()
+    win.focus()
+  })
+}
+
+async function startApp(): Promise<void> {
+  if (readBuildVariant() === 'standalone') {
+    await maybeImportLegacyData()
+    const server = await startStandaloneServer()
+    stopStandalone = server.close
+    await createStandaloneWindow(server.origin)
+    registerStandaloneMenu()
+    setupAutoUpdater({ variant: 'standalone', isPackaged: app.isPackaged })
+    return
+  }
+
   const storedUrl = readServerConfig(app.getPath('userData'))
   currentTarget = resolveStartupTarget({
     isPackaged: app.isPackaged,
@@ -373,6 +471,7 @@ app.whenReady().then(() => {
 
   registerSetupIpc()
   buildMenu()
+  setupAutoUpdater({ variant: 'client', isPackaged: app.isPackaged })
 
   if (currentTarget.mode === 'remote') {
     createShellWindow(currentTarget.url)
@@ -391,6 +490,19 @@ app.whenReady().then(() => {
     else if (currentTarget.mode === 'setup') openSetupWindow()
     else createWindow()
   })
+}
+
+app.whenReady().then(async () => {
+  if (!hasLock) return
+  try {
+    await startApp()
+  } catch (error) {
+    dialog.showErrorBox(
+      'Hustl konnte nicht starten',
+      error instanceof Error ? error.message : String(error)
+    )
+    app.quit()
+  }
 })
 
 app.on('window-all-closed', () => {

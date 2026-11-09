@@ -17,21 +17,46 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Windows
+          - name: Client Windows
             os: windows-latest
             script: dist:win
-            artifact: windows
-            files: dist/*.exe
-          - name: macOS
+            artifact: client-windows
+            files: |
+              dist/*.exe
+              dist/latest.yml
+              dist/*.blockmap
+          - name: Client macOS
             os: macos-latest
             script: dist:mac
-            artifact: macos
-            files: dist/*.dmg
-          - name: Linux
+            artifact: client-macos
+            files: |
+              dist/*.dmg
+              dist/latest-mac.yml
+              dist/*.blockmap
+          - name: Client Linux
             os: ubuntu-latest
             script: dist:linux
-            artifact: linux
-            files: dist/*.AppImage
+            artifact: client-linux
+            files: |
+              dist/*.AppImage
+              dist/latest-linux.yml
+              dist/*.blockmap
+          - name: Standalone Windows
+            os: windows-latest
+            script: dist:standalone:win
+            artifact: standalone-windows
+            files: |
+              dist/standalone/*.exe
+              dist/standalone/standalone.yml
+              dist/standalone/*.blockmap
+          - name: Standalone Linux
+            os: ubuntu-latest
+            script: dist:standalone:linux
+            artifact: standalone-linux
+            files: |
+              dist/standalone/*.AppImage
+              dist/standalone/standalone-linux.yml
+              dist/standalone/*.blockmap
 
     steps:
       - uses: actions/checkout@v4
@@ -79,10 +104,17 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p release
-          cp artifacts/hustl-windows/*.exe release/Hustl-win.exe
-          cp artifacts/hustl-macos/*-arm64.dmg release/Hustl-mac-arm64.dmg
-          cp artifacts/hustl-macos/*-x64.dmg release/Hustl-mac-x64.dmg
-          cp artifacts/hustl-linux/*.AppImage release/Hustl-linux.AppImage
+          cp artifacts/hustl-client-windows/*.exe release/Hustl-Setup.exe
+          cp artifacts/hustl-client-macos/*-arm64.dmg release/Hustl-arm64.dmg
+          cp artifacts/hustl-client-macos/*-x64.dmg release/Hustl-x64.dmg
+          cp artifacts/hustl-client-linux/*.AppImage release/Hustl.AppImage
+          cp artifacts/hustl-standalone-windows/*.exe release/Hustl-Standalone-Setup.exe
+          cp artifacts/hustl-standalone-linux/*.AppImage release/Hustl-Standalone.AppImage
+          # Old names stay available for existing links.
+          cp artifacts/hustl-client-windows/*.exe release/Hustl-win.exe
+          cp artifacts/hustl-client-macos/*-arm64.dmg release/Hustl-mac-arm64.dmg
+          cp artifacts/hustl-client-macos/*-x64.dmg release/Hustl-mac-x64.dmg
+          cp artifacts/hustl-client-linux/*.AppImage release/Hustl-linux.AppImage
           ls -lh release
 
       - uses: softprops/action-gh-release@v2

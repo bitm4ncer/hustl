@@ -15,8 +15,14 @@ const AUTH_TABLES = [
   'auth_bootstrap',
 ]
 
-const SKIP_DIRS = new Set(['backups', 'exports'])
-const SKIP_FILES = new Set(['bootstrap-token.txt'])
+const SKIP_DIRS = new Set(['backups', 'exports', '.restore-staging'])
+const SKIP_FILES = new Set([
+  'bootstrap-token.txt',
+  'hustl.db',
+  'hustl.db-wal',
+  'hustl.db-shm',
+  'hustl.db-journal'
+])
 
 let busy = false
 
@@ -26,7 +32,7 @@ function walk(root: string, current = root): string[] {
   for (const entry of entries) {
     const absolute = path.join(current, entry.name)
     if (entry.isDirectory()) {
-      if (current === root && SKIP_DIRS.has(entry.name)) continue
+      if (current === root && (SKIP_DIRS.has(entry.name) || entry.name.startsWith('.before-restore-'))) continue
       files.push(...walk(root, absolute))
     } else if (entry.isFile()) {
       if (current === root && SKIP_FILES.has(entry.name)) continue
@@ -41,7 +47,7 @@ function sha256(buffer: Buffer): string {
   return createHash('sha256').update(buffer).digest('hex')
 }
 
-/** Hasht eine Datei als Stream — kein Vollpuffer bei großen Archiven. */
+/** Hasht eine Datei als Stream â€” kein Vollpuffer bei groÃŸen Archiven. */
 async function hashFile(absolute: string): Promise<string> {
   const hash = createHash('sha256')
   await new Promise<void>((resolve, reject) => {
@@ -65,7 +71,7 @@ export interface ArchiveResult {
 
 /**
  * Baut das Vollarchiv als Streaming-ZIP. Wirft `CONFLICT`, wenn bereits eines
- * erzeugt wird. Die temporäre DB-Kopie wird nach dem Stream gelöscht.
+ * erzeugt wird. Die temporÃ¤re DB-Kopie wird nach dem Stream gelÃ¶scht.
  */
 export async function buildFullArchive(args: {
   db: DatabaseSync
@@ -118,7 +124,7 @@ export async function buildFullArchive(args: {
     const manifest = {
       format: 1,
       createdAt: now.toISOString(),
-      appVersion: process.env.HUSTL_VERSION ?? '1.1.1',
+      appVersion: process.env.HUSTL_VERSION ?? '1.1.2',
       database: {
         file: 'data/hustl.db',
         sha256: sha256(databaseBytes),
@@ -134,8 +140,8 @@ export async function buildFullArchive(args: {
 
     const archive = new ZipArchive({ zlib: { level: 6 } })
 
-    // Genau einmal aufräumen — auch wenn der Client den Download abbricht und
-    // archiver nie 'end' emittiert. Sonst bleibt `busy` für immer true.
+    // Genau einmal aufrÃ¤umen â€” auch wenn der Client den Download abbricht und
+    // archiver nie 'end' emittiert. Sonst bleibt `busy` fÃ¼r immer true.
     let released = false
     const release = (): void => {
       if (released) return
@@ -149,7 +155,7 @@ export async function buildFullArchive(args: {
 
     archive.append(readme(now), { name: 'README.txt' })
     archive.append(databaseBytes, { name: 'data/hustl.db' })
-    // Dateien als Stream anhängen: konstanter Speicherbedarf statt Vollpuffer.
+    // Dateien als Stream anhÃ¤ngen: konstanter Speicherbedarf statt Vollpuffer.
     for (const entry of entries) archive.file(entry.absolute, { name: entry.name })
     for (const [name, content] of Object.entries(csvFiles)) archive.append(content, { name })
     // Manifest zuletzt: es beschreibt genau den Inhalt dieses Streams.
@@ -166,21 +172,22 @@ export async function buildFullArchive(args: {
 
 function readme(now: Date): string {
   return [
-    'Hustl — Datenexport',
+    'Hustl â€” Datenexport',
     '',
     `Erstellt: ${now.toISOString()}`,
     '',
     'Inhalt:',
     '  data/hustl.db      konsistenter SQLite-Snapshot (ohne Anmeldedaten)',
-    '  data/…             alle PDFs, Belege, Kontoauszüge und Vorlagen-Dateien',
-    '  csv/…              lesbare Tabellenexporte (Semikolon, UTF-8)',
+    '  data/â€¦             alle PDFs, Belege, KontoauszÃ¼ge und Vorlagen-Dateien',
+    '  csv/â€¦              lesbare Tabellenexporte (Semikolon, UTF-8)',
     '  manifest.json      SHA-256 und Bytezahl jeder Datei',
     '',
-    'Prüfen:',
+    'PrÃ¼fen:',
     '  sha256sum data/hustl.db  mit manifest.database.sha256 vergleichen.',
     '',
     'Wiederherstellen:',
-    '  restore.sh prüft Integrität und Manifest, bevor es /data ersetzt.',
+    '  restore.sh prÃ¼ft IntegritÃ¤t und Manifest, bevor es /data ersetzt.',
     '',
   ].join('\n')
 }
+

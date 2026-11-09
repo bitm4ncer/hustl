@@ -196,6 +196,9 @@ export function registerAuthRoutes(app: FastifyInstance, deps: AuthDeps): void {
 
   // --- Session --------------------------------------------------------------
   app.get('/api/auth/session', async (request, reply) => {
+    if (config.local) {
+      return reply.send({ authenticated: true, local: true, credentials: [], needsSetup: false })
+    }
     const session = currentSession(db, request)
     return reply.send({
       authenticated: session != null,
