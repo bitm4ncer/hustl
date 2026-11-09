@@ -689,7 +689,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </article>
         </div>
 
-        <p class="hosting-note reveal">The desktop app is <strong>not a server</strong>: it needs a reachable Hustl URL. A free cloud allowance (e.g. Oracle Cloud Free Tier, ARM) may be enough for testing. Availability and terms change.</p>
+        <p class="hosting-note reveal">The client is <strong>not a server</strong>: it needs a reachable Hustl URL. The standalone app runs without one. A free cloud allowance (e.g. Oracle Cloud Free Tier, ARM) may be enough for testing. Availability and terms change.</p>
       </div>
     </section>
 
@@ -698,26 +698,45 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <div class="section-head reveal">
           <p class="eyebrow">Download</p>
           <h2>For your computer.</h2>
-          <p>The desktop app is a slim shell around your Hustl instance. On first launch it asks for your server URL. Nothing else.</p>
+          <p>Two downloads: <strong>Hustl Standalone</strong> runs locally without a server. <strong>Hustl Client</strong> connects to your own instance.</p>
         </div>
 
+        <h3 class="download-subhead reveal">Hustl Standalone <span>local &middot; no server &middot; no account</span></h3>
         <div class="download-grid">
-          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-win.exe" rel="noreferrer">
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Standalone-Setup.exe" rel="noreferrer">
             <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-windows"></use></svg></span>
             <span class="download-info"><strong>Windows</strong><small>Installer &middot; 64-bit</small></span>
             <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
-          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-arm64.dmg" rel="noreferrer">
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Standalone.AppImage" rel="noreferrer">
+            <span class="download-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linux"></use></svg></span>
+            <span class="download-info"><strong>Linux</strong><small>AppImage &middot; x86_64</small></span>
+            <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+          <div class="download-card is-disabled reveal" aria-disabled="true">
+            <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"></use></svg></span>
+            <span class="download-info"><strong>macOS</strong><small>coming soon &middot; signed</small></span>
+          </div>
+        </div>
+
+        <h3 class="download-subhead reveal">Hustl Client <span>for your own Hustl instance</span></h3>
+        <div class="download-grid">
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-Setup.exe" rel="noreferrer">
+            <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-windows"></use></svg></span>
+            <span class="download-info"><strong>Windows</strong><small>Installer &middot; 64-bit</small></span>
+            <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-arm64.dmg" rel="noreferrer">
             <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"></use></svg></span>
             <span class="download-info"><strong>macOS</strong><small>Apple Silicon</small></span>
             <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
-          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-mac-x64.dmg" rel="noreferrer">
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-x64.dmg" rel="noreferrer">
             <span class="download-icon"><svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"></use></svg></span>
             <span class="download-info"><strong>macOS</strong><small>Intel &middot; x64</small></span>
             <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
-          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl-linux.AppImage" rel="noreferrer">
+          <a class="download-card reveal" href="https://github.com/bitm4ncer/hustl/releases/latest/download/Hustl.AppImage" rel="noreferrer">
             <span class="download-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linux"></use></svg></span>
             <span class="download-info"><strong>Linux</strong><small>AppImage &middot; x86_64</small></span>
             <svg class="icon download-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
@@ -726,7 +745,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
 
         <div class="download-foot reveal">
           <p><strong>PWA instead of a download:</strong> Open your Hustl URL in the browser and choose “Install app” (Chrome/Edge) or “Add to Home Screen” (iOS). No installer, no updates. Just the website.</p>
-          <p class="muted">The desktop builds are unsigned. Windows and macOS ask for approval on first launch. <a href="https://github.com/bitm4ncer/hustl#download-the-desktop-app" target="_blank" rel="noreferrer">Help in the README</a></p>
+          <p class="muted">Hustl is open source (ISC) and the builds are unsigned. Windows shows SmartScreen: “More info” → “Run anyway”. On macOS 15+ use <strong>System Settings → Privacy &amp; Security → “Open Anyway”</strong>. A signed macOS standalone version with automatic updates follows once demand supports it.</p>
           <a class="btn btn-ghost btn-small" href="https://github.com/bitm4ncer/hustl/releases/latest" target="_blank" rel="noreferrer">All releases on GitHub</a>
         </div>
       </div>
@@ -751,7 +770,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>Do I need a server?</summary>
-            <p>Yes. Hustl is deliberately self-hosted and not a hosted service. A small VPS is enough. The installer sets up Docker, HTTPS (in bundled mode) and a daily database snapshot. If that sounds too technical, use the agent guide.</p>
+            <p>For the PWA and client, yes. Hustl is deliberately self-hosted and not a hosted service; a small VPS is enough, and the installer sets up Docker, HTTPS and a daily snapshot. To get started, the <strong>standalone app</strong> runs locally without a server.</p>
           </details>
           <details>
             <summary>Can I use Hustl with a team?</summary>

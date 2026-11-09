@@ -1329,6 +1329,23 @@ summary:focus-visible {
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
+.download-subhead {
+  margin: 28px 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.download-subhead:first-of-type {
+  margin-top: 0;
+}
+.download-subhead span {
+  margin-left: 8px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.download-card.is-disabled {
+  opacity: 0.55;
+  cursor: default;
+}
 .download-card {
   display: flex;
   align-items: center;
