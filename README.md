@@ -18,6 +18,7 @@
   <a href="https://github.com/bitm4ncer/hustl/releases/latest"><img alt="Download for Windows, macOS and Linux" src="https://img.shields.io/badge/download-Windows%20%7C%20macOS%20%7C%20Linux-555"></a>
   <a href="LICENSE"><img alt="License: ISC" src="https://img.shields.io/badge/license-ISC-blue"></a>
   <img alt="Self-hosted with Docker" src="https://img.shields.io/badge/self--hosted-Docker-2496ED?logo=docker&logoColor=white">
+  <a href="https://buymeacoffee.com/bitmancer"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
 </p>
 
 ---
