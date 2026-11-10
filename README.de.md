@@ -23,7 +23,7 @@
 
 ---
 
-Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Studios in Deutschland. Sie läuft auf einem kleinen Server, den du selbst mietest. Deine Rechnungen, Kunden und Belege bleiben dort, nicht bei uns. Du nutzt Hustl im Browser, installierst es auf dem Handy als App oder nimmst die Desktop-App für Windows, macOS und Linux.
+Hustl ist eine Rechnungs- und Finanz-App für Freelancer, Soloselbstständige, Musiker, Künstler und andere unabhängige Kreative. Sie läuft auf einem kleinen Server, den du selbst mietest. Deine Rechnungen, Kunden und Belege bleiben dort, nicht bei uns. Du nutzt Hustl im Browser, installierst es auf dem Handy als App oder nimmst die Desktop-App für Windows, macOS und Linux. In Deutschland entwickelt, mit deutscher E-Rechnung (ZUGFeRD/Factur-X), wenn du sie brauchst — die App selbst ist nicht auf Deutschland beschränkt.
 
 <p align="center">
   <a href="https://bitm4ncer.github.io/hustl/de/"><strong>Website & Screenshots →</strong></a>
@@ -33,7 +33,7 @@ Hustl ist eine Rechnungs- und Finanz-App für Soloselbstständige und kleine Stu
 
 Hustl passt zu dir, wenn du:
 
-- als Freelancer arbeitest oder ein kleines Studio führst,
+- als Freelancer, Soloselbstständiger, Musiker, Künstler oder anderer unabhängiger Kreativer arbeitest,
 - Rechnungen, Angebote, Projekte, Aufgaben und Finanzen an einem Ort haben willst,
 - deine Daten auf deinem eigenen Server haben willst statt in einer fremden Cloud,
 - mit einem kleinen Server einverstanden bist, der etwa **5 bis 15 € im Monat** kostet.

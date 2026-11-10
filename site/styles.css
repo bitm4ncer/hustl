@@ -264,16 +264,6 @@ button {
   transform: translateY(-1px);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
 }
-.btn-donate {
-  background: #ffdd00;
-  color: #111;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
-}
-.btn-donate:hover {
-  background: #ffe95c;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.26);
-}
 .btn-ghost {
   background: var(--surface);
   color: var(--text);
@@ -1852,15 +1842,6 @@ summary:focus-visible {
 
 @media (max-width: 520px) {
   .header-cta {
-    display: none;
-  }
-  .header-donate {
-    width: 40px;
-    min-height: 40px;
-    padding: 0;
-    border-radius: 10px;
-  }
-  .header-donate .donate-label {
     display: none;
   }
   .planner-panel {

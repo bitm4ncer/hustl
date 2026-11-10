@@ -1,6 +1,6 @@
 # Hustl
 
-> Hustl is a self-hosted invoicing and finance app for freelancers and small studios. It runs on your own server, with no cloud account and no telemetry in the app.
+> Hustl is a self-hosted invoicing and finance app for freelancers, solo self-employed people, musicians, artists and other independent creatives. It runs on your own server, with no cloud account and no telemetry in the app.
 
 ## Canonical pages
 
@@ -26,7 +26,7 @@
 
 ## Who it is for
 
-Solo freelancers and one-person studios who want one calm place for projects, tasks, invoices and finances, no software subscription, and control over their data on their own server. Hustl is built for one person per instance: several passkeys, but no roles or approvals.
+Freelancers, solo self-employed people, musicians, artists and other independent creatives who want one calm place for projects, tasks, invoices and finances, no software subscription, and control over their data on their own server. Hustl is built for one person per instance: several passkeys, but no roles or approvals.
 
 ## Hosting
 

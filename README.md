@@ -23,7 +23,7 @@
 
 ---
 
-Hustl is an invoicing and finance app for freelancers and small studios in Germany. It runs on a small server that you rent yourself. Your invoices, clients and receipts stay there, not with us. Use Hustl in the browser, install it on your phone as an app, or use the desktop app for Windows, macOS and Linux.
+Hustl is an invoicing and finance app for freelancers, solo self-employed people, musicians, artists and other independent creatives. It runs on a small server that you rent yourself. Your invoices, clients and receipts stay there, not with us. Use Hustl in the browser, install it on your phone as an app, or use the desktop app for Windows, macOS and Linux. Built in Germany with German e-invoicing (ZUGFeRD/Factur-X) when you need it — the app itself is not limited to Germany.
 
 <p align="center">
   <a href="https://bitm4ncer.github.io/hustl/"><strong>Website & screenshots →</strong></a>
@@ -33,7 +33,7 @@ Hustl is an invoicing and finance app for freelancers and small studios in Germa
 
 Hustl is a good fit if you:
 
-- work as a freelancer or run a small studio,
+- work as a freelancer, solo self-employed person, musician, artist or other independent creative,
 - want invoices, offers, projects, tasks and finances in one place,
 - want your data on your own server instead of someone else's cloud,
 - are okay with a small server that costs about **5 to 15 € per month**.
