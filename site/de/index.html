@@ -16,14 +16,47 @@
       "operatingSystem": "Windows, macOS, Linux, iOS, Android",
       "url": "https://bitm4ncer.github.io/hustl/de/",
       "downloadUrl": "https://github.com/bitm4ncer/hustl/releases/latest",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.1.3",
       "license": "https://github.com/bitm4ncer/hustl/blob/main/LICENSE",
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
       "screenshot": "https://bitm4ncer.github.io/hustl/assets/screens/invoices.webp",
       "sameAs": ["https://github.com/bitm4ncer/hustl"],
       "inLanguage": ["de", "en"],
+      "featureList": [
+        "E-Rechnungen nach EN 16931 (ZUGFeRD/Factur-X)",
+        "Rechnungen, Angebote und Kundenverwaltung",
+        "Projekte, Aufgaben und Tagesplaner",
+        "Finanz- und Ausgabenübersicht mit Kontoauszugsabgleich",
+        "PDF-, CSV- und Vollarchiv-Export"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Freelancer, Soloselbstständige, Musiker, Künstler und unabhängige Kreative"
+      },
+      "keywords": "E-Rechnung, ZUGFeRD, Factur-X, Rechnungssoftware, Finanzen, Freelancer, Musiker, Künstler, self-hosted",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Hustl",
+        "url": "https://bitm4ncer.github.io/hustl/de/"
+      },
       "description": "Self-hosted App für E-Rechnungen, Angebote, Projekte, Kunden, Aufgaben und Finanzen für Freelancer, Soloselbstständige, Musiker und Künstler."
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hustl",
+      "url": "https://bitm4ncer.github.io/hustl/de/",
+      "logo": "https://bitm4ncer.github.io/hustl/assets/logo.png",
+      "sameAs": ["https://github.com/bitm4ncer/hustl"],
+      "founder": {
+        "@type": "Person",
+        "name": "bitmancer",
+        "url": "https://github.com/bitm4ncer"
+      }
     }
   </script>
   <meta property="og:type" content="website">
@@ -48,6 +81,102 @@
   <link rel="preload" href="../assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
   <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet Hustl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die App ist kostenlos und Open Source (ISC). Du zahlst nur deinen Server (je nach Anbieter etwa 5 bis 15 € im Monat) und eine Domain, meist 5 bis 30 € im Jahr (0,40 bis 2,50 € im Monat). Der Preis hängt von TLD und Anbieter ab; Aktionen im ersten Jahr sind oft günstiger als die Verlängerung. Kein Abo, keine Lizenzgebühr."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo liegen meine Daten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In einer SQLite-Datenbank und als PDFs auf deinem eigenen Server. Es gibt keine Cloud, kein Konto bei uns und keine Analytics. Backups verlassen den Server nur, wenn du selbst ein Offsite-Ziel einrichtest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich einen Server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für PWA und Client ja. Hustl ist bewusst self-hosted und kein gehosteter Dienst; ein kleiner VPS reicht, der Installer richtet Docker, HTTPS und einen täglichen Snapshot ein. Für den Einstieg gibt es die Standalone-App , die lokal ohne Server läuft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Hustl mit mehreren Personen nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl ist für eine Person pro Instanz gedacht. Du kannst mehrere Passkeys und Geräte nutzen, aber es gibt keine Rollen, Teams oder getrennten Benutzerkonten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Hustl auch auf einem NAS oder zu Hause betreiben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, wenn Docker und ein dauerhafter Speicher vorhanden sind, zum Beispiel auf einer Synology/QNAP-NAS, einem Heimserver oder einem Raspberry Pi. Für Zugriff von außen brauchst du einen Reverse Proxy oder einen Tunnel wie Cloudflare Tunnel. Die Hosting-Optionen stehen oben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Hustl auf dem iPhone nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, als PWA. Öffne deine Hustl-URL in Safari, tippe auf „Teilen“ und wähle „Zum Home-Bildschirm“. Die Anmeldung läuft über Face ID oder Touch ID."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist ein Passkey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Login ohne Passwort: Face ID, Touch ID, Windows Hello oder ein Sicherheitsschlüssel. Du kannst mehrere Geräte hinzufügen und zehn Recovery-Codes aufbewahren, für den Fall, dass ein Gerät verloren geht."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind meine Daten sicher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl nutzt Passkeys, HttpOnly-Session-Cookies und CSRF-Schutz. HTTPS übernimmt dein Reverse Proxy (im gebündelten Modus Caddy). Updates und Backups liegen in deiner Verantwortung. Der Installer legt täglich einen Datenbank-Snapshot an; PDFs und Belege kommen nur mit restic oder dem Vollarchiv dazu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich meine Daten exportieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Du kannst ein Vollarchiv als ZIP mit Datenbank, allen PDFs und CSV-Dateien herunterladen. Für die Steuerberatung gibt es zusätzlich einen Monatsexport."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es eine gehostete Version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Hustl ist absichtlich self-hosted, damit deine Rechnungen und Kundendaten bei dir bleiben. Du kannst die App aber auf einem Server deines Vertrauens oder bei einem Anbieter deiner Wahl betreiben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist mit E-Rechnung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand deshalb eine Beispielrechnung mit dem offiziellen KoSIT-Validator testen. Zur E-Rechnungs-Seite."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -137,6 +266,7 @@
         <a href="#planer">Planer</a>
         <a href="#einblicke">Einblicke</a>
         <a href="#finanz-ablauf">Finanzen</a>
+        <a href="e-rechnung/">E-Rechnung</a>
         <a href="#installation">Installation</a>
         <a href="#faq">FAQ</a>
         <a class="nav-download-mobile" href="#download">Download</a>
@@ -813,7 +943,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>Was ist mit E-Rechnung?</summary>
-            <p>Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand deshalb eine Beispielrechnung mit dem offiziellen KoSIT-Validator testen.</p>
+            <p>Hustl erzeugt hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). Geprüft wird das Datenmodell, nicht die vollständige XSD-/Schematron-Konformität. Vor dem ersten echten Versand deshalb eine Beispielrechnung mit dem offiziellen KoSIT-Validator testen. <a href="e-rechnung/">Zur E-Rechnungs-Seite</a>.</p>
           </details>
         </div>
       </div>
@@ -860,6 +990,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <a href="#einblicke">Einblicke</a>
         <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
+        <a href="e-rechnung/">E-Rechnung</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">

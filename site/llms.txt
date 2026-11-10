@@ -6,12 +6,26 @@
 
 - English: https://bitm4ncer.github.io/hustl/
 - German: https://bitm4ncer.github.io/hustl/de/
+- E-invoicing (English): https://bitm4ncer.github.io/hustl/e-invoicing/
+- E-Rechnung (German): https://bitm4ncer.github.io/hustl/de/e-rechnung/
 - Source: https://github.com/bitm4ncer/hustl
 - Documentation: https://github.com/bitm4ncer/hustl#readme
 - German documentation: https://github.com/bitm4ncer/hustl/blob/main/README.de.md
 - Installation with an agent: https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md
 - Latest release: https://github.com/bitm4ncer/hustl/releases/latest
 - License: https://github.com/bitm4ncer/hustl/blob/main/LICENSE (ISC)
+
+## E-invoicing facts (Germany, as of November 2026)
+
+- Since 1 January 2025, domestic B2B businesses in Germany must be able to receive e-invoices.
+- From 1 January 2027, businesses with a prior-year turnover above €800,000 must issue e-invoices.
+- From 1 January 2028, all businesses must issue e-invoices, except small businesses under § 19 UStG.
+- Small businesses under § 19 UStG must receive and archive e-invoices, but are exempt from issuing them.
+- An e-invoice is a structured, machine-readable dataset according to EN 16931. A plain PDF is not an e-invoice.
+- XRechnung is pure XML. ZUGFeRD/Factur-X is a hybrid PDF/A-3 file with embedded XML.
+- E-invoices must be archived electronically (generally 8 years).
+- Hustl creates ZUGFeRD/Factur-X invoices. XRechnung and receiving third-party e-invoices are not the core output.
+- This is general information, not tax advice. Verify the current rules with a tax adviser.
 
 ## What it does
 

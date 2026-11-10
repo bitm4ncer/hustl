@@ -43,7 +43,7 @@ Hustl ist **nicht** das Richtige, wenn du eine Team-Plattform mit mehreren Benut
 ## Was Hustl kann
 
 - **Rechnungen**: schreiben, nummerieren, finalisieren und als PDF herunterladen.
-- **E-Rechnung**: hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X).
+- **E-Rechnung**: hybride PDF/A-3-Dateien nach EN 16931 (ZUGFeRD / Factur-X). [Zur E-Rechnungs-Seite →](https://bitm4ncer.github.io/hustl/de/e-rechnung/)
 - **Angebote**: Versionen, Status und PDF; ein angenommenes Angebot wird zu Kunde und Projekt.
 - **Kunden und Projekte**: Stundensätze, Fixpreise, Positionen und offene Posten.
 - **Finanzen**: Einnahmen, Ausgaben, Fixkosten, Dashboard, Prognose und Monatsexport.

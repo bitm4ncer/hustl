@@ -43,7 +43,7 @@ Hustl is **not** a good fit if you need a multi-user team platform, want a fully
 ## What Hustl does
 
 - **Invoices**: create, number, finalize and download as PDF.
-- **E-invoices**: hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X).
+- **E-invoices**: hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). [Read the e-invoicing guide →](https://bitm4ncer.github.io/hustl/e-invoicing/)
 - **Offers**: versions, status and PDF; turn an accepted offer into a client and project.
 - **Clients and projects**: hourly rates, fixed prices, line items and open items.
 - **Finance**: income, expenses, fixed costs, dashboard, forecast and monthly export.

@@ -541,6 +541,79 @@ summary:focus-visible {
   background: var(--bg-soft);
 }
 
+/* ---------- E-invoicing page ---------- */
+
+.page-hero {
+  padding: 150px 0 78px;
+}
+.page-hero h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+}
+.page-hero .lede {
+  max-width: 760px;
+}
+.article-meta {
+  margin-top: 14px;
+  color: var(--faint);
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+}
+.legal-note {
+  max-width: 920px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.legal-note strong {
+  color: var(--text);
+}
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+.deadline-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+.deadline-table th,
+.deadline-table td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.deadline-table th {
+  color: var(--faint);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.deadline-table td {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+.deadline-table td:first-child {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.feature-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.main-nav a[aria-current='page'] {
+  color: var(--text);
+}
+
 .section-head {
   max-width: 760px;
   margin-bottom: 54px;
@@ -1764,6 +1837,7 @@ summary:focus-visible {
     margin-bottom: 38px;
   }
   .feature-grid,
+  .feature-grid.cols-2,
   .steps,
   .hosting-grid,
   .download-grid,

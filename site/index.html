@@ -16,14 +16,47 @@
       "operatingSystem": "Windows, macOS, Linux, iOS, Android",
       "url": "https://bitm4ncer.github.io/hustl/",
       "downloadUrl": "https://github.com/bitm4ncer/hustl/releases/latest",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.1.3",
       "license": "https://github.com/bitm4ncer/hustl/blob/main/LICENSE",
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
       "screenshot": "https://bitm4ncer.github.io/hustl/assets/screens/invoices.webp",
       "sameAs": ["https://github.com/bitm4ncer/hustl"],
       "inLanguage": ["en", "de"],
+      "featureList": [
+        "E-invoices according to EN 16931 (ZUGFeRD/Factur-X)",
+        "Invoices, offers and client management",
+        "Projects, tasks and a daily planner",
+        "Finance and expense overview with bank statement matching",
+        "PDF, CSV and full-archive export"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Freelancers, solo self-employed people, musicians, artists and independent creatives"
+      },
+      "keywords": "e-invoicing, ZUGFeRD, Factur-X, invoice software, finance, freelancers, musicians, artists, self-hosted",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Hustl",
+        "url": "https://bitm4ncer.github.io/hustl/"
+      },
       "description": "Self-hosted app for e-invoices, offers, projects, clients, tasks and finances for freelancers, solo self-employed people, musicians and artists."
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hustl",
+      "url": "https://bitm4ncer.github.io/hustl/",
+      "logo": "https://bitm4ncer.github.io/hustl/assets/logo.png",
+      "sameAs": ["https://github.com/bitm4ncer/hustl"],
+      "founder": {
+        "@type": "Person",
+        "name": "bitmancer",
+        "url": "https://github.com/bitm4ncer"
+      }
     }
   </script>
   <meta property="og:type" content="website">
@@ -48,6 +81,102 @@
   <link rel="preload" href="assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Hustl cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The app is free and open source (ISC). You only pay for your server (roughly €5 to €15 per month depending on the provider) and a domain, usually €5 to €30 per year (€0.40 to €2.50 per month). The price depends on the TLD and registrar; first-year offers are often cheaper than renewals. No subscription, no license fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a SQLite database and as PDFs on your own server. There is no cloud, no account with us and no analytics. Backups only leave the server if you set up an offsite target such as restic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the PWA and client, yes. Hustl is deliberately self-hosted and not a hosted service; a small VPS is enough, and the installer sets up Docker, HTTPS and a daily snapshot. To get started, the standalone app runs locally without a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Hustl with a team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl is designed for one person per instance. You can use multiple passkeys and devices, but there are no roles, teams or separate user accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run Hustl on a NAS or at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if Docker and persistent storage are available, for example on a Synology/QNAP NAS, a home server or a Raspberry Pi. For external access you need a reverse proxy or a tunnel such as Cloudflare Tunnel. See the hosting options above."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Hustl on my iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, as a PWA. Open your Hustl URL in Safari, tap “Share” and choose “Add to Home Screen”. Sign-in uses Face ID or Touch ID."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a passkey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A passwordless login using Face ID, Touch ID, Windows Hello or a security key. You can add more devices later with a recovery code. Store the ten recovery codes separately from your phone or laptop."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl uses passkeys, HttpOnly session cookies and CSRF protection. HTTPS is handled by your reverse proxy (Caddy in bundled mode). Updates and backups are your responsibility. The installer creates a daily database snapshot; PDFs and receipts are only included with restic or the full archive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Download a full archive as a ZIP with the database, all PDFs and CSV files. For your tax adviser there is also a monthly export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a hosted version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Hustl is deliberately self-hosted so your invoices and customer data stay with you. You can run it on a server you trust or at a hosting provider of your choice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about e-invoicing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl creates hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). It checks the data model, not full XSD/Schematron conformance. Before the first real send, validate a sample with the official KoSIT validator. Read the full e-invoicing guide."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -134,6 +263,7 @@
         <a href="#planner">Planner</a>
         <a href="#screens">Screens</a>
         <a href="#finance-flow">Finance</a>
+        <a href="e-invoicing/">E-invoicing</a>
         <a href="#installation">Install</a>
         <a href="#faq">FAQ</a>
         <a class="nav-download-mobile" href="#download">Download</a>
@@ -810,7 +940,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
           </details>
           <details>
             <summary>What about e-invoicing?</summary>
-            <p>Hustl creates hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). It checks the data model, not full XSD/Schematron conformance. Before the first real send, validate a sample with the official KoSIT validator.</p>
+            <p>Hustl creates hybrid PDF/A-3 files according to EN 16931 (ZUGFeRD / Factur-X). It checks the data model, not full XSD/Schematron conformance. Before the first real send, validate a sample with the official KoSIT validator. <a href="e-invoicing/">Read the full e-invoicing guide</a>.</p>
           </details>
         </div>
       </div>
@@ -857,6 +987,7 @@ cd /opt/hustl/src &amp;&amp; sudo ./deploy/selfhost/install.sh</code></pre>
         <a href="#screens">Screens</a>
         <a href="#installation">Installation</a>
         <a href="#hosting">Hosting</a>
+        <a href="e-invoicing/">E-invoicing</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">

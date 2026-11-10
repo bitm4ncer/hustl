@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Rechnung für Freelancer, Künstler und Selbstständige | Hustl</title>
+  <meta name="description" content="E-Rechnung Pflicht 2027/2028: Fristen, XRechnung vs. ZUGFeRD und eine self-hosted Lösung für Freelancer, Künstler, Musiker und Selbstständige. Ohne Cloud-Zwang.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#101012">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://bitm4ncer.github.io/hustl/de/e-rechnung/",
+          "url": "https://bitm4ncer.github.io/hustl/de/e-rechnung/",
+          "name": "E-Rechnung für Freelancer, Künstler und Selbstständige",
+          "description": "E-Rechnung Pflicht 2027/2028: Fristen, XRechnung vs. ZUGFeRD und eine self-hosted Lösung für Freelancer, Künstler, Musiker und Selbstständige.",
+          "inLanguage": "de",
+          "isPartOf": { "@type": "WebSite", "name": "Hustl", "url": "https://bitm4ncer.github.io/hustl/de/" }
+        },
+        {
+          "@type": "Article",
+          "headline": "E-Rechnung für Freelancer, Künstler und Selbstständige",
+          "description": "Fristen, Formate und ein self-hosted E-Rechnungs-Workflow für Freelancer und unabhängige Kreative.",
+          "datePublished": "2026-11-10",
+          "dateModified": "2026-11-10",
+          "inLanguage": "de",
+          "author": { "@type": "Organization", "name": "Hustl", "url": "https://bitm4ncer.github.io/hustl/de/" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hustl",
+            "url": "https://bitm4ncer.github.io/hustl/de/",
+            "logo": { "@type": "ImageObject", "url": "https://bitm4ncer.github.io/hustl/assets/logo.png" }
+          },
+          "mainEntityOfPage": "https://bitm4ncer.github.io/hustl/de/e-rechnung/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Hustl", "item": "https://bitm4ncer.github.io/hustl/de/" },
+            { "@type": "ListItem", "position": 2, "name": "E-Rechnung", "item": "https://bitm4ncer.github.io/hustl/de/e-rechnung/" }
+          ]
+        }
+      ]
+    }
+  </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ab wann muss ich E-Rechnungen ausstellen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seit dem 1. Januar 2025 müssen inländische B2B-Unternehmen E-Rechnungen empfangen können. Ab dem 1. Januar 2027 müssen Unternehmen mit einem Vorjahresumsatz über 800.000 € E-Rechnungen ausstellen. Ab dem 1. Januar 2028 gilt die Ausstellungspflicht für alle Unternehmen, außer Kleinunternehmer nach § 19 UStG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Müssen Kleinunternehmer E-Rechnungen ausstellen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Kleinunternehmer nach § 19 UStG sind dauerhaft von der Ausstellungspflicht befreit, müssen E-Rechnungen aber empfangen und archivieren können. Freiwillig dürfen sie E-Rechnungen ausstellen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Reicht eine PDF-Rechnung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Eine E-Rechnung ist ein strukturierter, maschinenlesbarer Datensatz nach EN 16931, zum Beispiel XRechnung (XML) oder ZUGFeRD (PDF/A-3 mit eingebettetem XML). Ein normales PDF ist keine E-Rechnung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen XRechnung und ZUGFeRD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "XRechnung ist reines XML. ZUGFeRD/Factur-X ist hybrid: eine lesbare PDF/A-3-Datei mit eingebettetem XML-Datensatz. Hustl erstellt ZUGFeRD-/Factur-X-Rechnungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Unterstützt Hustl XRechnung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl konzentriert sich auf ZUGFeRD/Factur-X (hybrides PDF/A-3). XRechnung ist ein reines XML-Format und nicht der Kern-Output. Wenn du XRechnung für öffentliche Auftraggeber brauchst, prüfe deinen Workflow, bevor du dich auf Hustl verlässt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Hustl für die Steuererklärung nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl hilft dir, Belege zu sammeln, Finanzen zu ordnen und Daten zu exportieren. Es ist keine Steuerberatung und reicht keine Steuererklärung ein. Validiere E-Rechnungen mit dem offiziellen KoSIT-Validator und besprich deinen Prozess mit deinem Steuerberater."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Hustl selbst hosten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Hustl ist Open Source (ISC) und läuft auf deinem eigenen Server. Die Standalone-App läuft lokal ohne Server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kann ich exportieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDFs, CSV-Tabellen und ein Vollarchiv mit Datenbank und Dokumenten. So bekommt deine Steuerberatung die zugrunde liegenden Daten, ohne dass du an eine Cloud-Plattform gebunden bist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind diese Fristen rechtlich bindend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Diese Seite ist allgemeine Information mit Stand November 2026, keine Steuer- oder Rechtsberatung. Prüfe deinen Einzelfall mit deinem Steuerberater."
+          }
+        }
+      ]
+    }
+  </script>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="E-Rechnung für Freelancer, Künstler und Selbstständige">
+  <meta property="og:description" content="Fristen 2027/2028, XRechnung vs. ZUGFeRD und ein self-hosted E-Rechnungs-Workflow. Für Freelancer, Musiker, Künstler und unabhängige Kreative.">
+  <meta property="og:url" content="https://bitm4ncer.github.io/hustl/de/e-rechnung/">
+  <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hustl: E-Rechnung für Freelancer und Kreative">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitm4ncer.github.io/hustl/assets/og.png">
+  <link rel="canonical" href="https://bitm4ncer.github.io/hustl/de/e-rechnung/">
+  <link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/de/e-rechnung/">
+  <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <link rel="icon" href="../../assets/logo.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="../../llms.txt" title="LLM-freundliche Website-Zusammenfassung">
+  <link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-invoice" viewBox="0 0 24 24">
+      <path d="M7 3.5h7.5L19 8v12.5H7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M14 3.5V8h4.5M8.5 12h7M8.5 15.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-einvoice" viewBox="0 0 24 24">
+      <path d="M6 3.5h8l4 4v13H6a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M14 3.5v4h4M8 12l2.2 2.2L15 9.5M8 17h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24">
+      <path d="M6 3.5v17l2-1.2 2 1.2 2-1.2 2 1.2 2-1.2 2 1.2v-17l-2 1.2-2-1.2-2 1.2-2-1.2-2 1.2-2-1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-finance" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M15 8.5c-.8-.7-1.8-1-3-1-1.8 0-3 .9-3 2.2 0 3.2 6 1.4 6 4.6 0 1.3-1.2 2.2-3 2.2-1.2 0-2.2-.3-3-1M12 5.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-server" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <rect x="4" y="14" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M7.5 7h.01M7.5 17h.01M11 7h.01M11 17h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24">
+      <path d="M5.5 9.5h10v4.6a4.4 4.4 0 0 1-4.4 4.4H9.9a4.4 4.4 0 0 1-4.4-4.4V9.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M15.5 10.5h1.3a2.2 2.2 0 0 1 0 4.4h-1.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M8.3 6.5c0-.7.6-.9.6-1.6M11.3 6.5c0-.7.6-.9.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="../../" aria-label="Hustl: zum Start">
+        <img src="../../assets/logo.png" width="34" height="34" alt="">
+        <span>Hustl</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+        <a href="../../#funktionen">Funktionen</a>
+        <a href="../../#fuer-wen">Für wen</a>
+        <a href="../../#planer">Planer</a>
+        <a href="../../#einblicke">Einblicke</a>
+        <a href="../../#finanz-ablauf">Finanzen</a>
+        <a href="./" aria-current="page">E-Rechnung</a>
+        <a href="../../#installation">Installation</a>
+        <a href="../../#faq">FAQ</a>
+        <a class="nav-download-mobile" href="../../#download">Download</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Sprache wählen">
+          <a href="./" hreflang="de" aria-current="page">DE</a>
+          <a href="../../e-invoicing/" hreflang="en" lang="en" aria-label="English">EN</a>
+        </div>
+        <a class="icon-btn github-link" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer" aria-label="Hustl auf GitHub öffnen" title="GitHub">
+          <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+        </a>
+        <a class="icon-btn donate-link" href="https://buymeacoffee.com/bitmancer" target="_blank" rel="noreferrer" aria-label="Kauf mir einen Kaffee" title="Kauf mir einen Kaffee">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-coffee"></use></svg>
+        </a>
+        <a class="btn btn-primary btn-small header-cta" href="../../#download">Download</a>
+        <button class="menu-btn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="wrap hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> E-Rechnung &middot; Fristen 2027/2028</p>
+        <h1>E-Rechnung für Freelancer, Künstler und Selbstständige</h1>
+        <p class="lede">Die E-Rechnung kommt stufenweise. Hustl erstellt ZUGFeRD-/Factur-X-Rechnungen als PDF/A-3, sammelt Belege und exportiert deine Finanzen für die Steuerberatung — self-hosted auf deinem Server.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../../#installation">
+            Hustl installieren
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+            GitHub ansehen
+          </a>
+        </div>
+        <p class="article-meta">Stand November 2026 &middot; Keine Steuerberatung.</p>
+      </div>
+    </section>
+
+    <section class="section" id="fristen">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Fristen</p>
+          <h2>Wer muss was tun – und wann?</h2>
+          <p>Die Regeln gelten für inländische B2B-Rechnungen. Entscheidend für die Ausstellung ist dein Vorjahresumsatz.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="deadline-table">
+            <thead>
+              <tr><th>Ab</th><th>Pflicht</th><th>Wer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1.1.2025</td><td>E-Rechnungen empfangen</td><td>Alle inländischen B2B-Unternehmen</td></tr>
+              <tr><td>1.1.2027</td><td>E-Rechnungen ausstellen</td><td>Vorjahresumsatz über 800.000 €</td></tr>
+              <tr><td>1.1.2028</td><td>E-Rechnungen ausstellen</td><td>Alle Unternehmen, außer Kleinunternehmer nach § 19 UStG</td></tr>
+              <tr><td>Dauerhaft</td><td>Empfangen &amp; archivieren</td><td>Auch Kleinunternehmer nach § 19 UStG</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="legal-note reveal"><strong>Wichtig:</strong> Kleinunternehmer nach § 19 UStG sind von der <em>Ausstellung</em> befreit, müssen E-Rechnungen aber empfangen und archivieren können. Kleinbetragsrechnungen bis 250 € und Fahrausweise bleiben Ausnahmen. E-Rechnungen müssen außerdem elektronisch archiviert werden (in der Regel 8 Jahre). Diese Seite ist allgemeine Information mit Stand November 2026, keine Steuer- oder Rechtsberatung. Prüfe deinen Einzelfall mit deinem Steuerberater.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="formate">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Formate</p>
+          <h2>Ein PDF allein ist keine E-Rechnung.</h2>
+          <p>Eine E-Rechnung ist ein strukturierter, maschinenlesbarer Datensatz nach EN 16931. In Deutschland sind XRechnung und ZUGFeRD die wichtigsten Formate.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-invoice"></use></svg></span>
+            <h3>Ein PDF reicht nicht</h3>
+            <p>Eine normale PDF-Rechnung ist für Menschen lesbar, aber nicht maschinenlesbar. Sie erfüllt die Anforderung an eine strukturierte E-Rechnung nicht.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg></span>
+            <h3>XRechnung</h3>
+            <p>Reines XML nach EN 16931. Häufig bei öffentlichen Auftraggebern. Zum Lesen brauchst du einen Viewer oder Software.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-receipt"></use></svg></span>
+            <h3>ZUGFeRD / Factur-X</h3>
+            <p>Hybrid: eine lesbare PDF/A-3-Datei mit eingebettetem XML-Datensatz. Dieses Format erzeugt Hustl.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="was-hustl-macht">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Mit Hustl</p>
+          <h2>Von der Rechnung bis zum Export – ohne Ballast.</h2>
+          <p>Hustl ist für Ein-Personen-Betriebe gebaut: Rechnungen, Angebote, Projekte, Aufgaben, Ausgaben und Finanzen in einer ruhigen App.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg></span>
+            <h3>ZUGFeRD/Factur-X erstellen</h3>
+            <p>Hybride PDF/A-3-Rechnungen nach EN 16931 erzeugen. Hustl prüft das Datenmodell; validiere vor dem ersten echten Versand eine Beispielrechnung mit dem offiziellen KoSIT-Validator.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-receipt"></use></svg></span>
+            <h3>Belege &amp; Ausgaben sammeln</h3>
+            <p>Beleg-PDFs hochladen, Felder erkennen lassen, Kontoauszüge importieren und Ausgaben und Einnahmen in einer Übersicht behalten.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-finance"></use></svg></span>
+            <h3>Exportieren &amp; archivieren</h3>
+            <p>PDFs, CSV-Tabellen und ein Vollarchiv mit Datenbank und Dokumenten für deine Steuerberatung herunterladen. Kein Lock-in.</p>
+          </article>
+        </div>
+        <p class="legal-note reveal"><strong>Abgrenzung:</strong> Hustl konzentriert sich auf das Ausstellen von ZUGFeRD-/Factur-X-Rechnungen. XRechnung ist ein reines XML-Format und nicht der Kern-Output. Für den Empfang fremder E-Rechnungen prüfe bitte deinen Workflow und deine Tools, bevor du dich auf Hustl verlässt.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="self-hosted">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Self-hosted</p>
+          <h2>E-Rechnung ohne Cloud-Konto.</h2>
+          <p>Hustl läuft auf deinem eigenen Server oder lokal als Standalone-App. Deine Rechnungen, Belege und Kundendaten bleiben bei dir. Keine Telemetrie, kein Vendor-Lock-in, Open Source unter ISC.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../../#installation">Installation starten</a>
+          <a class="btn btn-ghost" href="../../#hosting">Hosting-Optionen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap faq-wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Fragen zur E-Rechnung.</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Ab wann muss ich E-Rechnungen ausstellen?</summary>
+            <p>Seit dem 1. Januar 2025 müssen inländische B2B-Unternehmen E-Rechnungen empfangen können. Ab dem 1. Januar 2027 müssen Unternehmen mit einem Vorjahresumsatz über 800.000 € E-Rechnungen ausstellen. Ab dem 1. Januar 2028 gilt die Ausstellungspflicht für alle Unternehmen, außer Kleinunternehmer nach § 19 UStG.</p>
+          </details>
+          <details>
+            <summary>Müssen Kleinunternehmer E-Rechnungen ausstellen?</summary>
+            <p>Nein. Kleinunternehmer nach § 19 UStG sind dauerhaft von der Ausstellungspflicht befreit, müssen E-Rechnungen aber empfangen und archivieren können. Freiwillig dürfen sie E-Rechnungen ausstellen.</p>
+          </details>
+          <details>
+            <summary>Reicht eine PDF-Rechnung?</summary>
+            <p>Nein. Eine E-Rechnung ist ein strukturierter, maschinenlesbarer Datensatz nach EN 16931, zum Beispiel XRechnung (XML) oder ZUGFeRD (PDF/A-3 mit eingebettetem XML). Ein normales PDF ist keine E-Rechnung.</p>
+          </details>
+          <details>
+            <summary>Was ist der Unterschied zwischen XRechnung und ZUGFeRD?</summary>
+            <p>XRechnung ist reines XML. ZUGFeRD/Factur-X ist hybrid: eine lesbare PDF/A-3-Datei mit eingebettetem XML-Datensatz. Hustl erstellt ZUGFeRD-/Factur-X-Rechnungen.</p>
+          </details>
+          <details>
+            <summary>Unterstützt Hustl XRechnung?</summary>
+            <p>Hustl konzentriert sich auf ZUGFeRD/Factur-X (hybrides PDF/A-3). XRechnung ist ein reines XML-Format und nicht der Kern-Output. Wenn du XRechnung für öffentliche Auftraggeber brauchst, prüfe deinen Workflow, bevor du dich auf Hustl verlässt.</p>
+          </details>
+          <details>
+            <summary>Kann ich Hustl für die Steuererklärung nutzen?</summary>
+            <p>Hustl hilft dir, Belege zu sammeln, Finanzen zu ordnen und Daten zu exportieren. Es ist keine Steuerberatung und reicht keine Steuererklärung ein. Validiere E-Rechnungen mit dem offiziellen KoSIT-Validator und besprich deinen Prozess mit deinem Steuerberater.</p>
+          </details>
+          <details>
+            <summary>Kann ich Hustl selbst hosten?</summary>
+            <p>Ja. Hustl ist Open Source (ISC) und läuft auf deinem eigenen Server. Die Standalone-App läuft lokal ohne Server.</p>
+          </details>
+          <details>
+            <summary>Was kann ich exportieren?</summary>
+            <p>PDFs, CSV-Tabellen und ein Vollarchiv mit Datenbank und Dokumenten. So bekommt deine Steuerberatung die zugrunde liegenden Daten, ohne dass du an eine Cloud-Plattform gebunden bist.</p>
+          </details>
+          <details>
+            <summary>Sind diese Fristen rechtlich bindend?</summary>
+            <p>Nein. Diese Seite ist allgemeine Information mit Stand November 2026, keine Steuer- oder Rechtsberatung. Prüfe deinen Einzelfall mit deinem Steuerberater.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-inner reveal">
+        <div>
+          <p class="eyebrow">Bereit?</p>
+          <h2>Deine Arbeit an einem Ort.</h2>
+          <p>Rechnungen, E-Rechnungen, Projekte, Aufgaben und Finanzen — self-hosted auf deinem eigenen Server.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="../../#installation">Hustl installieren</a>
+          <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../" aria-label="Hustl: zum Start">
+          <img src="../../assets/logo.png" width="32" height="32" alt="">
+          <span>Hustl</span>
+        </a>
+        <p>Rechnungen, Angebote, Projekte, Aufgaben und Finanzen für Freelancer und unabhängige Kreative. Self-hosted, offen und ohne Cloud-Zwang.</p>
+        <p class="footer-small">Ein unabhängiges Open-Source-Projekt von bitm4ncer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produkt</h4>
+        <a href="../../#funktionen">Funktionen</a>
+        <a href="../../#fuer-wen">Für wen</a>
+        <a href="../../#planer">Planer</a>
+        <a href="../../#finanz-ablauf">Finanzablauf</a>
+        <a href="../../#erscheinungsbild">Helles Theme</a>
+      </div>
+      <div class="footer-col">
+        <h4>Entdecken</h4>
+        <a href="../../#einblicke">Einblicke</a>
+        <a href="../../#installation">Installation</a>
+        <a href="../../#hosting">Hosting</a>
+        <a href="./">E-Rechnung</a>
+        <a href="../../#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressourcen</h4>
+        <a href="../../#download">Download</a>
+        <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">Dokumentation</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agenten-Leitfaden</a>
+        <a href="https://github.com/bitm4ncer/hustl/issues" target="_blank" rel="noreferrer">Issues</a>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/LICENSE" target="_blank" rel="noreferrer">ISC-Lizenz</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md#datenschutz" target="_blank" rel="noreferrer">Datenschutz</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.md" target="_blank" rel="noreferrer">English README</a>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>&copy; <span data-year>2026</span> bitm4ncer</span>
+      <span>Keine Telemetrie &middot; Keine Cloud &middot; Nur dein Server</span>
+    </div>
+  </footer>
+
+  <script src="../../analytics-config.js" defer></script>
+  <script src="../../analytics.js" defer></script>
+  <script src="../../app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-invoicing for freelancers and creatives in Germany | Hustl</title>
+  <meta name="description" content="E-invoicing mandate 2027/2028: deadlines, XRechnung vs ZUGFeRD and a self-hosted solution for freelancers, musicians, artists and independent creatives. No cloud lock-in.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#101012">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://bitm4ncer.github.io/hustl/e-invoicing/",
+          "url": "https://bitm4ncer.github.io/hustl/e-invoicing/",
+          "name": "E-invoicing for freelancers and creatives in Germany",
+          "description": "E-invoicing mandate 2027/2028: deadlines, XRechnung vs ZUGFeRD and a self-hosted solution for freelancers, musicians, artists and independent creatives.",
+          "inLanguage": "en",
+          "isPartOf": { "@type": "WebSite", "name": "Hustl", "url": "https://bitm4ncer.github.io/hustl/" }
+        },
+        {
+          "@type": "Article",
+          "headline": "E-invoicing for freelancers and creatives in Germany",
+          "description": "Deadlines, formats and a self-hosted e-invoicing workflow for freelancers and independent creatives.",
+          "datePublished": "2026-11-10",
+          "dateModified": "2026-11-10",
+          "inLanguage": "en",
+          "author": { "@type": "Organization", "name": "Hustl", "url": "https://bitm4ncer.github.io/hustl/" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hustl",
+            "url": "https://bitm4ncer.github.io/hustl/",
+            "logo": { "@type": "ImageObject", "url": "https://bitm4ncer.github.io/hustl/assets/logo.png" }
+          },
+          "mainEntityOfPage": "https://bitm4ncer.github.io/hustl/e-invoicing/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Hustl", "item": "https://bitm4ncer.github.io/hustl/" },
+            { "@type": "ListItem", "position": 2, "name": "E-invoicing", "item": "https://bitm4ncer.github.io/hustl/e-invoicing/" }
+          ]
+        }
+      ]
+    }
+  </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When do I have to issue e-invoices in Germany?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Since 1 January 2025, domestic B2B businesses must be able to receive e-invoices. From 1 January 2027, businesses with a prior-year turnover above €800,000 must issue them. From 1 January 2028, all businesses must issue them, except small businesses under § 19 UStG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do small businesses have to issue e-invoices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Small businesses under § 19 UStG are permanently exempt from issuing e-invoices, but they must be able to receive and archive them. They may issue e-invoices voluntarily."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a PDF invoice enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. An e-invoice is a structured, machine-readable dataset according to EN 16931, such as XRechnung (XML) or ZUGFeRD (PDF/A-3 with embedded XML). A plain PDF is not an e-invoice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between XRechnung and ZUGFeRD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "XRechnung is pure XML. ZUGFeRD/Factur-X is a hybrid: a human-readable PDF/A-3 with an embedded XML dataset. Hustl creates ZUGFeRD/Factur-X invoices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Hustl support XRechnung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl focuses on ZUGFeRD/Factur-X (hybrid PDF/A-3). XRechnung is a pure XML format and is not the core output. If you need XRechnung for public-sector clients, check your workflow before relying on Hustl."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Hustl for my tax return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hustl helps you collect receipts, organize your finances and export data. It is not tax advice and does not file tax returns. Validate e-invoices with the official KoSIT validator and review your process with your tax adviser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I self-host Hustl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Hustl is open source (ISC) and runs on your own server. The standalone app runs locally without a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDFs, CSV tables and a full archive with the database and documents. That gives your tax adviser the underlying data without locking you into a cloud platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this deadline information legally binding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This page is general information, last updated November 2026, not tax or legal advice. Check your individual case with your tax adviser."
+          }
+        }
+      ]
+    }
+  </script>
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:title" content="E-invoicing for freelancers and creatives in Germany">
+  <meta property="og:description" content="Deadlines 2027/2028, XRechnung vs ZUGFeRD and a self-hosted e-invoicing workflow. For freelancers, musicians, artists and independent creatives.">
+  <meta property="og:url" content="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <meta property="og:image" content="https://bitm4ncer.github.io/hustl/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hustl: e-invoicing for freelancers and creatives">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bitm4ncer.github.io/hustl/assets/og-en.png">
+  <link rel="canonical" href="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <link rel="alternate" hreflang="en" href="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <link rel="alternate" hreflang="de" href="https://bitm4ncer.github.io/hustl/de/e-rechnung/">
+  <link rel="alternate" hreflang="x-default" href="https://bitm4ncer.github.io/hustl/e-invoicing/">
+  <link rel="icon" href="../assets/logo.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="../llms.txt" title="LLM-friendly site summary">
+  <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-invoice" viewBox="0 0 24 24">
+      <path d="M7 3.5h7.5L19 8v12.5H7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M14 3.5V8h4.5M8.5 12h7M8.5 15.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-einvoice" viewBox="0 0 24 24">
+      <path d="M6 3.5h8l4 4v13H6a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M14 3.5v4h4M8 12l2.2 2.2L15 9.5M8 17h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24">
+      <path d="M6 3.5v17l2-1.2 2 1.2 2-1.2 2 1.2 2-1.2 2 1.2v-17l-2 1.2-2-1.2-2 1.2-2-1.2-2 1.2-2-1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M8.5 9h7M8.5 12.5h7M8.5 16h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-finance" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M15 8.5c-.8-.7-1.8-1-3-1-1.8 0-3 .9-3 2.2 0 3.2 6 1.4 6 4.6 0 1.3-1.2 2.2-3 2.2-1.2 0-2.2-.3-3-1M12 5.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-server" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <rect x="4" y="14" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M7.5 7h.01M7.5 17h.01M11 7h.01M11 17h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24">
+      <path d="M5.5 9.5h10v4.6a4.4 4.4 0 0 1-4.4 4.4H9.9a4.4 4.4 0 0 1-4.4-4.4V9.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M15.5 10.5h1.3a2.2 2.2 0 0 1 0 4.4h-1.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M8.3 6.5c0-.7.6-.9.6-1.6M11.3 6.5c0-.7.6-.9.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="../" aria-label="Hustl: back to start">
+        <img src="../assets/logo.png" width="34" height="34" alt="">
+        <span>Hustl</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../#features">Features</a>
+        <a href="../#who-for">Who it's for</a>
+        <a href="../#planner">Planner</a>
+        <a href="../#screens">Screens</a>
+        <a href="../#finance-flow">Finance</a>
+        <a href="./" aria-current="page">E-invoicing</a>
+        <a href="../#installation">Install</a>
+        <a href="../#faq">FAQ</a>
+        <a class="nav-download-mobile" href="../#download">Download</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Choose language">
+          <a href="../de/e-rechnung/" hreflang="de" lang="de" aria-label="Deutsch">DE</a>
+          <a href="./" hreflang="en" aria-current="page">EN</a>
+        </div>
+        <a class="icon-btn github-link" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer" aria-label="Open Hustl on GitHub" title="GitHub">
+          <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+        </a>
+        <a class="icon-btn donate-link" href="https://buymeacoffee.com/bitmancer" target="_blank" rel="noreferrer" aria-label="Buy me a coffee" title="Buy me a coffee">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-coffee"></use></svg>
+        </a>
+        <a class="btn btn-primary btn-small header-cta" href="../#download">Download</a>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="wrap hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> E-invoicing &middot; Germany 2027/2028</p>
+        <h1>E-invoicing for freelancers and creatives in Germany</h1>
+        <p class="lede">The e-invoicing mandate is rolling out in stages. Hustl creates ZUGFeRD/Factur-X invoices as PDF/A-3, collects receipts and exports your finances for your tax adviser — self-hosted on your own server.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../#installation">
+            Install Hustl
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+            View on GitHub
+          </a>
+        </div>
+        <p class="article-meta">Last updated November 2026 &middot; General information, not tax advice.</p>
+      </div>
+    </section>
+
+    <section class="section" id="deadlines">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Deadlines</p>
+          <h2>Who has to do what, and when.</h2>
+          <p>The rules apply to domestic B2B invoices in Germany. The date that matters for issuing depends on your prior-year turnover.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="deadline-table">
+            <thead>
+              <tr><th>From</th><th>Obligation</th><th>Who</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1 Jan 2025</td><td>Receive e-invoices</td><td>All domestic B2B businesses</td></tr>
+              <tr><td>1 Jan 2027</td><td>Issue e-invoices</td><td>Prior-year turnover above €800,000</td></tr>
+              <tr><td>1 Jan 2028</td><td>Issue e-invoices</td><td>All businesses, except small businesses under § 19 UStG</td></tr>
+              <tr><td>Ongoing</td><td>Receive &amp; archive</td><td>Also small businesses under § 19 UStG</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="legal-note reveal"><strong>Important:</strong> Small businesses under § 19 UStG are exempt from <em>issuing</em> e-invoices, but must be able to receive and archive them. Small-amount invoices up to €250 and travel tickets remain exceptions. E-invoices must also be archived electronically (generally 8 years). This page is general information as of November 2026, not tax or legal advice. Check your individual case with your tax adviser.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="formats">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Formats</p>
+          <h2>A PDF alone is not an e-invoice.</h2>
+          <p>An e-invoice is a structured, machine-readable dataset according to EN 16931. The two common formats in Germany are XRechnung and ZUGFeRD.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-invoice"></use></svg></span>
+            <h3>A PDF is not enough</h3>
+            <p>A normal PDF invoice is readable by humans, but not machine-readable. It does not fulfil the structured e-invoice requirement.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg></span>
+            <h3>XRechnung</h3>
+            <p>Pure XML according to EN 16931. Common for public-sector clients. You need a viewer or software to read it.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-receipt"></use></svg></span>
+            <h3>ZUGFeRD / Factur-X</h3>
+            <p>A hybrid: a human-readable PDF/A-3 file with an embedded XML dataset. Hustl creates this format.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="what-hustl-does">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">With Hustl</p>
+          <h2>From invoice to export, without the bloat.</h2>
+          <p>Hustl is built for one-person businesses: invoices, offers, projects, tasks, expenses and finances in one calm app.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-einvoice"></use></svg></span>
+            <h3>Create ZUGFeRD/Factur-X</h3>
+            <p>Generate hybrid PDF/A-3 invoices according to EN 16931. Hustl checks the data model; validate a sample with the official KoSIT validator before your first real send.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-receipt"></use></svg></span>
+            <h3>Collect receipts &amp; expenses</h3>
+            <p>Upload receipt PDFs, extract fields, import bank statements and keep expenses and income in one overview.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-finance"></use></svg></span>
+            <h3>Export &amp; archive</h3>
+            <p>Download PDFs, CSV tables and a full archive with the database and documents for your tax adviser. No lock-in.</p>
+          </article>
+        </div>
+        <p class="legal-note reveal"><strong>Scope:</strong> Hustl focuses on issuing ZUGFeRD/Factur-X invoices. XRechnung is a pure XML format and is not the core output. For receiving third-party e-invoices, check your workflow and tools before relying on Hustl.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="self-hosted">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Self-hosted</p>
+          <h2>E-invoicing without a cloud account.</h2>
+          <p>Hustl runs on your own server or locally as a standalone app. Your invoices, receipts and client data stay with you. No telemetry, no vendor lock-in, open source under ISC.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../#installation">Start installation</a>
+          <a class="btn btn-ghost" href="../#hosting">Hosting options</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap faq-wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>E-invoicing questions, answered.</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>When do I have to issue e-invoices in Germany?</summary>
+            <p>Since 1 January 2025, domestic B2B businesses must be able to receive e-invoices. From 1 January 2027, businesses with a prior-year turnover above €800,000 must issue them. From 1 January 2028, all businesses must issue them, except small businesses under § 19 UStG.</p>
+          </details>
+          <details>
+            <summary>Do small businesses have to issue e-invoices?</summary>
+            <p>No. Small businesses under § 19 UStG are permanently exempt from issuing e-invoices, but they must be able to receive and archive them. They may issue e-invoices voluntarily.</p>
+          </details>
+          <details>
+            <summary>Is a PDF invoice enough?</summary>
+            <p>No. An e-invoice is a structured, machine-readable dataset according to EN 16931, such as XRechnung (XML) or ZUGFeRD (PDF/A-3 with embedded XML). A plain PDF is not an e-invoice.</p>
+          </details>
+          <details>
+            <summary>What is the difference between XRechnung and ZUGFeRD?</summary>
+            <p>XRechnung is pure XML. ZUGFeRD/Factur-X is a hybrid: a human-readable PDF/A-3 with an embedded XML dataset. Hustl creates ZUGFeRD/Factur-X invoices.</p>
+          </details>
+          <details>
+            <summary>Does Hustl support XRechnung?</summary>
+            <p>Hustl focuses on ZUGFeRD/Factur-X (hybrid PDF/A-3). XRechnung is a pure XML format and is not the core output. If you need XRechnung for public-sector clients, check your workflow before relying on Hustl.</p>
+          </details>
+          <details>
+            <summary>Can I use Hustl for my tax return?</summary>
+            <p>Hustl helps you collect receipts, organize your finances and export data. It is not tax advice and does not file tax returns. Validate e-invoices with the official KoSIT validator and review your process with your tax adviser.</p>
+          </details>
+          <details>
+            <summary>Can I self-host Hustl?</summary>
+            <p>Yes. Hustl is open source (ISC) and runs on your own server. The standalone app runs locally without a server.</p>
+          </details>
+          <details>
+            <summary>What can I export?</summary>
+            <p>PDFs, CSV tables and a full archive with the database and documents. That gives your tax adviser the underlying data without locking you into a cloud platform.</p>
+          </details>
+          <details>
+            <summary>Is this deadline information legally binding?</summary>
+            <p>No. This page is general information, last updated November 2026, not tax or legal advice. Check your individual case with your tax adviser.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-inner reveal">
+        <div>
+          <p class="eyebrow">Ready?</p>
+          <h2>Keep your work in one place.</h2>
+          <p>Invoices, e-invoices, projects, tasks and finances — self-hosted on your own server.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="../#installation">Install Hustl</a>
+          <a class="btn btn-ghost" href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">
+            <svg class="icon icon-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"></use></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../" aria-label="Hustl: back to start">
+          <img src="../assets/logo.png" width="32" height="32" alt="">
+          <span>Hustl</span>
+        </a>
+        <p>Invoices, offers, projects, tasks and finances for freelancers and independent creatives. Self-hosted, open and without cloud lock-in.</p>
+        <p class="footer-small">An independent open-source project by bitm4ncer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="../#features">Features</a>
+        <a href="../#who-for">Who it's for</a>
+        <a href="../#planner">Planner</a>
+        <a href="../#finance-flow">Finance flow</a>
+        <a href="../#appearance">Light theme</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="../#screens">Screens</a>
+        <a href="../#installation">Installation</a>
+        <a href="../#hosting">Hosting</a>
+        <a href="./">E-invoicing</a>
+        <a href="../#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../#download">Download</a>
+        <a href="https://github.com/bitm4ncer/hustl" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/bitm4ncer/hustl#readme" target="_blank" rel="noreferrer">Documentation</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/INSTALL-WITH-AGENT.md" target="_blank" rel="noreferrer">Agent guide</a>
+        <a href="https://github.com/bitm4ncer/hustl/issues" target="_blank" rel="noreferrer">Issues</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/LICENSE" target="_blank" rel="noreferrer">ISC License</a>
+        <a href="https://github.com/bitm4ncer/hustl#privacy" target="_blank" rel="noreferrer">Privacy</a>
+        <a href="https://github.com/bitm4ncer/hustl/blob/main/README.de.md" target="_blank" rel="noreferrer">German README</a>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>&copy; <span data-year>2026</span> bitm4ncer</span>
+      <span>No telemetry &middot; No cloud &middot; Just your server</span>
+    </div>
+  </footer>
+
+  <script src="../analytics-config.js" defer></script>
+  <script src="../analytics.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
